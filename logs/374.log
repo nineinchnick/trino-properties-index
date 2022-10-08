@@ -1,0 +1,882 @@
++ set +e
++ grep -s -q node.id /etc/trino/node.properties
++ NODE_ID_EXISTS=1
++ set -e
++ NODE_ID=
++ [[ 1 != 0 ]]
++ NODE_ID=-Dnode.id=cda26e649288
++ exec /usr/lib/trino/bin/launcher run --etc-dir /etc/trino -Dnode.id=cda26e649288
+WARNING: Support for the ARM architecture is experimental
+Oct 08, 2022 7:20:05 AM io.airlift.log.Logger info
+INFO: Java version: 11.0.14.1
+2022-10-08T07:20:05.984Z	INFO	main	io.airlift.log.Logging	Logging to stderr
+2022-10-08T07:20:05.984Z	INFO	main	Bootstrap	Loading configuration
+2022-10-08T07:20:06.059Z	INFO	main	Bootstrap	Initializing logging
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	PROPERTY                                                            DEFAULT                                                                    RUNTIME                                                                    DESCRIPTION
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	discovery.uri                                                       ----                                                                       http://localhost:8080                                                      Discovery service base URI
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	service-inventory.uri                                               ----                                                                       ----                                                                       Service inventory base URI
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	service-inventory.update-interval                                   10.00s                                                                     10.00s                                                                     Service inventory update interval
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	discovery.trino.pool                                                general                                                                    general
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	discovery.max-age                                                   30.00s                                                                     30.00s
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	discovery.store-cache-ttl                                           1.00s                                                                      1.00s
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	dynamic.store.gc-interval                                           1.00h                                                                      1.00h
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	dynamic.store.remote.max-batch-size                                 1000                                                                       1000
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	dynamic.store.remote.queue-size                                     1000                                                                       1000
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	dynamic.store.remote.update-interval                                5.00s                                                                      5.00s
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	dynamic.store.remote.replication-interval                           1.00m                                                                      1.00m
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	dynamic.store.tombstone-max-age                                     1.00d                                                                      1.00d
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	discovery.http-client.https.automatic-shared-secret                 [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	discovery.http-client.use-blocking-connect                          false                                                                      false
+2022-10-08T07:20:06.642Z	INFO	main	Bootstrap	discovery.http-client.connect-timeout                               5.00s                                                                      5.00s
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.http2.enabled                                 false                                                                      false                                                                      Enable the HTTP/2 transport
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.http2.session-receive-window-size             16MB                                                                       16MB                                                                       Initial size of session's flow control receive window for HTTP/2
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.http2.stream-receive-window-size              16MB                                                                       16MB                                                                       Initial size of stream's flow control receive window for HTTP/2
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.http2.input-buffer-size                       8kB                                                                        8kB                                                                        Size of the buffer used to read from the network for HTTP/2
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.http-proxy                                    ----                                                                       ----
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.https.excluded-cipher                         [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  Setting this config property overwrites Jetty's default excluded cipher suites
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.https.included-cipher                         []                                                                         []
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.idle-timeout                                  1.00m                                                                      1.00m
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.keep-alive-interval                           ----                                                                       ----
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.key-store-password                            [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.key-store-path                                ----                                                                       ----
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.log.buffer-size                               1MB                                                                        1MB
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.log.compression.enabled                       true                                                                       true
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.log.enabled                                   false                                                                      false
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.log.flush-interval                            10.00s                                                                     10.00s
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.log.max-history                               15                                                                         15
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.log.max-size                                  1GB                                                                        1GB
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.log.path                                      var/log/                                                                   var/log/                                                                   The name of the log file will be prefixed with the name of the HTTP client (<client_name>-http-client.log)
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.log.queue-size                                10000                                                                      10000
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.max-connections                               200                                                                        200
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.max-connections-per-server                    20                                                                         20
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.max-content-length                            16MB                                                                       16MB
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.max-requests-queued-per-destination           1024                                                                       1024
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.max-threads                                   200                                                                        200
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.min-threads                                   8                                                                          8
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.record-request-complete                       true                                                                       true
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.request-buffer-size                           4kB                                                                        4kB
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.request-timeout                               5.00m                                                                      5.00m
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.response-buffer-size                          16kB                                                                       16kB
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.http-proxy.secure                             false                                                                      false
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.secure-random-algorithm                       ----                                                                       ----
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.selector-count                                2                                                                          2
+2022-10-08T07:20:06.643Z	INFO	main	Bootstrap	discovery.http-client.socks-proxy                                   ----                                                                       ----
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	discovery.http-client.timeout-concurrency                           1                                                                          1                                                                          Number of concurrent locks for timeout
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	discovery.http-client.timeout-threads                               1                                                                          1                                                                          Total number of timeout threads
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	discovery.http-client.trust-store-password                          [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	discovery.http-client.trust-store-path                              ----                                                                       ----
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	discovery.http-client.https.hostname-verification                   true                                                                       true                                                                       Verify that server hostname matches the server certificate
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.https.automatic-shared-secret                   [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.use-blocking-connect                            false                                                                      false
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.connect-timeout                                 5.00s                                                                      5.00s
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.http2.enabled                                   false                                                                      false                                                                      Enable the HTTP/2 transport
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.http2.session-receive-window-size               16MB                                                                       16MB                                                                       Initial size of session's flow control receive window for HTTP/2
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.http2.stream-receive-window-size                16MB                                                                       16MB                                                                       Initial size of stream's flow control receive window for HTTP/2
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.http2.input-buffer-size                         8kB                                                                        8kB                                                                        Size of the buffer used to read from the network for HTTP/2
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.http-proxy                                      ----                                                                       ----
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.https.excluded-cipher                           [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  Setting this config property overwrites Jetty's default excluded cipher suites
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.https.included-cipher                           []                                                                         []
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.idle-timeout                                    1.00m                                                                      1.00m
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.keep-alive-interval                             ----                                                                       ----
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.key-store-password                              [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.key-store-path                                  ----                                                                       ----
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.log.buffer-size                                 1MB                                                                        1MB
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.log.compression.enabled                         true                                                                       true
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.log.enabled                                     false                                                                      false
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.log.flush-interval                              10.00s                                                                     10.00s
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.log.max-history                                 15                                                                         15
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.log.max-size                                    1GB                                                                        1GB
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.log.path                                        var/log/                                                                   var/log/                                                                   The name of the log file will be prefixed with the name of the HTTP client (<client_name>-http-client.log)
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.log.queue-size                                  10000                                                                      10000
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.max-connections                                 200                                                                        200
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.max-connections-per-server                      20                                                                         20
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.max-content-length                              16MB                                                                       16MB
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.max-requests-queued-per-destination             1024                                                                       1024
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.max-threads                                     200                                                                        200
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.min-threads                                     8                                                                          8
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.record-request-complete                         true                                                                       true
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.request-buffer-size                             4kB                                                                        4kB
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.request-timeout                                 5.00m                                                                      5.00m
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.response-buffer-size                            16kB                                                                       16kB
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.http-proxy.secure                               false                                                                      false
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.secure-random-algorithm                         ----                                                                       ----
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.selector-count                                  2                                                                          2
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.socks-proxy                                     ----                                                                       ----
+2022-10-08T07:20:06.644Z	INFO	main	Bootstrap	dynamic.http-client.timeout-concurrency                             1                                                                          1                                                                          Number of concurrent locks for timeout
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	dynamic.http-client.timeout-threads                                 1                                                                          1                                                                          Total number of timeout threads
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	dynamic.http-client.trust-store-password                            [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	dynamic.http-client.trust-store-path                                ----                                                                       ----
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	dynamic.http-client.https.hostname-verification                     true                                                                       true                                                                       Verify that server hostname matches the server certificate
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.https.automatic-shared-secret          [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.use-blocking-connect                   false                                                                      false
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.connect-timeout                        5.00s                                                                      5.00s
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.http2.enabled                          false                                                                      false                                                                      Enable the HTTP/2 transport
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.http2.session-receive-window-size      16MB                                                                       16MB                                                                       Initial size of session's flow control receive window for HTTP/2
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.http2.stream-receive-window-size       16MB                                                                       16MB                                                                       Initial size of stream's flow control receive window for HTTP/2
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.http2.input-buffer-size                8kB                                                                        8kB                                                                        Size of the buffer used to read from the network for HTTP/2
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.http-proxy                             ----                                                                       ----
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.https.excluded-cipher                  [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  Setting this config property overwrites Jetty's default excluded cipher suites
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.https.included-cipher                  []                                                                         []
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.idle-timeout                           1.00m                                                                      1.00m
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.keep-alive-interval                    ----                                                                       ----
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.key-store-password                     [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.key-store-path                         ----                                                                       ----
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.log.buffer-size                        1MB                                                                        1MB
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.log.compression.enabled                true                                                                       true
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.log.enabled                            false                                                                      false
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.log.flush-interval                     10.00s                                                                     10.00s
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.log.max-history                        15                                                                         15
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.log.max-size                           1GB                                                                        1GB
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.log.path                               var/log/                                                                   var/log/                                                                   The name of the log file will be prefixed with the name of the HTTP client (<client_name>-http-client.log)
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.log.queue-size                         10000                                                                      10000
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.max-connections                        200                                                                        200
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.max-connections-per-server             20                                                                         20
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.max-content-length                     16MB                                                                       16MB
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.max-requests-queued-per-destination    1024                                                                       1024
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.max-threads                            200                                                                        200
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.min-threads                            8                                                                          8
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.record-request-complete                true                                                                       true
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.request-buffer-size                    4kB                                                                        4kB
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.request-timeout                        5.00m                                                                      5.00m
+2022-10-08T07:20:06.645Z	INFO	main	Bootstrap	failure-detector.http-client.response-buffer-size                   16kB                                                                       16kB
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	failure-detector.http-client.http-proxy.secure                      false                                                                      false
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	failure-detector.http-client.secure-random-algorithm                ----                                                                       ----
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	failure-detector.http-client.selector-count                         2                                                                          2
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	failure-detector.http-client.socks-proxy                            ----                                                                       ----
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	failure-detector.http-client.timeout-concurrency                    1                                                                          1                                                                          Number of concurrent locks for timeout
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	failure-detector.http-client.timeout-threads                        1                                                                          1                                                                          Total number of timeout threads
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	failure-detector.http-client.trust-store-password                   [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	failure-detector.http-client.trust-store-path                       ----                                                                       ----
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	failure-detector.http-client.https.hostname-verification            true                                                                       true                                                                       Verify that server hostname matches the server certificate
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.https.automatic-shared-secret             [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.use-blocking-connect                      false                                                                      false
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.connect-timeout                           5.00s                                                                      5.00s
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.http2.enabled                             false                                                                      false                                                                      Enable the HTTP/2 transport
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.http2.session-receive-window-size         16MB                                                                       16MB                                                                       Initial size of session's flow control receive window for HTTP/2
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.http2.stream-receive-window-size          16MB                                                                       16MB                                                                       Initial size of stream's flow control receive window for HTTP/2
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.http2.input-buffer-size                   8kB                                                                        8kB                                                                        Size of the buffer used to read from the network for HTTP/2
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.http-proxy                                ----                                                                       ----
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.https.excluded-cipher                     [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  Setting this config property overwrites Jetty's default excluded cipher suites
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.https.included-cipher                     []                                                                         []
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.idle-timeout                              30.00s                                                                     30.00s
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.keep-alive-interval                       ----                                                                       ----
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.key-store-password                        [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.key-store-path                            ----                                                                       ----
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.log.buffer-size                           1MB                                                                        1MB
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.log.compression.enabled                   true                                                                       true
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.log.enabled                               false                                                                      false
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.log.flush-interval                        10.00s                                                                     10.00s
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.log.max-history                           15                                                                         15
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.log.max-size                              1GB                                                                        1GB
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.log.path                                  var/log/                                                                   var/log/                                                                   The name of the log file will be prefixed with the name of the HTTP client (<client_name>-http-client.log)
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.log.queue-size                            10000                                                                      10000
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.max-connections                           200                                                                        200
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.max-connections-per-server                20                                                                         20
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.max-content-length                        16MB                                                                       16MB
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.max-requests-queued-per-destination       1024                                                                       1024
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.max-threads                               200                                                                        200
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.min-threads                               8                                                                          8
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.record-request-complete                   true                                                                       true
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.request-buffer-size                       4kB                                                                        4kB
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.request-timeout                           10.00s                                                                     10.00s
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.response-buffer-size                      16kB                                                                       16kB
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.http-proxy.secure                         false                                                                      false
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.secure-random-algorithm                   ----                                                                       ----
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.selector-count                            2                                                                          2
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.socks-proxy                               ----                                                                       ----
+2022-10-08T07:20:06.646Z	INFO	main	Bootstrap	memoryManager.http-client.timeout-concurrency                       1                                                                          1                                                                          Number of concurrent locks for timeout
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	memoryManager.http-client.timeout-threads                           1                                                                          1                                                                          Total number of timeout threads
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	memoryManager.http-client.trust-store-password                      [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	memoryManager.http-client.trust-store-path                          ----                                                                       ----
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	memoryManager.http-client.https.hostname-verification               true                                                                       true                                                                       Verify that server hostname matches the server certificate
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.https.automatic-shared-secret              [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.use-blocking-connect                       false                                                                      false
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.connect-timeout                            5.00s                                                                      5.00s
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.http2.enabled                              false                                                                      false                                                                      Enable the HTTP/2 transport
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.http2.session-receive-window-size          16MB                                                                       16MB                                                                       Initial size of session's flow control receive window for HTTP/2
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.http2.stream-receive-window-size           16MB                                                                       16MB                                                                       Initial size of stream's flow control receive window for HTTP/2
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.http2.input-buffer-size                    8kB                                                                        8kB                                                                        Size of the buffer used to read from the network for HTTP/2
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.http-proxy                                 ----                                                                       ----
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.https.excluded-cipher                      [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  Setting this config property overwrites Jetty's default excluded cipher suites
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.https.included-cipher                      []                                                                         []
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.idle-timeout                               30.00s                                                                     30.00s
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.keep-alive-interval                        ----                                                                       ----
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.key-store-password                         [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.key-store-path                             ----                                                                       ----
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.log.buffer-size                            1MB                                                                        1MB
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.log.compression.enabled                    true                                                                       true
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.log.enabled                                false                                                                      false
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.log.flush-interval                         10.00s                                                                     10.00s
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.log.max-history                            15                                                                         15
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.log.max-size                               1GB                                                                        1GB
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.log.path                                   var/log/                                                                   var/log/                                                                   The name of the log file will be prefixed with the name of the HTTP client (<client_name>-http-client.log)
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.log.queue-size                             10000                                                                      10000
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.max-connections                            200                                                                        200
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.max-connections-per-server                 20                                                                         20
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.max-content-length                         16MB                                                                       16MB
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.max-requests-queued-per-destination        1024                                                                       1024
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.max-threads                                200                                                                        200
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.min-threads                                8                                                                          8
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.record-request-complete                    true                                                                       true
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.request-buffer-size                        4kB                                                                        4kB
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.request-timeout                            10.00s                                                                     10.00s
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.response-buffer-size                       16kB                                                                       16kB
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.http-proxy.secure                          false                                                                      false
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.secure-random-algorithm                    ----                                                                       ----
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.selector-count                             2                                                                          2
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.socks-proxy                                ----                                                                       ----
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.timeout-concurrency                        1                                                                          1                                                                          Number of concurrent locks for timeout
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.timeout-threads                            1                                                                          1                                                                          Total number of timeout threads
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.trust-store-password                       [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.trust-store-path                           ----                                                                       ----
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	node-manager.http-client.https.hostname-verification                true                                                                       true                                                                       Verify that server hostname matches the server certificate
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	exchange.http-client.https.automatic-shared-secret                  [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.647Z	INFO	main	Bootstrap	exchange.http-client.use-blocking-connect                           false                                                                      false
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.connect-timeout                                5.00s                                                                      5.00s
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.http2.enabled                                  false                                                                      false                                                                      Enable the HTTP/2 transport
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.http2.session-receive-window-size              16MB                                                                       16MB                                                                       Initial size of session's flow control receive window for HTTP/2
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.http2.stream-receive-window-size               16MB                                                                       16MB                                                                       Initial size of stream's flow control receive window for HTTP/2
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.http2.input-buffer-size                        8kB                                                                        8kB                                                                        Size of the buffer used to read from the network for HTTP/2
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.http-proxy                                     ----                                                                       ----
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.https.excluded-cipher                          [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  Setting this config property overwrites Jetty's default excluded cipher suites
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.https.included-cipher                          []                                                                         []
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.idle-timeout                                   30.00s                                                                     30.00s
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.keep-alive-interval                            ----                                                                       ----
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.key-store-password                             [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.key-store-path                                 ----                                                                       ----
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.log.buffer-size                                1MB                                                                        1MB
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.log.compression.enabled                        true                                                                       true
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.log.enabled                                    false                                                                      false
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.log.flush-interval                             10.00s                                                                     10.00s
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.log.max-history                                15                                                                         15
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.log.max-size                                   1GB                                                                        1GB
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.log.path                                       var/log/                                                                   var/log/                                                                   The name of the log file will be prefixed with the name of the HTTP client (<client_name>-http-client.log)
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.log.queue-size                                 10000                                                                      10000
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.max-connections                                200                                                                        200
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.max-connections-per-server                     250                                                                        250
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.max-content-length                             32MB                                                                       32MB
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.max-requests-queued-per-destination            1024                                                                       1024
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.max-threads                                    200                                                                        200
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.min-threads                                    8                                                                          8
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.record-request-complete                        true                                                                       true
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.request-buffer-size                            4kB                                                                        4kB
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.request-timeout                                10.00s                                                                     10.00s
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.response-buffer-size                           16kB                                                                       16kB
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.http-proxy.secure                              false                                                                      false
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.secure-random-algorithm                        ----                                                                       ----
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.selector-count                                 2                                                                          2
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.socks-proxy                                    ----                                                                       ----
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.timeout-concurrency                            1                                                                          1                                                                          Number of concurrent locks for timeout
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.timeout-threads                                1                                                                          1                                                                          Total number of timeout threads
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.trust-store-password                           [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.trust-store-path                               ----                                                                       ----
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	exchange.http-client.https.hostname-verification                    true                                                                       true                                                                       Verify that server hostname matches the server certificate
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.https.automatic-shared-secret                 [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.use-blocking-connect                          false                                                                      false
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.connect-timeout                               5.00s                                                                      5.00s
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.http2.enabled                                 false                                                                      false                                                                      Enable the HTTP/2 transport
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.http2.session-receive-window-size             16MB                                                                       16MB                                                                       Initial size of session's flow control receive window for HTTP/2
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.http2.stream-receive-window-size              16MB                                                                       16MB                                                                       Initial size of stream's flow control receive window for HTTP/2
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.http2.input-buffer-size                       8kB                                                                        8kB                                                                        Size of the buffer used to read from the network for HTTP/2
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.http-proxy                                    ----                                                                       ----
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.https.excluded-cipher                         [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  Setting this config property overwrites Jetty's default excluded cipher suites
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.https.included-cipher                         []                                                                         []
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.idle-timeout                                  30.00s                                                                     30.00s
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.keep-alive-interval                           ----                                                                       ----
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.key-store-password                            [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.key-store-path                                ----                                                                       ----
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.log.buffer-size                               1MB                                                                        1MB
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.log.compression.enabled                       true                                                                       true
+2022-10-08T07:20:06.648Z	INFO	main	Bootstrap	scheduler.http-client.log.enabled                                   false                                                                      false
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.log.flush-interval                            10.00s                                                                     10.00s
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.log.max-history                               15                                                                         15
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.log.max-size                                  1GB                                                                        1GB
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.log.path                                      var/log/                                                                   var/log/                                                                   The name of the log file will be prefixed with the name of the HTTP client (<client_name>-http-client.log)
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.log.queue-size                                10000                                                                      10000
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.max-connections                               200                                                                        200
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.max-connections-per-server                    250                                                                        250
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.max-content-length                            16MB                                                                       16MB
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.max-requests-queued-per-destination           1024                                                                       1024
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.max-threads                                   200                                                                        200
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.min-threads                                   8                                                                          8
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.record-request-complete                       true                                                                       true
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.request-buffer-size                           4kB                                                                        4kB
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.request-timeout                               10.00s                                                                     10.00s
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.response-buffer-size                          16kB                                                                       16kB
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.http-proxy.secure                             false                                                                      false
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.secure-random-algorithm                       ----                                                                       ----
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.selector-count                                2                                                                          2
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.socks-proxy                                   ----                                                                       ----
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.timeout-concurrency                           1                                                                          1                                                                          Number of concurrent locks for timeout
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.timeout-threads                               1                                                                          1                                                                          Total number of timeout threads
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.trust-store-password                          [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.trust-store-path                              ----                                                                       ----
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	scheduler.http-client.https.hostname-verification                   true                                                                       true                                                                       Verify that server hostname matches the server certificate
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.https.automatic-shared-secret                [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.use-blocking-connect                         false                                                                      false
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.connect-timeout                              5.00s                                                                      5.00s
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.http2.enabled                                false                                                                      false                                                                      Enable the HTTP/2 transport
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.http2.session-receive-window-size            16MB                                                                       16MB                                                                       Initial size of session's flow control receive window for HTTP/2
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.http2.stream-receive-window-size             16MB                                                                       16MB                                                                       Initial size of stream's flow control receive window for HTTP/2
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.http2.input-buffer-size                      8kB                                                                        8kB                                                                        Size of the buffer used to read from the network for HTTP/2
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.http-proxy                                   ----                                                                       ----
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.https.excluded-cipher                        [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  [^.*_(MD5|SHA|SHA1)$, ^TLS_RSA_.*$, ^SSL_.*$, ^.*_NULL_.*$, ^.*_anon_.*$]  Setting this config property overwrites Jetty's default excluded cipher suites
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.https.included-cipher                        []                                                                         []
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.idle-timeout                                 1.00m                                                                      1.00m
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.keep-alive-interval                          ----                                                                       ----
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.key-store-password                           [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.key-store-path                               ----                                                                       ----
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.log.buffer-size                              1MB                                                                        1MB
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.log.compression.enabled                      true                                                                       true
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.log.enabled                                  false                                                                      false
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.log.flush-interval                           10.00s                                                                     10.00s
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.log.max-history                              15                                                                         15
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.log.max-size                                 1GB                                                                        1GB
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.log.path                                     var/log/                                                                   var/log/                                                                   The name of the log file will be prefixed with the name of the HTTP client (<client_name>-http-client.log)
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.log.queue-size                               10000                                                                      10000
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.max-connections                              200                                                                        200
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.max-connections-per-server                   20                                                                         20
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.max-content-length                           16MB                                                                       16MB
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.max-requests-queued-per-destination          1024                                                                       1024
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.max-threads                                  200                                                                        200
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.min-threads                                  8                                                                          8
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.record-request-complete                      true                                                                       true
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.request-buffer-size                          4kB                                                                        4kB
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.request-timeout                              5.00m                                                                      5.00m
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.response-buffer-size                         16kB                                                                       16kB
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.http-proxy.secure                            false                                                                      false
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.secure-random-algorithm                      ----                                                                       ----
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.selector-count                               2                                                                          2
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.socks-proxy                                  ----                                                                       ----
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.timeout-concurrency                          1                                                                          1                                                                          Number of concurrent locks for timeout
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.timeout-threads                              1                                                                          1                                                                          Total number of timeout threads
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.trust-store-password                         [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.trust-store-path                             ----                                                                       ----
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	workerInfo.http-client.https.hostname-verification                  true                                                                       true                                                                       Verify that server hostname matches the server certificate
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	http-server.admin.enabled                                           false                                                                      false
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	http-server.admin.threads.max                                       200                                                                        200
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	http-server.admin.threads.min                                       2                                                                          2
+2022-10-08T07:20:06.649Z	INFO	main	Bootstrap	http-server.admin.port                                              0                                                                          0
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.http2.session-receive-window-size                       16MB                                                                       16MB                                                                       Initial size of session's flow control receive window for HTTP/2
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.http2.stream-receive-window-size                        16MB                                                                       16MB                                                                       Initial size of stream's flow control receive window for HTTP/2
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.http2.input-buffer-size                                 8kB                                                                        8kB                                                                        Size of the buffer used to read from the network for HTTP/2
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.http2.max-concurrent-streams                            16384                                                                      16384                                                                      Maximum concurrent streams per connection for HTTP/2
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.http2.stream-idle-timeout                               15.00s                                                                     15.00s
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.accept-queue-size                                       8000                                                                       8000
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.http.acceptor-threads                                   ----                                                                       ----
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.http.enabled                                            true                                                                       true
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.http.port                                               8080                                                                       8080
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.http.selector-threads                                   ----                                                                       ----
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.https.acceptor-threads                                  ----                                                                       ----
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.https.enabled                                           false                                                                      false
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.https.selector-threads                                  ----                                                                       ----
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.log.compression.enabled                                 true                                                                       true
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.log.enabled                                             true                                                                       true
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.log.max-history                                         15                                                                         15
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.log.max-size                                            100MB                                                                      100MB
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.log.path                                                var/log/http-request.log                                                   var/log/http-request.log
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.log.queue-size                                          10000                                                                      10000
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.max-request-header-size                                 2MB                                                                        2MB
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.max-response-header-size                                2MB                                                                        2MB
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.threads.max                                             200                                                                        200
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.threads.min                                             2                                                                          2
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.net.max-idle-time                                       200.00s                                                                    200.00s
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.process-forwarded                                       false                                                                      false                                                                      Process Forwarded and X-Forwarded headers (for proxied environments)
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.show-stack-trace                                        true                                                                       true                                                                       Show the stack trace when generating an error response
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.threads.max-idle-time                                   1.00m                                                                      1.00m
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	http-server.auth.users-file                                         ----                                                                       ----
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	jmx.rmiregistry.port                                                ----                                                                       ----
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	jmx.rmiserver.port                                                  ----                                                                       ----
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	node.binary-spec                                                    ----                                                                       ----
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	node.config-spec                                                    ----                                                                       ----
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	node.environment                                                    ----                                                                       docker
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	node.internal-address-source                                        IP                                                                         IP
+2022-10-08T07:20:06.650Z	INFO	main	Bootstrap	node.location                                                       ----                                                                       ----
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	node.bind-ip                                                        ----                                                                       ----
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	node.external-address                                               ----                                                                       ----
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	node.id                                                             ----                                                                       cda26e649288
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	node.internal-address                                               ----                                                                       ----
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	node.pool                                                           general                                                                    general
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	aggregation-operator-unspill-memory-limit                           4MB                                                                        4MB
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	legacy.allow-set-view-authorization                                 false                                                                      false                                                                      For security reasons ALTER VIEW SET AUTHORIZATION is disabled for SECURITY DEFINER; setting this option to true will re-enable this functionality
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	concurrent-lifespans-per-task                                       0                                                                          0                                                                          Experimental: Default number of lifespans that run in parallel on each task when grouped execution is enabled
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	dynamic-schedule-for-grouped-execution                              false                                                                      false                                                                      Experimental: Use dynamic schedule for grouped execution when possible
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	exchange.compression-enabled                                        false                                                                      false
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	exchange.data-integrity-verification                                ABORT                                                                      ABORT
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	filter-and-project-min-output-page-row-count                        256                                                                        256
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	filter-and-project-min-output-page-size                             500kB                                                                      500kB
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	grouped-execution-enabled                                           false                                                                      false                                                                      Experimental: Use grouped execution when possible
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	hide-inaccessible-columns                                           false                                                                      false                                                                      When enabled non-accessible columns are silently filtered from results from SELECT * statements
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	incremental-hash-array-load-factor.enabled                          true                                                                       true                                                                       Use smaller load factor for small hash arrays in order to improve performance
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	experimental.late-materialization.enabled                           false                                                                      false
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	deprecated.legacy-catalog-roles                                     false                                                                      false                                                                      Enable legacy role management syntax that assumed all roles are catalog scoped
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	deprecated.legacy-row-to-json-cast                                  false                                                                      false
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	analyzer.max-grouping-sets                                          2048                                                                       2048
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	max-recursion-depth                                                 10                                                                         10                                                                         Maximum recursion depth for recursive common table expression
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	memory-revoking-target                                              0.5                                                                        0.5                                                                        When revoking memory, try to revoke so much that pool is filled below target at the end
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	memory-revoking-threshold                                           0.9                                                                        0.9                                                                        Revoke memory when memory pool is filled over threshold
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	deprecated.omit-datetime-type-precision                             false                                                                      false                                                                      Enable compatibility mode for legacy clients when rendering datetime type names with default precision
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	pages-index.eager-compaction-enabled                                false                                                                      false
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	parse-decimal-literals-as-double                                    false                                                                      false
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	re2j.dfa-retries                                                    5                                                                          5
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	re2j.dfa-states-limit                                               2147483647                                                                 2147483647
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	redistribute-writes                                                 true                                                                       true
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	regex-library                                                       JONI                                                                       JONI
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	scale-writers                                                       false                                                                      false
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	spill-enabled                                                       false                                                                      false
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	spiller-max-used-space-threshold                                    0.9                                                                        0.9
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	spiller-spill-path                                                  []                                                                         []
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	spiller-threads                                                     4                                                                          4
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	writer-min-size                                                     32MB                                                                       32MB                                                                       Target minimum size of writer output when scaling writers
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	event.max-output-stage-size                                         16MB                                                                       16MB
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	event-listener.config-files                                         []                                                                         []
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	enable-coordinator-dynamic-filters-distribution                     true                                                                       true                                                                       Enable distribution of dynamic filters from coordinator to all workers
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	enable-dynamic-filtering                                            true                                                                       true
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	enable-large-dynamic-filters                                        false                                                                      false
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	dynamic-filtering.large-broadcast.max-distinct-values-per-driver    5000                                                                       5000
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	dynamic-filtering.large-broadcast.max-size-per-driver               500kB                                                                      500kB
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	dynamic-filtering.large-broadcast.range-row-limit-per-driver        10000                                                                      10000
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	dynamic-filtering.large-partitioned.max-distinct-values-per-driver  500                                                                        500
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	dynamic-filtering.large-partitioned.max-size-per-driver             50kB                                                                       50kB
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	dynamic-filtering.large-partitioned.range-row-limit-per-driver      1000                                                                       1000
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	dynamic-filtering.service-thread-count                              2                                                                          2
+2022-10-08T07:20:06.651Z	INFO	main	Bootstrap	dynamic-filtering.small-broadcast.max-distinct-values-per-driver    200                                                                        200
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	dynamic-filtering.small-broadcast.max-size-per-driver               20kB                                                                       20kB
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	dynamic-filtering.small-broadcast.range-row-limit-per-driver        400                                                                        400
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	dynamic-filtering.small-partitioned.max-distinct-values-per-driver  20                                                                         20
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	dynamic-filtering.small-partitioned.max-size-per-driver             10kB                                                                       10kB
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	dynamic-filtering.small-partitioned.range-row-limit-per-driver      100                                                                        100
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	failure-injection.expiration-period                                 10.00m                                                                     10.00m                                                                     Period after which an injected failure is considered expired and will no longer be triggering a failure
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	failure-injection.request-timeout                                   2.00m                                                                      2.00m                                                                      Period after which requests blocked to emulate a timeout are released
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.client.timeout                                                5.00m                                                                      5.00m
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	fault-tolerant-execution-max-task-split-count                       256                                                                        256                                                                        Maximal number of splits for a single fault tolerant task (count based)
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	fault-tolerant-execution-min-task-split-count                       16                                                                         16                                                                         Minimal number of splits for a single fault tolerant task (count based)
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	fault-tolerant-execution-target-task-input-size                     1GB                                                                        1GB                                                                        Target size in bytes of all task inputs for a single fault tolerant task
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	fault-tolerant-execution-target-task-split-count                    16                                                                         16                                                                         Target number of splits for a single fault tolerant task (split weight aware)
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	fault-tolerant-execution-task-descriptor-storage-max-memory         161061274B                                                                 161061274B                                                                 Maximum amount of memory to be used to store task descriptors for fault tolerant queries on coordinator
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.hash-partition-count                                          100                                                                        100                                                                        Number of partitions for distributed joins and aggregations
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-concurrent-queries                                        1000                                                                       1000
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-history                                                   100                                                                        100
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-length                                                    1000000                                                                    1000000
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-queued-queries                                            5000                                                                       5000
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-stage-count                                               100                                                                        100
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.min-expire-age                                                15.00m                                                                     15.00m
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.min-schedule-split-batch-size                                 100                                                                        100
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.execution-policy                                              phased                                                                     phased
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.manager-executor-pool-size                                    5                                                                          5
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-cpu-time                                                  1000000000.00d                                                             1000000000.00d
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-execution-time                                            100.00d                                                                    100.00d
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-planning-time                                             10.00m                                                                     10.00m
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-run-time                                                  100.00d                                                                    100.00d
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.max-scan-physical-bytes                                       ----                                                                       ----
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query-retry-attempts                                                4                                                                          4
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.remote-task.max-callback-threads                              1000                                                                       1000
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.remote-task.max-error-duration                                5.00m                                                                      5.00m
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.remote-task.min-error-duration                                5.00m                                                                      5.00m
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query-manager.required-workers                                      1                                                                          1                                                                          Minimum number of active workers that must be available before a query will start
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query-manager.required-workers-max-wait                             5.00m                                                                      5.00m                                                                      Maximum time to wait for minimum number of workers before the query is failed
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	retry-initial-delay                                                 10.00s                                                                     10.00s                                                                     Initial delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt up to 'retry_max_delay'
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	retry-max-delay                                                     1.00m                                                                      1.00m                                                                      Maximum delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt starting from 'retry_initial_delay'
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	retry-policy                                                        NONE                                                                       NONE
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.schedule-split-batch-size                                     1000                                                                       1000
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	query.stage-count-warning-threshold                                 50                                                                         50                                                                         Emit a warning when stage count exceeds this threshold
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	task-retry-attempts-overall                                         2147483647                                                                 2147483647
+2022-10-08T07:20:06.652Z	INFO	main	Bootstrap	task-retry-attempts-per-task                                        2                                                                          2
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.client.timeout                                                 2.00m                                                                      2.00m
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.http-response-threads                                          100                                                                        100
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.http-timeout-threads                                           3                                                                          3
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.info.max-age                                                   15.00m                                                                     15.00m
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.info-update-interval                                           3.00s                                                                      3.00s                                                                      Interval between updating task data
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.initial-splits-per-node                                        12                                                                         12
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.level-time-multiplier                                          2                                                                          2                                                                          Factor that determines the target scheduled time for a level relative to the next
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.max-drivers-per-task                                           2147483647                                                                 2147483647                                                                 Maximum number of drivers a task can run
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.max-index-memory                                               64MB                                                                       64MB
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.max-local-exchange-buffer-size                                 32MB                                                                       32MB
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	driver.max-page-partitioning-buffer-size                            32MB                                                                       32MB
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.max-partial-aggregation-memory                                 16MB                                                                       16MB
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.max-partial-top-n-memory                                       16MB                                                                       16MB
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.max-worker-threads                                             12                                                                         12
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.min-drivers                                                    24                                                                         24
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.min-drivers-per-task                                           3                                                                          3                                                                          Minimum number of drivers guaranteed to run per task given there is sufficient work to do
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.per-operator-cpu-timer-enabled                                 true                                                                       true
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.share-index-loading                                            false                                                                      false
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	sink.max-broadcast-buffer-size                                      200MB                                                                      200MB
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	sink.max-buffer-size                                                32MB                                                                       32MB
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.split-concurrency-adjustment-interval                          100.00ms                                                                   100.00ms
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.statistics-cpu-timer-enabled                                   true                                                                       true
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.status-refresh-max-wait                                        1.00s                                                                      1.00s
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.concurrency                                                    8                                                                          8                                                                          Default number of local parallel jobs per worker
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.cpu-timer-enabled                                              true                                                                       true
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.task-notification-threads                                      5                                                                          5                                                                          Number of threads used for internal task event notifications
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.task-yield-threads                                             3                                                                          3                                                                          Number of threads used for setting yield signals
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	task.writer-count                                                   1                                                                          1                                                                          Number of writers per task
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.include-coordinator                                  true                                                                       true
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.max-absolute-full-nodes-per-query                    2147483647                                                                 2147483647
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.max-fraction-full-nodes-per-query                    0.5                                                                        0.5
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.max-pending-splits-per-task                          10                                                                         10
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.max-splits-per-node                                  100                                                                        100
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.max-unacknowledged-splits-per-task                   500                                                                        500                                                                        Maximum number of leaf splits not yet delivered to a given task
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.min-candidates                                       10                                                                         10
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.allocator-type                                       FULL_NODE_CAPABLE                                                          FULL_NODE_CAPABLE
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.policy                                               UNIFORM                                                                    UNIFORM
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.optimized-local-scheduling                           true                                                                       true
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	node-scheduler.splits-balancing-policy                              STAGE                                                                      STAGE                                                                      Strategy for balancing new splits on worker nodes
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	warning-collector.max-warnings                                      2147483647                                                                 2147483647
+2022-10-08T07:20:06.653Z	INFO	main	Bootstrap	failure-detector.enabled                                            true                                                                       true
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	failure-detector.expiration-grace-interval                          10.00m                                                                     10.00m                                                                     How long to wait before 'forgetting' a service after it disappears from discovery
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	failure-detector.threshold                                          0.1                                                                        0.1
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	failure-detector.heartbeat-interval                                 500.00ms                                                                   500.00ms
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	failure-detector.warmup-interval                                    5.00s                                                                      5.00s                                                                      How long to wait after transitioning to success before considering a service alive
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	fault-tolerant-execution-task-memory                                4GB                                                                        4GB                                                                        Estimated amount of memory a single task will use when task level retries are used; value is used allocating nodes for tasks execution
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	query.low-memory-killer.delay                                       5.00m                                                                      5.00m                                                                      Delay between cluster running low on memory and invoking killer
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	query.low-memory-killer.policy                                      TOTAL_RESERVATION_ON_BLOCKED_NODES                                         TOTAL_RESERVATION_ON_BLOCKED_NODES
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	query.max-memory                                                    20GB                                                                       20GB
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	query.max-total-memory                                              40GB                                                                       40GB
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	memory.heap-headroom-per-node                                       322122547B                                                                 322122547B                                                                 The amount of heap memory to set aside as headroom/buffer (e.g., for untracked allocations)
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	query.max-memory-per-node                                           322122547B                                                                 322122547B
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	catalog.config-dir                                                  etc/catalog                                                                etc/catalog
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	catalog.disabled-catalogs                                           ----                                                                       ----
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	exchange.acknowledge-pages                                          true                                                                       true
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	exchange.client-threads                                             25                                                                         25
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	exchange.concurrent-request-multiplier                              3                                                                          3
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	exchange.deduplication-buffer-size                                  32MB                                                                       32MB
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	exchange.max-buffer-size                                            32MB                                                                       32MB
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	exchange.max-error-duration                                         5.00m                                                                      5.00m
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	exchange.max-response-size                                          16MB                                                                       16MB
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	exchange.min-error-duration                                         5.00m                                                                      5.00m
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	exchange.page-buffer-client.max-callback-threads                    25                                                                         25
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	access-control.config-files                                         []                                                                         []
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	discovery-server.enabled                                            true                                                                       true
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	internal-communication.http2.enabled                                false                                                                      false                                                                      Enable the HTTP/2 transport
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	internal-communication.https.required                               false                                                                      false
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	internal-communication.https.keystore.key                           [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	internal-communication.https.keystore.path                          ----                                                                       ----
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	internal-communication.shared-secret                                [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	internal-communication.https.truststore.key                         [REDACTED]                                                                 [REDACTED]
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	internal-communication.https.truststore.path                        ----                                                                       ----
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	jmx.base-name                                                       trino                                                                      trino
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	protocol.v1.alternate-header-name                                   ----                                                                       ----                                                                       Alternate header name for V1 protocol
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	protocol.v1.prepared-statement-compression.min-gain                 512                                                                        512                                                                        Prepared statement compression is not applied if the size gain is less than the configured value
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	protocol.v1.prepared-statement-compression.length-threshold         2048                                                                       2048                                                                       Compression is applied to prepared statements longer than the configured value
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	experimental.concurrent-startup                                     false                                                                      false                                                                      Parallelize work during server startup
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	coordinator                                                         true                                                                       true
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	shutdown.grace-period                                               2.00m                                                                      2.00m
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	http.include-exception-in-response                                  true                                                                       true
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	query.info-url-template                                             ----                                                                       ----
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	query-results.compression-enabled                                   true                                                                       true
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	plugin.dir                                                          plugin                                                                     plugin
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	http-server.authentication.insecure.user-mapping.file               ----                                                                       ----
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	http-server.authentication.insecure.user-mapping.pattern            ----                                                                       ----
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	http-server.authentication.type                                     [insecure]                                                                 [insecure]                                                                 Ordered list of authentication types
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	management.user                                                     ----                                                                       ----                                                                       Optional fixed user for all requests to management endpoints
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	management.user.https-enabled                                       false                                                                      false                                                                      Use fixed management user for secure HTTPS requests
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	http-server.authentication.allow-insecure-over-http                 true                                                                       true                                                                       Insecure authentication over HTTP (non-secure) enabled
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	web-ui.session-timeout                                              1.00d                                                                      1.00d
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	web-ui.shared-secret                                                ----                                                                       ----
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	web-ui.authentication.type                                          ----                                                                       ----                                                                       Authentication type for the web ui
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	web-ui.enabled                                                      true                                                                       true
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	max-spill-per-node                                                  100GB                                                                      100GB
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	query-max-spill-per-node                                            100GB                                                                      100GB
+2022-10-08T07:20:06.654Z	INFO	main	Bootstrap	spill-compression-enabled                                           false                                                                      false
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	spill-encryption-enabled                                            false                                                                      false
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	sql.default-catalog                                                 ----                                                                       ----
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	sql.default-schema                                                  ----                                                                       ----
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	sql.forced-session-time-zone                                        ----                                                                       ----                                                                       User session time zone overriding value sent by client
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	sql.path                                                            ----                                                                       ----
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	compiler.expression-cache-size                                      10000                                                                      10000
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	adaptive-partial-aggregation.enabled                                true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	adaptive-partial-aggregation.min-rows                               100000                                                                     100000                                                                     Minimum number of processed rows before partial aggregation might be adaptively turned off
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	adaptive-partial-aggregation.unique-rows-ratio-threshold            0.8                                                                        0.8                                                                        Ratio between aggregation output and input rows above which partial aggregation might be adaptively turned off
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	collect-plan-statistics-for-all-queries                             false                                                                      false                                                                      Collect plan statistics for non-EXPLAIN queries
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	colocated-joins-enabled                                             false                                                                      false                                                                      Experimental: Use a colocated join when possible
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.complex-expression-pushdown.enabled                       true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	cpu-cost-weight                                                     75.0                                                                       75.0
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.default-filter-factor-enabled                             false                                                                      false
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.dictionary-aggregation                                    false                                                                      false
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	distributed-index-joins-enabled                                     false                                                                      false
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	distributed-sort                                                    true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	enable-forced-exchange-below-group-id                               true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.enable-intermediate-aggregations                          false                                                                      false
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	enable-stats-calculator                                             true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.filter-conjunction-independence-factor                    0.75                                                                       0.75                                                                       Scales the strength of independence assumption for selectivity estimates of the conjunction of multiple filters
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.force-single-node-output                                  true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.ignore-downstream-preferences                             false                                                                      false
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.ignore-stats-calculator-failures                          true                                                                       true                                                                       Ignore statistics calculator failures
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	iterative-optimizer-timeout                                         3.00m                                                                      3.00m
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	join-distribution-type                                              AUTOMATIC                                                                  AUTOMATIC
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	join-max-broadcast-table-size                                       100MB                                                                      100MB                                                                      Maximum estimated size of a table that can be broadcast when using automatic join type selection
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.join-multi-clause-independence-factor                     0.25                                                                       0.25                                                                       Scales the strength of independence assumption for selectivity estimates of multi-clause joins
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.join-reordering-strategy                                  AUTOMATIC                                                                  AUTOMATIC                                                                  The strategy to use for reordering joins
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.max-reordered-joins                                       9                                                                          9                                                                          The maximum number of tables to reorder in cost-based join reordering
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	memory-cost-weight                                                  10.0                                                                       10.0
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.merge-project-with-values                                 true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	network-cost-weight                                                 15.0                                                                       15.0
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.optimize-duplicate-insensitive-joins                      true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.optimize-hash-generation                                  true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.optimize-metadata-queries                                 false                                                                      false
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.optimize-mixed-distinct-aggregations                      false                                                                      false
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.optimize-top-n-ranking                                    true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.predicate-pushdown-use-table-properties                   true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	optimizer.prefer-partial-aggregation                                true                                                                       true
+2022-10-08T07:20:06.655Z	INFO	main	Bootstrap	preferred-write-partitioning-min-number-of-partitions               50                                                                         50                                                                         Use preferred write partitioning when the number of written partitions exceeds the configured threshold
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	optimizer.push-aggregation-through-outer-join                       true                                                                       true
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	optimizer.push-partial-aggregation-through-join                     false                                                                      false
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	optimizer.push-table-write-through-union                            true                                                                       true
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	optimizer.rewrite-filtering-semi-join-to-inner-join                 true                                                                       true
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	optimizer.skip-redundant-sort                                       true                                                                       true
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	spatial-joins-enabled                                               true                                                                       true                                                                       Use spatial index for spatial joins when possible
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	statistics-precalculation-for-pushdown.enabled                      false                                                                      false
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	optimizer.table-scan-node-partitioning-min-bucket-to-task-ratio     0.5                                                                        0.5                                                                        Min table scan bucket to task ratio for which plan will be adopted to node pre-partitioned tables
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	optimizer.use-legacy-window-filter-pushdown                         false                                                                      false
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	optimizer.use-mark-distinct                                         true                                                                       true
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	use-preferred-write-partitioning                                    true                                                                       true
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	optimizer.use-table-scan-node-partitioning                          true                                                                       true                                                                       Adapt plan to node pre-partitioned tables
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	transaction.idle-check-interval                                     1.00m                                                                      1.00m                                                                      Time interval between idle transactions checks
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	transaction.idle-timeout                                            5.00m                                                                      5.00m                                                                      Amount of time before an inactive transaction is considered expired
+2022-10-08T07:20:06.656Z	INFO	main	Bootstrap	transaction.max-finishing-concurrency                               1                                                                          1                                                                          Maximum parallelism for committing or aborting a transaction
+2022-10-08T07:20:07.235Z	INFO	main	org.eclipse.jetty.util.log	Logging initialized @1538ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-10-08T07:20:08.752Z	INFO	main	org.eclipse.jetty.server.Server	jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 11.0.14.1+1-LTS
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.ui.ClusterResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.ui.ClusterResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.airlift.discovery.store.StoreResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.airlift.discovery.store.StoreResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.protocol.ExecutingStatementResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.protocol.ExecutingStatementResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.airlift.discovery.server.ServiceResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.airlift.discovery.server.ServiceResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.airlift.discovery.server.DynamicAnnouncementResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.airlift.discovery.server.DynamicAnnouncementResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.ui.ClusterStatsResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.ui.ClusterStatsResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.ThreadResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.ThreadResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.QueryStateInfoResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.QueryStateInfoResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.ui.LoginResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.ui.LoginResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.StatusResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.StatusResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.NodeResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.NodeResource will be ignored. 
+2022-10-08T07:20:08.946Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.ui.WorkerResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.ui.WorkerResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.QueryResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.QueryResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.ui.WebUiStaticResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.ui.WebUiStaticResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.airlift.jmx.MBeanResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.airlift.jmx.MBeanResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.dispatcher.QueuedStatementResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.dispatcher.QueuedStatementResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.TaskResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.TaskResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.ui.UiQueryResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.ui.UiQueryResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.ServerInfoResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.ServerInfoResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.ResourceGroupStateInfoResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.ResourceGroupStateInfoResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.server.TaskExecutorResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.server.TaskExecutorResource will be ignored. 
+2022-10-08T07:20:08.947Z	WARN	main	org.glassfish.jersey.internal.inject.Providers	A provider io.trino.memory.MemoryResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.trino.memory.MemoryResource will be ignored. 
+2022-10-08T07:20:09.069Z	WARN	main	org.glassfish.jersey.internal.Errors	The following warnings have been detected: WARNING: The (sub)resource method getRoot in io.trino.server.ui.WebUiStaticResource contains empty path annotation.
+WARNING: Parameter 2 of type io.trino.execution.resourcegroups.ResourceGroupManager<?> from public io.trino.server.QueryStateInfoResource(io.trino.dispatcher.DispatchManager,io.trino.execution.resourcegroups.ResourceGroupManager<?>,io.trino.security.AccessControl,io.trino.server.HttpRequestSessionContextFactory,io.trino.server.ProtocolConfig) is not resolvable to a concrete type.
+WARNING: Parameter 2 of type io.trino.execution.resourcegroups.ResourceGroupManager<?> from public io.trino.server.QueryStateInfoResource(io.trino.dispatcher.DispatchManager,io.trino.execution.resourcegroups.ResourceGroupManager<?>,io.trino.security.AccessControl,io.trino.server.HttpRequestSessionContextFactory,io.trino.server.ProtocolConfig) is not resolvable to a concrete type.
+WARNING: Parameter 1 of type io.trino.execution.resourcegroups.ResourceGroupManager<?> from public io.trino.server.ResourceGroupStateInfoResource(io.trino.execution.resourcegroups.ResourceGroupManager<?>) is not resolvable to a concrete type.
+
+2022-10-08T07:20:09.070Z	INFO	main	org.eclipse.jetty.server.handler.ContextHandler	Started o.e.j.s.ServletContextHandler@37665305{/,null,AVAILABLE,@http}
+2022-10-08T07:20:09.074Z	INFO	main	org.eclipse.jetty.server.AbstractConnector	Started http@706d2bae{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8080}
+2022-10-08T07:20:09.074Z	INFO	main	org.eclipse.jetty.server.Server	Started @3378ms
+2022-10-08T07:20:09.810Z	INFO	main	io.airlift.bootstrap.LifeCycleManager	Life cycle starting...
+2022-10-08T07:20:09.811Z	INFO	main	io.airlift.bootstrap.LifeCycleManager	Life cycle started
+2022-10-08T07:20:09.811Z	INFO	main	io.trino.server.Server	Trino version: 374
+2022-10-08T07:20:09.811Z	INFO	main	io.trino.server.Server	Working directory: /data/trino
+2022-10-08T07:20:09.811Z	INFO	main	io.trino.server.Server	Etc directory: /etc/trino
+2022-10-08T07:20:09.816Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/accumulo --
+2022-10-08T07:20:09.841Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.accumulo.AccumuloPlugin
+2022-10-08T07:20:09.847Z	INFO	main	io.trino.server.PluginManager	Registering connector accumulo
+2022-10-08T07:20:09.848Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/accumulo --
+2022-10-08T07:20:09.848Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/atop --
+2022-10-08T07:20:09.855Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.atop.AtopPlugin
+2022-10-08T07:20:09.860Z	INFO	main	io.trino.server.PluginManager	Registering connector atop
+2022-10-08T07:20:09.860Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/atop --
+2022-10-08T07:20:09.860Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/bigquery --
+2022-10-08T07:20:09.880Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.bigquery.BigQueryPlugin
+2022-10-08T07:20:09.885Z	INFO	main	io.trino.server.PluginManager	Registering connector bigquery
+2022-10-08T07:20:09.886Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/bigquery --
+2022-10-08T07:20:09.886Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/blackhole --
+2022-10-08T07:20:09.892Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.blackhole.BlackHolePlugin
+2022-10-08T07:20:09.897Z	INFO	main	io.trino.server.PluginManager	Registering connector blackhole
+2022-10-08T07:20:09.897Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/blackhole --
+2022-10-08T07:20:09.897Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/cassandra --
+2022-10-08T07:20:09.914Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.cassandra.CassandraPlugin
+2022-10-08T07:20:09.920Z	INFO	main	io.trino.server.PluginManager	Registering connector cassandra
+2022-10-08T07:20:09.920Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/cassandra --
+2022-10-08T07:20:09.920Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/clickhouse --
+2022-10-08T07:20:09.933Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.clickhouse.ClickHousePlugin
+2022-10-08T07:20:09.939Z	INFO	main	io.trino.server.PluginManager	Registering connector clickhouse
+2022-10-08T07:20:09.939Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/clickhouse --
+2022-10-08T07:20:09.939Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/delta-lake --
+2022-10-08T07:20:09.968Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.deltalake.DeltaLakePlugin
+2022-10-08T07:20:09.974Z	INFO	main	io.trino.server.PluginManager	Registering connector delta-lake
+2022-10-08T07:20:09.974Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/delta-lake --
+2022-10-08T07:20:09.974Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/druid --
+2022-10-08T07:20:09.985Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.druid.DruidJdbcPlugin
+2022-10-08T07:20:09.990Z	INFO	main	io.trino.server.PluginManager	Registering connector druid
+2022-10-08T07:20:09.991Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/druid --
+2022-10-08T07:20:09.991Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/elasticsearch --
+2022-10-08T07:20:10.001Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.elasticsearch.ElasticsearchPlugin
+2022-10-08T07:20:10.005Z	INFO	main	io.trino.server.PluginManager	Registering connector elasticsearch
+2022-10-08T07:20:10.005Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/elasticsearch --
+2022-10-08T07:20:10.005Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/example-http --
+2022-10-08T07:20:10.024Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.example.ExamplePlugin
+2022-10-08T07:20:10.030Z	INFO	main	io.trino.server.PluginManager	Registering connector example-http
+2022-10-08T07:20:10.030Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/example-http --
+2022-10-08T07:20:10.030Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/exchange --
+2022-10-08T07:20:10.038Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.exchange.FileSystemExchangePlugin
+2022-10-08T07:20:10.042Z	INFO	main	io.trino.server.PluginManager	Registering exchange manager filesystem
+2022-10-08T07:20:10.042Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/exchange --
+2022-10-08T07:20:10.043Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/geospatial --
+2022-10-08T07:20:10.047Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.geospatial.GeoPlugin
+2022-10-08T07:20:10.052Z	INFO	main	io.trino.server.PluginManager	Registering type Geometry
+2022-10-08T07:20:10.052Z	INFO	main	io.trino.server.PluginManager	Registering type BingTile
+2022-10-08T07:20:10.052Z	INFO	main	io.trino.server.PluginManager	Registering type KdbTree
+2022-10-08T07:20:10.052Z	INFO	main	io.trino.server.PluginManager	Registering type SphericalGeography
+2022-10-08T07:20:10.057Z	INFO	main	io.trino.server.PluginManager	Registering functions from GeoPlugin
+2022-10-08T07:20:10.091Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/geospatial --
+2022-10-08T07:20:10.091Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/google-sheets --
+2022-10-08T07:20:10.102Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.google.sheets.SheetsPlugin
+2022-10-08T07:20:10.107Z	INFO	main	io.trino.server.PluginManager	Registering connector gsheets
+2022-10-08T07:20:10.107Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/google-sheets --
+2022-10-08T07:20:10.107Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/hive --
+2022-10-08T07:20:10.128Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.hive.HivePlugin
+2022-10-08T07:20:10.135Z	INFO	main	io.trino.server.PluginManager	Registering connector hive
+2022-10-08T07:20:10.135Z	INFO	main	io.trino.server.PluginManager	Registering connector hive-hadoop2
+2022-10-08T07:20:10.136Z	INFO	main	io.trino.server.PluginManager	Registering functions from HivePlugin
+2022-10-08T07:20:10.139Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/hive --
+2022-10-08T07:20:10.139Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/http-event-listener --
+2022-10-08T07:20:10.144Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.httpquery.HttpEventListenerPlugin
+2022-10-08T07:20:10.144Z	INFO	main	io.trino.server.PluginManager	Registering event listener http
+2022-10-08T07:20:10.145Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/http-event-listener --
+2022-10-08T07:20:10.145Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/iceberg --
+2022-10-08T07:20:10.165Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.iceberg.IcebergPlugin
+2022-10-08T07:20:10.169Z	INFO	main	io.trino.server.PluginManager	Registering connector iceberg
+2022-10-08T07:20:10.169Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/iceberg --
+2022-10-08T07:20:10.169Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/jmx --
+2022-10-08T07:20:10.173Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.jmx.JmxPlugin
+2022-10-08T07:20:10.177Z	INFO	main	io.trino.server.PluginManager	Registering connector jmx
+2022-10-08T07:20:10.177Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/jmx --
+2022-10-08T07:20:10.177Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/kafka --
+2022-10-08T07:20:10.184Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.kafka.KafkaPlugin
+2022-10-08T07:20:10.189Z	INFO	main	io.trino.server.PluginManager	Registering connector kafka
+2022-10-08T07:20:10.189Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/kafka --
+2022-10-08T07:20:10.189Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/kinesis --
+2022-10-08T07:20:10.195Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.kinesis.KinesisPlugin
+2022-10-08T07:20:10.200Z	INFO	main	io.trino.server.PluginManager	Registering connector kinesis
+2022-10-08T07:20:10.200Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/kinesis --
+2022-10-08T07:20:10.200Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/kudu --
+2022-10-08T07:20:10.206Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.kudu.KuduPlugin
+2022-10-08T07:20:10.210Z	INFO	main	io.trino.server.PluginManager	Registering connector kudu
+2022-10-08T07:20:10.211Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/kudu --
+2022-10-08T07:20:10.211Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/local-file --
+2022-10-08T07:20:10.215Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.localfile.LocalFilePlugin
+2022-10-08T07:20:10.219Z	INFO	main	io.trino.server.PluginManager	Registering connector localfile
+2022-10-08T07:20:10.220Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/local-file --
+2022-10-08T07:20:10.220Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/memory --
+2022-10-08T07:20:10.224Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.memory.MemoryPlugin
+2022-10-08T07:20:10.228Z	INFO	main	io.trino.server.PluginManager	Registering connector memory
+2022-10-08T07:20:10.228Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/memory --
+2022-10-08T07:20:10.228Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/ml --
+2022-10-08T07:20:10.232Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.ml.MLPlugin
+2022-10-08T07:20:10.237Z	INFO	main	io.trino.server.PluginManager	Registering type Model
+2022-10-08T07:20:10.237Z	INFO	main	io.trino.server.PluginManager	Registering type Regressor
+2022-10-08T07:20:10.237Z	INFO	main	io.trino.server.PluginManager	Registering parametric type Classifier
+2022-10-08T07:20:10.241Z	INFO	main	io.trino.server.PluginManager	Registering functions from MLPlugin
+2022-10-08T07:20:10.362Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/ml --
+2022-10-08T07:20:10.362Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/mongodb --
+2022-10-08T07:20:10.367Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.mongodb.MongoPlugin
+2022-10-08T07:20:10.371Z	INFO	main	io.trino.server.PluginManager	Registering type ObjectId
+2022-10-08T07:20:10.373Z	INFO	main	io.trino.server.PluginManager	Registering connector mongodb
+2022-10-08T07:20:10.374Z	INFO	main	io.trino.server.PluginManager	Registering functions from MongoPlugin
+2022-10-08T07:20:10.377Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/mongodb --
+2022-10-08T07:20:10.377Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/mysql --
+2022-10-08T07:20:10.391Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.mysql.MySqlPlugin
+2022-10-08T07:20:10.396Z	INFO	main	io.trino.server.PluginManager	Registering connector mysql
+2022-10-08T07:20:10.397Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/mysql --
+2022-10-08T07:20:10.397Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/oracle --
+2022-10-08T07:20:10.407Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.oracle.OraclePlugin
+2022-10-08T07:20:10.413Z	INFO	main	io.trino.server.PluginManager	Registering connector oracle
+2022-10-08T07:20:10.413Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/oracle --
+2022-10-08T07:20:10.413Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/password-authenticators --
+2022-10-08T07:20:10.419Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.password.PasswordAuthenticatorPlugin
+2022-10-08T07:20:10.434Z	INFO	main	io.trino.server.PluginManager	Registering group provider file
+2022-10-08T07:20:10.435Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/password-authenticators --
+2022-10-08T07:20:10.435Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/phoenix --
+2022-10-08T07:20:10.450Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.phoenix.PhoenixPlugin
+2022-10-08T07:20:10.454Z	INFO	main	io.trino.server.PluginManager	Registering connector phoenix
+2022-10-08T07:20:10.454Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/phoenix --
+2022-10-08T07:20:10.454Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/phoenix5 --
+2022-10-08T07:20:10.475Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.phoenix5.PhoenixPlugin
+2022-10-08T07:20:10.479Z	INFO	main	io.trino.server.PluginManager	Registering connector phoenix5
+2022-10-08T07:20:10.479Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/phoenix5 --
+2022-10-08T07:20:10.479Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/pinot --
+2022-10-08T07:20:10.504Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.pinot.PinotPlugin
+2022-10-08T07:20:10.510Z	INFO	main	io.trino.server.PluginManager	Registering connector pinot
+2022-10-08T07:20:10.510Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/pinot --
+2022-10-08T07:20:10.510Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/postgresql --
+2022-10-08T07:20:10.525Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.postgresql.PostgreSqlPlugin
+2022-10-08T07:20:10.531Z	INFO	main	io.trino.server.PluginManager	Registering connector postgresql
+2022-10-08T07:20:10.531Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/postgresql --
+2022-10-08T07:20:10.531Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/prometheus --
+2022-10-08T07:20:10.536Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.prometheus.PrometheusPlugin
+2022-10-08T07:20:10.541Z	INFO	main	io.trino.server.PluginManager	Registering connector prometheus
+2022-10-08T07:20:10.541Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/prometheus --
+2022-10-08T07:20:10.541Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/raptor-legacy --
+2022-10-08T07:20:10.559Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.raptor.legacy.RaptorPlugin
+2022-10-08T07:20:10.561Z	INFO	main	io.trino.server.PluginManager	Registering connector raptor-legacy
+2022-10-08T07:20:10.561Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/raptor-legacy --
+2022-10-08T07:20:10.561Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/redis --
+2022-10-08T07:20:10.566Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.redis.RedisPlugin
+2022-10-08T07:20:10.569Z	INFO	main	io.trino.server.PluginManager	Registering connector redis
+2022-10-08T07:20:10.569Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/redis --
+2022-10-08T07:20:10.569Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/redshift --
+2022-10-08T07:20:10.585Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.redshift.RedshiftPlugin
+2022-10-08T07:20:10.589Z	INFO	main	io.trino.server.PluginManager	Registering connector redshift
+2022-10-08T07:20:10.590Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/redshift --
+2022-10-08T07:20:10.590Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/resource-group-managers --
+2022-10-08T07:20:10.596Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.resourcegroups.ResourceGroupManagerPlugin
+2022-10-08T07:20:10.600Z	INFO	main	io.trino.server.PluginManager	Registering resource group configuration manager file
+2022-10-08T07:20:10.600Z	INFO	main	io.trino.server.PluginManager	Registering resource group configuration manager db
+2022-10-08T07:20:10.601Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/resource-group-managers --
+2022-10-08T07:20:10.601Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/session-property-managers --
+2022-10-08T07:20:10.606Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.session.SessionPropertyConfigurationManagerPlugin
+2022-10-08T07:20:10.610Z	INFO	main	io.trino.server.PluginManager	Registering session property configuration manager file
+2022-10-08T07:20:10.610Z	INFO	main	io.trino.server.PluginManager	Registering session property configuration manager db
+2022-10-08T07:20:10.610Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/session-property-managers --
+2022-10-08T07:20:10.610Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/singlestore --
+2022-10-08T07:20:10.616Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.singlestore.SingleStorePlugin
+2022-10-08T07:20:10.622Z	INFO	main	io.trino.server.PluginManager	Registering connector singlestore
+2022-10-08T07:20:10.622Z	INFO	main	io.trino.server.PluginManager	Registering connector memsql
+2022-10-08T07:20:10.623Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/singlestore --
+2022-10-08T07:20:10.623Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/sqlserver --
+2022-10-08T07:20:10.631Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.sqlserver.SqlServerPlugin
+2022-10-08T07:20:10.636Z	INFO	main	io.trino.server.PluginManager	Registering connector sqlserver
+2022-10-08T07:20:10.636Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/sqlserver --
+2022-10-08T07:20:10.636Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/teradata-functions --
+2022-10-08T07:20:10.638Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.teradata.functions.TeradataFunctionsPlugin
+2022-10-08T07:20:10.642Z	INFO	main	io.trino.server.PluginManager	Registering functions from TeradataFunctionsPlugin
+2022-10-08T07:20:10.648Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/teradata-functions --
+2022-10-08T07:20:10.649Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/thrift --
+2022-10-08T07:20:10.656Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.thrift.ThriftPlugin
+2022-10-08T07:20:10.659Z	INFO	main	io.trino.server.PluginManager	Registering connector trino-thrift
+2022-10-08T07:20:10.659Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/thrift --
+2022-10-08T07:20:10.659Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/tpcds --
+2022-10-08T07:20:10.661Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.tpcds.TpcdsPlugin
+2022-10-08T07:20:10.665Z	INFO	main	io.trino.server.PluginManager	Registering connector tpcds
+2022-10-08T07:20:10.666Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/tpcds --
+2022-10-08T07:20:10.666Z	INFO	main	io.trino.server.PluginManager	-- Loading plugin /data/trino/plugin/tpch --
+2022-10-08T07:20:10.667Z	INFO	main	io.trino.server.PluginManager	Installing io.trino.plugin.tpch.TpchPlugin
+2022-10-08T07:20:10.670Z	INFO	main	io.trino.server.PluginManager	Registering connector tpch
+2022-10-08T07:20:10.671Z	INFO	main	io.trino.server.PluginManager	-- Finished loading plugin /data/trino/plugin/tpch --
+2022-10-08T07:20:10.673Z	INFO	main	io.trino.metadata.StaticCatalogStore	-- Loading catalog etc/catalog/tpch.properties --
+2022-10-08T07:20:10.676Z	INFO	main	io.trino.metadata.StaticCatalogStore	-- Added catalog tpch using connector tpch --
+2022-10-08T07:20:10.676Z	INFO	main	io.trino.metadata.StaticCatalogStore	-- Loading catalog etc/catalog/tpcds.properties --
+2022-10-08T07:20:10.677Z	INFO	main	io.trino.metadata.StaticCatalogStore	-- Added catalog tpcds using connector tpcds --
+2022-10-08T07:20:10.677Z	INFO	main	io.trino.metadata.StaticCatalogStore	-- Loading catalog etc/catalog/memory.properties --
+2022-10-08T07:20:10.833Z	INFO	main	Bootstrap	PROPERTY                              DEFAULT  RUNTIME  DESCRIPTION
+2022-10-08T07:20:10.833Z	INFO	main	Bootstrap	memory.enable-lazy-dynamic-filtering  true     true
+2022-10-08T07:20:10.833Z	INFO	main	Bootstrap	memory.max-data-per-node              128MB    128MB
+2022-10-08T07:20:10.833Z	INFO	main	Bootstrap	memory.splits-per-node                6        6
+2022-10-08T07:20:10.889Z	INFO	main	io.airlift.bootstrap.LifeCycleManager	Life cycle starting...
+2022-10-08T07:20:10.889Z	INFO	main	io.airlift.bootstrap.LifeCycleManager	Life cycle started
+2022-10-08T07:20:10.889Z	INFO	main	io.trino.metadata.StaticCatalogStore	-- Added catalog memory using connector memory --
+2022-10-08T07:20:10.889Z	INFO	main	io.trino.metadata.StaticCatalogStore	-- Loading catalog etc/catalog/jmx.properties --
+2022-10-08T07:20:11.033Z	INFO	main	Bootstrap	PROPERTY         DEFAULT  RUNTIME  DESCRIPTION
+2022-10-08T07:20:11.033Z	INFO	main	Bootstrap	jmx.dump-period  10.00s   10.00s
+2022-10-08T07:20:11.033Z	INFO	main	Bootstrap	jmx.dump-tables  []       []
+2022-10-08T07:20:11.033Z	INFO	main	Bootstrap	jmx.max-entries  86400    86400
+2022-10-08T07:20:11.083Z	INFO	main	io.airlift.bootstrap.LifeCycleManager	Life cycle starting...
+2022-10-08T07:20:11.083Z	INFO	main	io.airlift.bootstrap.LifeCycleManager	Life cycle started
+2022-10-08T07:20:11.083Z	INFO	main	io.trino.metadata.StaticCatalogStore	-- Added catalog jmx using connector jmx --
+2022-10-08T07:20:11.085Z	INFO	main	io.trino.security.AccessControlManager	Using system access control: default
+2022-10-08T07:20:11.085Z	INFO	main	io.trino.exchange.ExchangeManagerRegistry	Exchange manager configuration file is not present: /data/trino/etc/exchange-manager.properties
+2022-10-08T07:20:11.102Z	INFO	main	io.trino.server.Server	======== SERVER STARTED ========
