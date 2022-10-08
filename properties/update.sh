@@ -5,10 +5,11 @@ cd "$SCRIPT_DIR" || exit 1
 
 log_pattern=$'^(.*)\t(.*)\t(.*)\t(.*)$'
 bootstrap_pattern='(PROPERTY[[:space:]]+)(DEFAULT[[:space:]]+)(RUNTIME[[:space:]]+)DESCRIPTION.*'
+propfile=properties.csv
+echo >"$propfile" "version,name,default_value"
 for logfile in ../logs/*.log; do
-    propfile=$(basename "$logfile" .log).csv
-    echo "Processing $logfile into $propfile"
-    echo >"$propfile" "name,default_value"
+    echo "Processing $logfile"
+    version=$(basename "$logfile" .log)
     property_length=0
     default_offset=0
     default_length=0
@@ -57,6 +58,6 @@ for logfile in ../logs/*.log; do
         fi
 
         # escape double quotes
-        echo >>"$propfile" "\"${name//\"/\\\"}\",\"${default_value//\"/\\\"}\""
+        echo >>"$propfile" "$version,\"${name//\"/\\\"}\",\"${default_value//\"/\\\"}\""
     done <"$logfile"
 done
