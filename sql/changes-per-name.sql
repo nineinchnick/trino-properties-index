@@ -8,7 +8,7 @@ first_source AS (
       , name
       , default_value
     FROM properties
-    WHERE version = ${source}
+    WHERE version = ${SOURCE}
 )
 , sources AS (
     SELECT
@@ -16,7 +16,7 @@ first_source AS (
       , name
       , max(version) AS last_version
     FROM properties
-    WHERE version >= ${source} AND version < ${target}
+    WHERE version >= ${SOURCE} AND version < ${TARGET}
     GROUP BY connector, name
 )
 , intermediate_targets AS (
@@ -25,7 +25,7 @@ first_source AS (
       , name
       , min(version) AS first_version
     FROM properties
-    WHERE version > ${source} AND version < ${target}
+    WHERE version > ${SOURCE} AND version < ${TARGET}
     GROUP BY connector, name
 )
 , targets AS (
@@ -43,7 +43,7 @@ first_source AS (
       , name
       , default_value
     FROM properties
-    WHERE version = ${target}
+    WHERE version = ${TARGET}
 )
 , groups AS (
     SELECT
