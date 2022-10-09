@@ -5,8 +5,9 @@ cd "$SCRIPT_DIR" || exit 1
 
 log_pattern=$'^(.*)\t(.*)\t(.*)\t(.*)$'
 bootstrap_pattern='(PROPERTY[[:space:]]+)(DEFAULT[[:space:]]+)(RUNTIME[[:space:]]+)DESCRIPTION.*'
+catalog_pattern='-- Loading catalog (etc/catalog/)?([\w-]+)(.properties)? --'
 propfile=properties.csv
-echo >"$propfile" "version,name,default_value"
+echo >"$propfile" "version,connector,name,default_value"
 for logfile in ../logs/*.log; do
     echo "Processing $logfile"
     version=$(basename "$logfile" .log)
@@ -15,6 +16,7 @@ for logfile in ../logs/*.log; do
     default_length=0
     runtime_offset=0
     runtime_length=0
+    connector=
     while read -r line; do
         if ! [[ $line =~ $log_pattern ]]; then
             continue
@@ -22,10 +24,16 @@ for logfile in ../logs/*.log; do
         #timestamp="${BASH_REMATCH[1]}"
         #level="${BASH_REMATCH[2]}"
         logger="${BASH_REMATCH[3]}"
+        message="${BASH_REMATCH[4]}"
+        if [ "$logger" == "io.trino.metadata.StaticCatalogStore" ]; then
+            if [[ $message =~ $catalog_pattern ]]; then
+                connector="${BASH_REMATCH[2]}"
+            fi
+            continue
+        fi
         if [ "$logger" != "Bootstrap" ]; then
             continue
         fi
-        message="${BASH_REMATCH[4]}"
         if [[ $message == PROPERTY* ]]; then
             if [[ $message =~ $bootstrap_pattern ]]; then
                 property_length="${#BASH_REMATCH[1]}"
@@ -58,6 +66,6 @@ for logfile in ../logs/*.log; do
         fi
 
         # escape double quotes
-        echo >>"$propfile" "$version,\"${name//\"/\\\"}\",\"${default_value//\"/\\\"}\""
+        echo >>"$propfile" "$version,$connector,\"${name//\"/\\\"}\",\"${default_value//\"/\\\"}\""
     done <"$logfile"
 done
