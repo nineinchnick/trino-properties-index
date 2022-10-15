@@ -22,6 +22,9 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -35,7 +38,7 @@ import java.util.zip.ZipInputStream;
  */
 public class AirliftConfigsListing
 {
-    private static final String ANNOTATION_DESC = "Lio/airlift/configuration/Config;";
+    public static final String ANNOTATION_DESC_CONFIG = "Lio/airlift/configuration/Config;";
 
     private AirliftConfigsListing()
     {
@@ -64,24 +67,29 @@ public class AirliftConfigsListing
                 if (!tarEntryName.endsWith(".jar")) {
                     continue;
                 }
-                ZipInputStream jarIS = new ZipInputStream(tarIS);
-
-                while (true) {
-                    ZipEntry jarEntry = jarIS.getNextEntry();
-
-                    if (jarEntry == null) {
-                        // no more data in jar
-                        break;
-                    }
-
-                    String jarEntryName = jarEntry.getName();
-                    if (!jarEntryName.endsWith(".class")) {
-                        continue;
-                    }
-                    ClassReader classReader = new ClassReader(jarIS);
-                    classReader.accept(new AnnotationSearch(ANNOTATION_DESC), 0);
-                }
+                readJar(new ZipInputStream(tarIS), System.out);
             }
+        }
+    }
+
+    public static void readJar(ZipInputStream inputStream, PrintStream printStream)
+            throws IOException
+    {
+
+        while (true) {
+            ZipEntry jarEntry = inputStream.getNextEntry();
+
+            if (jarEntry == null) {
+                // no more data in jar
+                break;
+            }
+
+            String jarEntryName = jarEntry.getName();
+            if (!jarEntryName.endsWith(".class")) {
+                continue;
+            }
+            ClassReader classReader = new ClassReader(inputStream);
+            classReader.accept(new AnnotationSearch(ANNOTATION_DESC_CONFIG, printStream), 0);
         }
     }
 
@@ -89,17 +97,19 @@ public class AirliftConfigsListing
             extends ClassVisitor
     {
         String searchedDescriptor;
+        PrintStream printStream;
 
-        AnnotationSearch(String desc)
+        AnnotationSearch(String searchedDescriptor, PrintStream printStream)
         {
-            super(Opcodes.ASM6);
-            searchedDescriptor = desc;
+            super(Opcodes.ASM9);
+            this.searchedDescriptor = searchedDescriptor;
+            this.printStream = printStream;
         }
 
         @Override
         public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions)
         {
-            return new MethodAnnotationSearch(searchedDescriptor);
+            return new MethodAnnotationSearch(searchedDescriptor, printStream);
         }
     }
 
@@ -107,18 +117,20 @@ public class AirliftConfigsListing
             extends MethodVisitor
     {
         String searchedDescriptor;
+        PrintStream printStream;
 
-        MethodAnnotationSearch(String desc)
+        MethodAnnotationSearch(String searchedDescriptor, PrintStream printStream)
         {
-            super(Opcodes.ASM6);
-            searchedDescriptor = desc;
+            super(Opcodes.ASM9);
+            this.searchedDescriptor = searchedDescriptor;
+            this.printStream = printStream;
         }
 
         @Override
         public AnnotationVisitor visitAnnotation(String desc, boolean visible)
         {
             if (desc.equals(searchedDescriptor)) {
-                return new AnnotationValuePrinter();
+                return new AnnotationValuePrinter(printStream);
             }
             return super.visitAnnotation(desc, visible);
         }
@@ -127,15 +139,18 @@ public class AirliftConfigsListing
     static class AnnotationValuePrinter
             extends AnnotationVisitor
     {
-        AnnotationValuePrinter()
+        PrintStream printStream;
+
+        AnnotationValuePrinter(PrintStream printStream)
         {
-            super(Opcodes.ASM6);
+            super(Opcodes.ASM9);
+            this.printStream = printStream;
         }
 
         @Override
         public void visit(final String name, final Object value)
         {
-            System.out.printf("%s%n", value);
+            printStream.printf("%s%n", value);
         }
     }
 }

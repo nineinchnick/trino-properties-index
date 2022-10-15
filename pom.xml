@@ -16,6 +16,8 @@
 
     <properties>
         <main-class>pl.net.was.listconfigs.AirliftConfigsListing</main-class>
+        <project.build.targetJdk>17</project.build.targetJdk>
+        <air.java.version>17.0.4</air.java.version>
     </properties>
 
     <dependencies>
@@ -28,6 +30,16 @@
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>
             <version>9.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
