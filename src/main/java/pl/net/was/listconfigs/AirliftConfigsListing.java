@@ -23,8 +23,11 @@ import org.objectweb.asm.Opcodes;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintStream;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -38,7 +41,18 @@ import java.util.zip.ZipInputStream;
  */
 public class AirliftConfigsListing
 {
-    public static final String ANNOTATION_DESC_CONFIG = "Lio/airlift/configuration/Config;";
+    public static final String ANNOTATION_CONFIG = "Lio/airlift/configuration/Config;";
+    public static final String ANNOTATION_CONFIG_DESC = "Lio/airlift/configuration/ConfigDescription;";
+    public static final String ANNOTATION_LEGACY_CONFIG = "Lio/airlift/configuration/LegacyConfig;";
+    public static final String ANNOTATION_DEFUNCT_CONFIG = "Lio/airlift/configuration/DefunctConfig;";
+    public static final String ANNOTATION_DEPRECATED = "Lio/airlift/configuration/Deprecated;";
+
+    public static final Set<String> ANNOTATIONS = Set.of(
+            ANNOTATION_CONFIG,
+            ANNOTATION_CONFIG_DESC,
+            ANNOTATION_LEGACY_CONFIG,
+            ANNOTATION_DEFUNCT_CONFIG,
+            ANNOTATION_DEPRECATED);
 
     private AirliftConfigsListing()
     {
@@ -67,15 +81,21 @@ public class AirliftConfigsListing
                 if (!tarEntryName.endsWith(".jar")) {
                     continue;
                 }
-                readJar(new ZipInputStream(tarIS), System.out);
+                Set<Method> methods = readJar(new ZipInputStream(tarIS));
+                methods.forEach(method -> {
+                    Map<String, Map<String, String>> annotations = method.annotationsMap();
+                    System.out.println(
+                            annotations.get(ANNOTATION_CONFIG).get("value") + ":" +
+                                    annotations.getOrDefault(ANNOTATION_CONFIG_DESC, Map.of("value", "")).get("value"));
+                });
             }
         }
     }
 
-    public static void readJar(ZipInputStream inputStream, PrintStream printStream)
+    public static Set<Method> readJar(ZipInputStream inputStream)
             throws IOException
     {
-
+        Set<Method> methods = new HashSet<>();
         while (true) {
             ZipEntry jarEntry = inputStream.getNextEntry();
 
@@ -89,48 +109,51 @@ public class AirliftConfigsListing
                 continue;
             }
             ClassReader classReader = new ClassReader(inputStream);
-            classReader.accept(new AnnotationSearch(ANNOTATION_DESC_CONFIG, printStream), 0);
+            classReader.accept(new AnnotationSearch(methods), 0);
         }
+        return methods.stream()
+                .filter(method -> method.annotations.stream().anyMatch(annotation -> annotation.name.equals(ANNOTATION_CONFIG)))
+                .collect(Collectors.toUnmodifiableSet());
     }
 
     static class AnnotationSearch
             extends ClassVisitor
     {
-        String searchedDescriptor;
-        PrintStream printStream;
+        Set<Method> methods;
 
-        AnnotationSearch(String searchedDescriptor, PrintStream printStream)
+        AnnotationSearch(Set<Method> methods)
         {
             super(Opcodes.ASM9);
-            this.searchedDescriptor = searchedDescriptor;
-            this.printStream = printStream;
+            this.methods = methods;
         }
 
         @Override
         public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions)
         {
-            return new MethodAnnotationSearch(searchedDescriptor, printStream);
+            Set<Annotation> annotations = new HashSet<>();
+            methods.add(new Method(name, annotations));
+            return new MethodAnnotationSearch(annotations);
         }
     }
 
     static class MethodAnnotationSearch
             extends MethodVisitor
     {
-        String searchedDescriptor;
-        PrintStream printStream;
+        Set<Annotation> annotations;
 
-        MethodAnnotationSearch(String searchedDescriptor, PrintStream printStream)
+        MethodAnnotationSearch(Set<Annotation> annotations)
         {
             super(Opcodes.ASM9);
-            this.searchedDescriptor = searchedDescriptor;
-            this.printStream = printStream;
+            this.annotations = annotations;
         }
 
         @Override
         public AnnotationVisitor visitAnnotation(String desc, boolean visible)
         {
-            if (desc.equals(searchedDescriptor)) {
-                return new AnnotationValuePrinter(printStream);
+            if (ANNOTATIONS.contains(desc)) {
+                Map<String, String> properties = new HashMap<>();
+                annotations.add(new Annotation(desc, properties));
+                return new AnnotationValuePrinter(properties);
             }
             return super.visitAnnotation(desc, visible);
         }
@@ -139,18 +162,32 @@ public class AirliftConfigsListing
     static class AnnotationValuePrinter
             extends AnnotationVisitor
     {
-        PrintStream printStream;
+        Map<String, String> properties;
 
-        AnnotationValuePrinter(PrintStream printStream)
+        AnnotationValuePrinter(Map<String, String> properties)
         {
             super(Opcodes.ASM9);
-            this.printStream = printStream;
+            this.properties = properties;
         }
 
         @Override
         public void visit(final String name, final Object value)
         {
-            printStream.printf("%s%n", value);
+            properties.put(name, value.toString());
+        }
+    }
+
+    public record Annotation(String name, Map<String, String> properties)
+    {
+    }
+
+    public record Method(String name, Set<Annotation> annotations)
+    {
+        public Map<String, Map<String, String>> annotationsMap()
+        {
+
+            return annotations.stream()
+                    .collect(Collectors.toMap(Annotation::name, Annotation::properties));
         }
     }
 }

@@ -15,17 +15,20 @@ package pl.net.was.listconfigs;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Map;
+import java.util.Set;
 import java.util.jar.JarInputStream;
+import java.util.stream.Collectors;
 
 import static java.util.Objects.requireNonNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
+import static pl.net.was.listconfigs.AirliftConfigsListing.ANNOTATION_CONFIG;
+import static pl.net.was.listconfigs.AirliftConfigsListing.ANNOTATION_CONFIG_DESC;
 import static pl.net.was.listconfigs.AirliftConfigsListing.readJar;
 
 class AirliftConfigsListingTest
@@ -46,21 +49,31 @@ class AirliftConfigsListingTest
         catch (IOException e) {
             throw new RuntimeException(e);
         }
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        Set<AirliftConfigsListing.Method> result;
         try {
-            readJar(jarIS, new PrintStream(outContent));
+            result = readJar(jarIS);
         }
         catch (IOException e) {
             throw new RuntimeException(e);
         }
-        String expected = """
-atop.security
-atop.executable-path
-atop.time-zone
-atop.executable-read-timeout
-atop.concurrent-readers-per-node
-atop.max-history-days
-""";
-        assertEquals(expected, outContent.toString());
+        Map<String, Set<AirliftConfigsListing.Annotation>> indexed = result.stream()
+                .collect(Collectors.toMap(AirliftConfigsListing.Method::name, AirliftConfigsListing.Method::annotations));
+        Map<String, Set<AirliftConfigsListing.Annotation>> expected = Map.of(
+                "setSecurity", Set.of(
+                        new AirliftConfigsListing.Annotation(ANNOTATION_CONFIG, Map.of("value", "atop.security"))),
+                "setExecutablePath", Set.of(
+                        new AirliftConfigsListing.Annotation(ANNOTATION_CONFIG, Map.of("value", "atop.executable-path"))),
+                "setTimeZone", Set.of(
+                        new AirliftConfigsListing.Annotation(ANNOTATION_CONFIG, Map.of("value", "atop.time-zone")),
+                        new AirliftConfigsListing.Annotation(ANNOTATION_CONFIG_DESC, Map.of("value", "The timezone in which the atop data was collected. Generally the timezone of the host."))),
+                "setReadTimeout", Set.of(
+                        new AirliftConfigsListing.Annotation(ANNOTATION_CONFIG, Map.of("value", "atop.executable-read-timeout")),
+                        new AirliftConfigsListing.Annotation(ANNOTATION_CONFIG_DESC, Map.of("value", "The timeout when reading from the atop process."))),
+                "setConcurrentReadersPerNode", Set.of(
+                        new AirliftConfigsListing.Annotation(ANNOTATION_CONFIG, Map.of("value", "atop.concurrent-readers-per-node"))),
+                "setMaxHistoryDays", Set.of(
+                        new AirliftConfigsListing.Annotation(ANNOTATION_CONFIG, Map.of("value", "atop.max-history-days"))));
+        assertThat(indexed.keySet()).isEqualTo(expected.keySet());
+        indexed.forEach((key, value) -> assertThat(value).containsExactlyInAnyOrderElementsOf(expected.get(key)));
     }
 }
