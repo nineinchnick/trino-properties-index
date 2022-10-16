@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.zip.GZIPInputStream;
@@ -66,6 +67,7 @@ public class AirliftConfigsListing
             System.exit(1);
         }
 
+        System.out.println("jar,config,description,is_deprecated");
         try (FileInputStream fileIS = new FileInputStream(args[0]);
                 GZIPInputStream tarGzIS = new GZIPInputStream(fileIS);
                 TarArchiveInputStream tarIS = new TarArchiveInputStream(tarGzIS)) {
@@ -81,21 +83,28 @@ public class AirliftConfigsListing
                 if (!tarEntryName.endsWith(".jar")) {
                     continue;
                 }
-                Set<Method> methods = readJar(new ZipInputStream(tarIS));
-                methods.forEach(method -> {
+                Jar jar = readAnnotations(tarEntryName, new ZipInputStream(tarIS));
+                if (!jar.groupId.equals("io.trino")) {
+                    continue;
+                }
+                jar.methods.forEach(method -> {
                     Map<String, Map<String, String>> annotations = method.annotationsMap();
-                    System.out.println(
-                            annotations.get(ANNOTATION_CONFIG).get("value") + ":" +
-                                    annotations.getOrDefault(ANNOTATION_CONFIG_DESC, Map.of("value", "")).get("value"));
+                    System.out.printf("%s,%s,%s,%s,%s%n",
+                            jar.version,
+                            jar.name,
+                            annotations.get(ANNOTATION_CONFIG).get("value"),
+                            annotations.getOrDefault(ANNOTATION_CONFIG_DESC, Map.of("value", "")).get("value"),
+                            annotations.containsKey(ANNOTATION_DEPRECATED));
                 });
             }
         }
     }
 
-    public static Set<Method> readJar(ZipInputStream inputStream)
+    public static Jar readAnnotations(String filename, ZipInputStream inputStream)
             throws IOException
     {
         Set<Method> methods = new HashSet<>();
+        Properties properties = new Properties();
         while (true) {
             ZipEntry jarEntry = inputStream.getNextEntry();
 
@@ -105,15 +114,24 @@ public class AirliftConfigsListing
             }
 
             String jarEntryName = jarEntry.getName();
+            if (jarEntryName.endsWith("/pom.properties")) {
+                properties.load(inputStream);
+                continue;
+            }
             if (!jarEntryName.endsWith(".class")) {
                 continue;
             }
             ClassReader classReader = new ClassReader(inputStream);
             classReader.accept(new AnnotationSearch(methods), 0);
         }
-        return methods.stream()
-                .filter(method -> method.annotations.stream().anyMatch(annotation -> annotation.name.equals(ANNOTATION_CONFIG)))
-                .collect(Collectors.toUnmodifiableSet());
+        return new Jar(
+                filename,
+                (String) properties.getOrDefault("groupId", ""),
+                (String) properties.getOrDefault("artifactId", ""),
+                (String) properties.getOrDefault("version", ""),
+                methods.stream()
+                        .filter(method -> method.annotations.stream().anyMatch(annotation -> annotation.name.equals(ANNOTATION_CONFIG)))
+                        .collect(Collectors.toUnmodifiableSet()));
     }
 
     static class AnnotationSearch
@@ -125,6 +143,19 @@ public class AirliftConfigsListing
         {
             super(Opcodes.ASM9);
             this.methods = methods;
+        }
+
+        @Override
+        public AnnotationVisitor visitAnnotation(String desc, boolean visible)
+        {
+            if (ANNOTATIONS.contains(desc)) {
+                Set<Annotation> annotations = new HashSet<>();
+                methods.add(new Method("", annotations));
+                Map<String, String> properties = new HashMap<>();
+                annotations.add(new Annotation(desc, properties));
+                return new AnnotationValuePrinter(properties);
+            }
+            return super.visitAnnotation(desc, visible);
         }
 
         @Override
@@ -185,9 +216,12 @@ public class AirliftConfigsListing
     {
         public Map<String, Map<String, String>> annotationsMap()
         {
-
             return annotations.stream()
                     .collect(Collectors.toMap(Annotation::name, Annotation::properties));
         }
+    }
+
+    public record Jar(String name, String groupId, String artifactId, String version, Set<Method> methods)
+    {
     }
 }

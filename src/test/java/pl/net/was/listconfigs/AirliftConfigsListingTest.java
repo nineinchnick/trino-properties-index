@@ -29,7 +29,7 @@ import static java.util.Objects.requireNonNull;
 import static org.assertj.core.api.Assertions.assertThat;
 import static pl.net.was.listconfigs.AirliftConfigsListing.ANNOTATION_CONFIG;
 import static pl.net.was.listconfigs.AirliftConfigsListing.ANNOTATION_CONFIG_DESC;
-import static pl.net.was.listconfigs.AirliftConfigsListing.readJar;
+import static pl.net.was.listconfigs.AirliftConfigsListing.readAnnotations;
 
 class AirliftConfigsListingTest
 {
@@ -49,14 +49,14 @@ class AirliftConfigsListingTest
         catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Set<AirliftConfigsListing.Method> result;
+        AirliftConfigsListing.Jar result;
         try {
-            result = readJar(jarIS);
+            result = readAnnotations("foo", jarIS);
         }
         catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Map<String, Set<AirliftConfigsListing.Annotation>> indexed = result.stream()
+        Map<String, Set<AirliftConfigsListing.Annotation>> indexed = result.methods().stream()
                 .collect(Collectors.toMap(AirliftConfigsListing.Method::name, AirliftConfigsListing.Method::annotations));
         Map<String, Set<AirliftConfigsListing.Annotation>> expected = Map.of(
                 "setSecurity", Set.of(
