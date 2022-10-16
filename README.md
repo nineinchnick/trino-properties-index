@@ -4,8 +4,7 @@ An index of all available properties in different versions of Trino
 
 ## Usage
 
-1. Run `logs/update.sh` to get startup logs of multiple Trino versions.
-1. Run `properties/update.sh` to extract properties from startup logs.
+1. Run `properties/update.sh` to extract properties.
 1. Run `report.sh -s 372 -t 399` to list added and removed properties between versions 372 (source) and 399 (target), inclusive.
 
 Example output:
