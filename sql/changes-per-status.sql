@@ -1,8 +1,17 @@
 -- Given two specific versions in a range of versions, figure out new, removed,
 -- and properties with updated defaults, with the version in which the change happened.
-.import properties/properties.csv properties --csv
+.import properties/properties.csv raw_properties --csv
 WITH
-first_source AS (
+properties AS (
+    SELECT
+      -- available columns: version,plugin,jar,config,description,is_deprecated
+        plugin AS connector
+      , config AS name
+      , version
+      , NULL AS default_value
+    FROM raw_properties
+)
+, first_source AS (
     SELECT
         connector
       , name

@@ -97,12 +97,12 @@ public class AirliftConfigsListing
                     if (matcher.find()) {
                         plugin = matcher.group(1);
                     }
-                    System.out.printf("%s,%s,%s,%s,%s,%s%n",
+                    System.out.printf("%s,%s,%s,%s,\"%s\",%s%n",
                             jar.version,
                             jar.name,
                             plugin,
                             annotations.get(ANNOTATION_CONFIG).get("value"),
-                            annotations.getOrDefault(ANNOTATION_CONFIG_DESC, Map.of("value", "")).get("value"),
+                            annotations.getOrDefault(ANNOTATION_CONFIG_DESC, Map.of("value", "")).get("value").replace("\"", "\"\""),
                             annotations.containsKey(ANNOTATION_DEPRECATED));
                 });
             }
