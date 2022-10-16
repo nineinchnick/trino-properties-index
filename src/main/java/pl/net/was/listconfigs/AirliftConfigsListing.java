@@ -28,6 +28,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipEntry;
@@ -67,7 +69,8 @@ public class AirliftConfigsListing
             System.exit(1);
         }
 
-        System.out.println("jar,config,description,is_deprecated");
+        Pattern pattern = Pattern.compile("/plugin/([^/]+)/");
+        System.out.println("version,jar,plugin,config,description,is_deprecated");
         try (FileInputStream fileIS = new FileInputStream(args[0]);
                 GZIPInputStream tarGzIS = new GZIPInputStream(fileIS);
                 TarArchiveInputStream tarIS = new TarArchiveInputStream(tarGzIS)) {
@@ -89,9 +92,15 @@ public class AirliftConfigsListing
                 }
                 jar.methods.forEach(method -> {
                     Map<String, Map<String, String>> annotations = method.annotationsMap();
-                    System.out.printf("%s,%s,%s,%s,%s%n",
+                    Matcher matcher = pattern.matcher(jar.name);
+                    String plugin = "";
+                    if (matcher.find()) {
+                        plugin = matcher.group(1);
+                    }
+                    System.out.printf("%s,%s,%s,%s,%s,%s%n",
                             jar.version,
                             jar.name,
+                            plugin,
                             annotations.get(ANNOTATION_CONFIG).get("value"),
                             annotations.getOrDefault(ANNOTATION_CONFIG_DESC, Map.of("value", "")).get("value"),
                             annotations.containsKey(ANNOTATION_DEPRECATED));
