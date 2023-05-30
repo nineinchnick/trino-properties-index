@@ -14,7 +14,7 @@ elif [ "${#cmd[@]}" -gt 1 ]; then
 fi
 
 # This is arbitrary - it is the first version that has a health probe
-version=372
+version=405
 artifact=io.trino:trino-server:${version}:tar.gz
 while mvn -q -C dependency:get -Dtransitive=false -Dartifact=$artifact; do
     properties="$version".csv
