@@ -1,5 +1,4 @@
 version,jar,plugin,config,description,is_deprecated
-390,trino-server-390/plugin/kinesis/trino-plugin-toolkit-390.jar,kinesis,ldap.ssl.truststore.path,"Path to the PEM or JKS trust store",false
 390,trino-server-390/plugin/kinesis/trino-plugin-toolkit-390.jar,kinesis,ldap.ssl.truststore.password,"Password for the trust store",false
 390,trino-server-390/plugin/kinesis/trino-plugin-toolkit-390.jar,kinesis,security.config-file,"",false
 390,trino-server-390/plugin/kinesis/trino-plugin-toolkit-390.jar,kinesis,ldap.ignore-referrals,"Referrals allow finding entries across multiple LDAP servers. Ignore them to only search within 1 LDAP server",false
@@ -11,8 +10,7 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/kinesis/trino-plugin-toolkit-390.jar,kinesis,ldap.timeout.read,"Timeout for reading data from LDAP",false
 390,trino-server-390/plugin/kinesis/trino-plugin-toolkit-390.jar,kinesis,jmx.base-name,"",false
 390,trino-server-390/plugin/kinesis/trino-plugin-toolkit-390.jar,kinesis,ldap.timeout.connect,"Timeout for establishing a connection",false
-390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.iterator-number,"Checkpoint iteration number",false
-390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.checkpoint-logical-name,"Prefix to the checkpoint name",false
+390,trino-server-390/plugin/kinesis/trino-plugin-toolkit-390.jar,kinesis,ldap.ssl.truststore.path,"Path to the PEM or JKS trust store",false
 390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.iterator-offset-seconds,"Seconds before current time to start fetching records from",false
 390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.checkpoint-enabled,"Whether to remember last read sequence number and use it in later requests",false
 390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.secret-key,"S3 Secret Key to access s3 locations",false
@@ -30,10 +28,10 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.max-batches,"Maximum number of calls to Kinesis per query",false
 390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.iterator-from-timestamp,"Whether to use start timestamp from shard iterator",false
 390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.dynamo-write-capacity,"DynamoDB read capacity to be set in client",false
+390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.iterator-number,"Checkpoint iteration number",false
+390,trino-server-390/plugin/kinesis/trino-kinesis-390.jar,kinesis,kinesis.checkpoint-logical-name,"Prefix to the checkpoint name",false
 390,trino-server-390/plugin/clickhouse/trino-clickhouse-390.jar,clickhouse,clickhouse.map-string-as-varchar,"Map ClickHouse String and FixedString as varchar instead of varbinary",false
 390,trino-server-390/plugin/clickhouse/trino-clickhouse-390.jar,clickhouse,clickhouse.legacy-driver,"Whether to use a legacy driver",false
-390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,user-credential-name,"",false
-390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,case-insensitive-name-matching.config-file,"",false
 390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,password-credential-name,"",false
 390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,unsupported-type-handling,"Unsupported type handling strategy",false
 390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,credential-provider.type,"",false
@@ -70,9 +68,11 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,write.batch-size,"Maximum number of rows to write in a single batch",false
 390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,keystore-user-credential-name,"",false
 390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,decimal-default-scale,"Default decimal scale for mapping unspecified and exceeding precision decimals. Not used when decimal_mapping is set to STRICT",false
-390,trino-server-390/plugin/postgresql/trino-postgresql-390.jar,postgresql,postgresql.array-mapping,"",false
+390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,user-credential-name,"",false
+390,trino-server-390/plugin/clickhouse/trino-base-jdbc-390.jar,clickhouse,case-insensitive-name-matching.config-file,"",false
 390,trino-server-390/plugin/postgresql/trino-postgresql-390.jar,postgresql,postgresql.experimental.enable-string-pushdown-with-collate,"",false
 390,trino-server-390/plugin/postgresql/trino-postgresql-390.jar,postgresql,postgresql.include-system-tables,"",false
+390,trino-server-390/plugin/postgresql/trino-postgresql-390.jar,postgresql,postgresql.array-mapping,"",false
 390,trino-server-390/plugin/atop/trino-atop-390.jar,atop,atop.max-history-days,"",false
 390,trino-server-390/plugin/atop/trino-atop-390.jar,atop,atop.concurrent-readers-per-node,"",false
 390,trino-server-390/plugin/atop/trino-atop-390.jar,atop,atop.security,"",false
@@ -121,16 +121,15 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/pinot/trino-pinot-390.jar,pinot,pinot.grpc.tls.ssl-provider,"",false
 390,trino-server-390/plugin/pinot/trino-pinot-390.jar,pinot,pinot.aggregation-pushdown.enabled,"",false
 390,trino-server-390/plugin/pinot/trino-pinot-390.jar,pinot,pinot.target-segment-page-size,"",false
-390,trino-server-390/plugin/resource-group-managers/trino-resource-group-managers-390.jar,resource-group-managers,resource-groups.config-db-password,"Database password",false
 390,trino-server-390/plugin/resource-group-managers/trino-resource-group-managers-390.jar,resource-group-managers,resource-groups.max-refresh-interval,"Time period for which the cluster will continue to accept queries after refresh failures cause configuration to become stale",false
 390,trino-server-390/plugin/resource-group-managers/trino-resource-group-managers-390.jar,resource-group-managers,resource-groups.config-db-url,"",false
 390,trino-server-390/plugin/resource-group-managers/trino-resource-group-managers-390.jar,resource-group-managers,resource-groups.config-file,"",false
 390,trino-server-390/plugin/resource-group-managers/trino-resource-group-managers-390.jar,resource-group-managers,jmx.base-name,"",false
 390,trino-server-390/plugin/resource-group-managers/trino-resource-group-managers-390.jar,resource-group-managers,resource-groups.exact-match-selector-enabled,"",false
 390,trino-server-390/plugin/resource-group-managers/trino-resource-group-managers-390.jar,resource-group-managers,resource-groups.config-db-user,"Database user name",false
-390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.max-keys-per-fetch,"Get values associated with the specified number of keys in the command such as MGET(key...)",false
+390,trino-server-390/plugin/resource-group-managers/trino-resource-group-managers-390.jar,resource-group-managers,resource-groups.config-db-password,"Database password",false
 390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.table-names,"Set of tables known to this connector. For each table, a description file may be present in the catalog folder which describes columns for the given table",false
-390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows \"schema:table:*\" format",false
+390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows ""schema:table:*"" format",false
 390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.scan-count,"Count parameter for Redis scan command",false
 390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.hide-internal-columns,"Whether internal columns are shown in table metadata or not. Default is no",false
 390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.user,"Username for a Redis server",false
@@ -142,13 +141,13 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.key-delimiter,"Delimiter for separating schema name and table name in the KEY prefix",false
 390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.table-description-cache-ttl,"The cache time for redis table description files",false
 390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.nodes,"Seed nodes for Redis cluster. At least one must exist",false
+390,trino-server-390/plugin/redis/trino-redis-390.jar,redis,redis.max-keys-per-fetch,"Get values associated with the specified number of keys in the command such as MGET(key...)",false
 390,trino-server-390/plugin/example-http/trino-example-http-390.jar,example-http,metadata-uri,"",false
 390,trino-server-390/plugin/local-file/trino-local-file-390.jar,local-file,trino-logs.http-request-log.location,"Directory or file where http request logs are written",false
 390,trino-server-390/plugin/local-file/trino-local-file-390.jar,local-file,trino-logs.http-request-log.pattern,"If log location is a directory this glob is used to match the file names in the directory",false
 390,trino-server-390/plugin/jmx/trino-jmx-390.jar,jmx,jmx.dump-tables,"",false
 390,trino-server-390/plugin/jmx/trino-jmx-390.jar,jmx,jmx.max-entries,"",false
 390,trino-server-390/plugin/jmx/trino-jmx-390.jar,jmx,jmx.dump-period,"",false
-390,trino-server-390/plugin/oracle/trino-oracle-390.jar,oracle,oracle.number.rounding-mode,"",false
 390,trino-server-390/plugin/oracle/trino-oracle-390.jar,oracle,oracle.connection-pool.min-size,"",false
 390,trino-server-390/plugin/oracle/trino-oracle-390.jar,oracle,oracle.connection-pool.inactive-timeout,"How long a connection in the pool can remain idle before it is closed",false
 390,trino-server-390/plugin/oracle/trino-oracle-390.jar,oracle,oracle.connection-pool.enabled,"",false
@@ -156,21 +155,7 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/oracle/trino-oracle-390.jar,oracle,oracle.synonyms.enabled,"",false
 390,trino-server-390/plugin/oracle/trino-oracle-390.jar,oracle,oracle.number.default-scale,"Default Trino DECIMAL scale for Oracle NUMBER data type",false
 390,trino-server-390/plugin/oracle/trino-oracle-390.jar,oracle,oracle.connection-pool.max-size,"",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.s3.requester-pays.enabled,"",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.orc.writer.stripe-min-size,"",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.s3.external-id,"External ID for the IAM role trust policy when connecting to S3",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.s3.aws-secret-key,"",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.projection-pushdown-enabled,"Projection pushdown into hive is enabled through applyProjection",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.metastore.authentication.type,"Thrift metastore authentication type",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.metastore.thrift.delegation-token.cache-ttl,"Time to live delegation token cache for metastore",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.metastore.glue.region,"AWS Region for Glue Data Catalog",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.azure.abfs.oauth.secret,"",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,parquet.use-column-index,"Enable using Parquet column indexes",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.metastore.thrift.client.max-retries,"Maximum number of retry attempts for metastore requests",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.orc.use-column-names,"Access ORC columns using names from the file",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.insert-existing-partitions-behavior,"Default value for insert existing partitions behavior",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.fs.new-file-inherit-ownership,"File system permissions for new directories",false
-390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.domain-compaction-threshold,"Maximum ranges to allow in a tuple domain without compacting it",false
+390,trino-server-390/plugin/oracle/trino-oracle-390.jar,oracle,oracle.number.rounding-mode,"",false
 390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.auto-purge,"",false
 390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.metastore.thrift.delegation-token.cache-maximum-size,"Delegation token cache maximum size",false
 390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.allow-rename-column,"Allow Hive connector to rename column",false
@@ -415,8 +400,21 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.max-partitions-per-writers,"Maximum number of partitions per writer",false
 390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.azure.abfs.oauth.client-id,"",false
 390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.max-outstanding-splits,"Target number of buffered splits for each table scan in a query, before the scheduler tries to pause itself",false
-390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.parquet.time-zone,"Time zone for Parquet read and write",false
-390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.max-initial-splits,"",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.s3.requester-pays.enabled,"",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.orc.writer.stripe-min-size,"",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.s3.external-id,"External ID for the IAM role trust policy when connecting to S3",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.s3.aws-secret-key,"",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.projection-pushdown-enabled,"Projection pushdown into hive is enabled through applyProjection",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.metastore.authentication.type,"Thrift metastore authentication type",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.metastore.thrift.delegation-token.cache-ttl,"Time to live delegation token cache for metastore",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.metastore.glue.region,"AWS Region for Glue Data Catalog",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.azure.abfs.oauth.secret,"",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,parquet.use-column-index,"Enable using Parquet column indexes",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.metastore.thrift.client.max-retries,"Maximum number of retry attempts for metastore requests",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.orc.use-column-names,"Access ORC columns using names from the file",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.insert-existing-partitions-behavior,"Default value for insert existing partitions behavior",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.fs.new-file-inherit-ownership,"File system permissions for new directories",false
+390,trino-server-390/plugin/delta-lake/trino-hive-390.jar,delta-lake,hive.domain-compaction-threshold,"Maximum ranges to allow in a tuple domain without compacting it",false
 390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.vacuum.min-retention,"Minimal retention period for vacuum procedure",false
 390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.max-split-size,"",false
 390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.domain-compaction-threshold,"Maximum ranges to allow in a tuple domain without compacting it",false
@@ -440,6 +438,8 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.minimum-assigned-split-weight,"Minimum weight that a split can be assigned",false
 390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.enable-non-concurrent-writes,"",false
 390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters during split generation",false
+390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.parquet.time-zone,"Time zone for Parquet read and write",false
+390,trino-server-390/plugin/delta-lake/trino-delta-lake-390.jar,delta-lake,delta.max-initial-splits,"",false
 390,trino-server-390/plugin/session-property-managers/trino-session-property-managers-390.jar,session-property-managers,session-property-manager.db.password,"",false
 390,trino-server-390/plugin/session-property-managers/trino-session-property-managers-390.jar,session-property-managers,session-property-manager.db.username,"",false
 390,trino-server-390/plugin/session-property-managers/trino-session-property-managers-390.jar,session-property-managers,session-property-manager.db.url,"",false
@@ -460,7 +460,6 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/bigquery/trino-bigquery-390.jar,bigquery,bigquery.view-materialization-dataset,"The dataset where the materialized view is going to be created",false
 390,trino-server-390/plugin/bigquery/trino-bigquery-390.jar,bigquery,bigquery.skip-view-materialization,"Skip materializing views",false
 390,trino-server-390/plugin/bigquery/trino-bigquery-390.jar,bigquery,bigquery.parent-project-id,"The Google Cloud Project ID to bill for the export",false
-390,trino-server-390/plugin/mongodb/trino-mongodb-390.jar,mongodb,mongodb.write-concern,"",false
 390,trino-server-390/plugin/mongodb/trino-mongodb-390.jar,mongodb,mongodb.connections-per-host,"",false
 390,trino-server-390/plugin/mongodb/trino-mongodb-390.jar,mongodb,mongodb.credentials,"",false
 390,trino-server-390/plugin/mongodb/trino-mongodb-390.jar,mongodb,mongodb.max-connection-idle-time,"",false
@@ -477,6 +476,7 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/mongodb/trino-mongodb-390.jar,mongodb,mongodb.required-replica-set,"",false
 390,trino-server-390/plugin/mongodb/trino-mongodb-390.jar,mongodb,mongodb.seeds,"",false
 390,trino-server-390/plugin/mongodb/trino-mongodb-390.jar,mongodb,mongodb.connection-timeout,"",false
+390,trino-server-390/plugin/mongodb/trino-mongodb-390.jar,mongodb,mongodb.write-concern,"",false
 390,trino-server-390/plugin/iceberg/trino-iceberg-390.jar,iceberg,iceberg.minimum-assigned-split-weight,"Minimum weight that a split can be assigned",false
 390,trino-server-390/plugin/iceberg/trino-iceberg-390.jar,iceberg,iceberg.delete-schema-locations-fallback,"Whether schema locations should be deleted when Trino can't determine whether they contain external files.",false
 390,trino-server-390/plugin/iceberg/trino-iceberg-390.jar,iceberg,iceberg.projection-pushdown-enabled,"Read only required fields from a struct",false
@@ -496,13 +496,12 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/iceberg/trino-iceberg-390.jar,iceberg,iceberg.use-file-size-from-metadata,"",false
 390,trino-server-390/plugin/iceberg/trino-iceberg-390.jar,iceberg,iceberg.table-statistics-enabled,"Enable use of table statistics",false
 390,trino-server-390/plugin/iceberg/trino-iceberg-390.jar,iceberg,iceberg.format-version,"Default Iceberg table format version",false
-390,trino-server-390/plugin/phoenix5/trino-phoenix5-390.jar,phoenix5,phoenix.config.resources,"",false
 390,trino-server-390/plugin/phoenix5/trino-phoenix5-390.jar,phoenix5,phoenix.connection-url,"",false
 390,trino-server-390/plugin/phoenix5/trino-phoenix5-390.jar,phoenix5,phoenix.max-scans-per-split,"Maximum number of HBase scans that will be performed in a single split.",false
-390,trino-server-390/plugin/thrift/trino-thrift-390.jar,thrift,trino-thrift.max-response-size,"",false
+390,trino-server-390/plugin/phoenix5/trino-phoenix5-390.jar,phoenix5,phoenix.config.resources,"",false
 390,trino-server-390/plugin/thrift/trino-thrift-390.jar,thrift,trino-thrift.lookup-requests-concurrency,"",false
 390,trino-server-390/plugin/thrift/trino-thrift-390.jar,thrift,trino-thrift.metadata-refresh-threads,"",false
-390,trino-server-390/plugin/raptor-legacy/trino-raptor-legacy-390.jar,raptor-legacy,raptor.security,"",false
+390,trino-server-390/plugin/thrift/trino-thrift-390.jar,thrift,trino-thrift.max-response-size,"",false
 390,trino-server-390/plugin/raptor-legacy/trino-raptor-legacy-390.jar,raptor-legacy,storage.max-deletion-threads,"Maximum number of threads to use for deletions",false
 390,trino-server-390/plugin/raptor-legacy/trino-raptor-legacy-390.jar,raptor-legacy,storage.organization-enabled,"",false
 390,trino-server-390/plugin/raptor-legacy/trino-raptor-legacy-390.jar,raptor-legacy,raptor.local-cleaner-interval,"How often to discover local shards that need to be cleaned up",false
@@ -548,11 +547,11 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/raptor-legacy/trino-raptor-legacy-390.jar,raptor-legacy,storage.orc.max-merge-distance,"",false
 390,trino-server-390/plugin/raptor-legacy/trino-raptor-legacy-390.jar,raptor-legacy,storage.max-recovery-threads,"Maximum number of threads to use for recovery",false
 390,trino-server-390/plugin/raptor-legacy/trino-raptor-legacy-390.jar,raptor-legacy,storage.missing-shard-discovery-interval,"How often to check the database and local file system missing shards",false
+390,trino-server-390/plugin/raptor-legacy/trino-raptor-legacy-390.jar,raptor-legacy,raptor.security,"",false
 390,trino-server-390/plugin/google-sheets/trino-google-sheets-390.jar,google-sheets,sheets-data-expire-after-write,"Sheets data expire after write duration",false
 390,trino-server-390/plugin/google-sheets/trino-google-sheets-390.jar,google-sheets,metadata-sheet-id,"Metadata sheet id containing table sheet mapping",false
 390,trino-server-390/plugin/google-sheets/trino-google-sheets-390.jar,google-sheets,credentials-path,"Credential file path to google service account",false
 390,trino-server-390/plugin/google-sheets/trino-google-sheets-390.jar,google-sheets,sheets-data-max-cache-size,"Sheet data max cache size",false
-390,trino-server-390/plugin/kafka/trino-kafka-390.jar,kafka,kafka.confluent-schema-registry-client-cache-size,"The maximum number of subjects that can be stored in the Confluent Schema Registry client cache",false
 390,trino-server-390/plugin/kafka/trino-kafka-390.jar,kafka,kafka.messages-per-split,"Count of Kafka messages to be processed by single Trino Kafka connector split",false
 390,trino-server-390/plugin/kafka/trino-kafka-390.jar,kafka,kafka.buffer-size,"Kafka message consumer buffer size",false
 390,trino-server-390/plugin/kafka/trino-kafka-390.jar,kafka,kafka.table-description-supplier,"The table description supplier to use, default is FILE",false
@@ -575,7 +574,7 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/kafka/trino-kafka-390.jar,kafka,kafka.confluent-subjects-cache-refresh-interval,"The interval that the topic to subjects cache will be refreshed",false
 390,trino-server-390/plugin/kafka/trino-kafka-390.jar,kafka,kafka.empty-field-strategy,"How to handle struct types with no fields: ignore, add a boolean field named 'dummy' or fail the query",false
 390,trino-server-390/plugin/kafka/trino-kafka-390.jar,kafka,kafka.ssl.truststore.location,"The location of the trust store file",false
-390,trino-server-390/plugin/cassandra/trino-cassandra-390.jar,cassandra,cassandra.allow-drop-table,"Allow Cassandra connector to drop table",false
+390,trino-server-390/plugin/kafka/trino-kafka-390.jar,kafka,kafka.confluent-schema-registry-client-cache-size,"The maximum number of subjects that can be stored in the Confluent Schema Registry client cache",false
 390,trino-server-390/plugin/cassandra/trino-cassandra-390.jar,cassandra,cassandra.consistency-level,"",false
 390,trino-server-390/plugin/cassandra/trino-cassandra-390.jar,cassandra,cassandra.protocol-version,"",false
 390,trino-server-390/plugin/cassandra/trino-cassandra-390.jar,cassandra,cassandra.split-size,"",false
@@ -603,6 +602,7 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/cassandra/trino-cassandra-390.jar,cassandra,cassandra.no-host-available-retry-timeout,"",false
 390,trino-server-390/plugin/cassandra/trino-cassandra-390.jar,cassandra,cassandra.tls.keystore-password,"",false
 390,trino-server-390/plugin/cassandra/trino-cassandra-390.jar,cassandra,cassandra.client.so-linger,"",false
+390,trino-server-390/plugin/cassandra/trino-cassandra-390.jar,cassandra,cassandra.allow-drop-table,"Allow Cassandra connector to drop table",false
 390,trino-server-390/plugin/mysql/trino-mysql-390.jar,mysql,mysql.max-reconnects,"",false
 390,trino-server-390/plugin/mysql/trino-mysql-390.jar,mysql,mysql.jdbc.use-information-schema,"Value of useInformationSchema MySQL JDBC driver connection property",false
 390,trino-server-390/plugin/mysql/trino-mysql-390.jar,mysql,mysql.connection-timeout,"",false
@@ -613,13 +613,12 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.log-split,"Will log io.trino.spi.eventlistener.SplitCompletedEvent",false
 390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.connect-retry-delay,"Delay in seconds between retries",false
 390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.connect-ingest-uri,"URL of receiving server. Explicitly set the scheme https:// to use symmetric encryption",false
-390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: \"Header-Name-1: header value 1, Header-Value-2: header value 2, ...\" ",false
+390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: ""Header-Name-1: header value 1, Header-Value-2: header value 2, ..."" ",false
 390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.connect-max-delay,"Maximum delay between retries. This should be used with exponential backoff.",false
 390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.connect-backoff-base,"Base used for exponential backoff when retying on server error. Formula is attemptDelay = retryDelay * backoffBase ^ attemptCount. Attempt counting starts from 0. Leave empty or set to 1 to disable.",false
 390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.connect-retry-count,"Number of retries on server error",false
 390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.log-created,"Will log io.trino.spi.eventlistener.QueryCreatedEvent",false
 390,trino-server-390/plugin/http-event-listener/trino-http-event-listener-390.jar,http-event-listener,http-event-listener.log-completed,"Will log io.trino.spi.eventlistener.QueryCompletedEvent",false
-390,trino-server-390/plugin/kudu/trino-kudu-390.jar,kudu,kudu.client.default-operation-timeout,"",false
 390,trino-server-390/plugin/kudu/trino-kudu-390.jar,kudu,kudu.client.default-admin-operation-timeout,"",false
 390,trino-server-390/plugin/kudu/trino-kudu-390.jar,kudu,kudu.client.master-addresses,"",false
 390,trino-server-390/plugin/kudu/trino-kudu-390.jar,kudu,kudu.schema-emulation.enabled,"",false
@@ -631,6 +630,7 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/kudu/trino-kudu-390.jar,kudu,kudu.client.disable-statistics,"",false
 390,trino-server-390/plugin/kudu/trino-kudu-390.jar,kudu,kudu.authentication.server.principal.primary,"The 'primary' portion of the kudu service principal name",false
 390,trino-server-390/plugin/kudu/trino-kudu-390.jar,kudu,kudu.authentication.type,"Kudu authentication type",false
+390,trino-server-390/plugin/kudu/trino-kudu-390.jar,kudu,kudu.client.default-operation-timeout,"",false
 390,trino-server-390/plugin/password-authenticators/trino-password-authenticators-390.jar,password-authenticators,file.password-file,"Location of the file that provides user names and passwords",false
 390,trino-server-390/plugin/password-authenticators/trino-password-authenticators-390.jar,password-authenticators,ldap.bind-password,"Bind password used. Example: password1234",false
 390,trino-server-390/plugin/password-authenticators/trino-password-authenticators-390.jar,password-authenticators,file.refresh-period,"How often to reload the group file",false
@@ -677,7 +677,6 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/exchange-filesystem/trino-exchange-filesystem-390.jar,exchange-filesystem,exchange.sink-buffer-pool-min-size,"",false
 390,trino-server-390/plugin/exchange-filesystem/trino-exchange-filesystem-390.jar,exchange-filesystem,exchange.max-output-partition-count,"",false
 390,trino-server-390/plugin/exchange-filesystem/trino-exchange-filesystem-390.jar,exchange-filesystem,exchange.s3.retry-mode,"",false
-390,trino-server-390/plugin/elasticsearch/trino-elasticsearch-390.jar,elasticsearch,elasticsearch.aws.secret-key,"",false
 390,trino-server-390/plugin/elasticsearch/trino-elasticsearch-390.jar,elasticsearch,elasticsearch.request-timeout,"Elasticsearch request timeout",false
 390,trino-server-390/plugin/elasticsearch/trino-elasticsearch-390.jar,elasticsearch,elasticsearch.connect-timeout,"Elasticsearch connect timeout",false
 390,trino-server-390/plugin/elasticsearch/trino-elasticsearch-390.jar,elasticsearch,elasticsearch.auth.user,"",false
@@ -705,25 +704,9 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/plugin/elasticsearch/trino-elasticsearch-390.jar,elasticsearch,elasticsearch.max-retry-time,"Maximum timeout in case of multiple retries",false
 390,trino-server-390/plugin/elasticsearch/trino-elasticsearch-390.jar,elasticsearch,elasticsearch.auth.password,"",false
 390,trino-server-390/plugin/elasticsearch/trino-elasticsearch-390.jar,elasticsearch,elasticsearch.node-refresh-interval,"How often to refresh the list of available Elasticsearch nodes",false
+390,trino-server-390/plugin/elasticsearch/trino-elasticsearch-390.jar,elasticsearch,elasticsearch.aws.secret-key,"",false
 390,trino-server-390/plugin/singlestore/trino-singlestore-390.jar,singlestore,singlestore.auto-reconnect,"",false
 390,trino-server-390/plugin/singlestore/trino-singlestore-390.jar,singlestore,singlestore.connection-timeout,"",false
-390,trino-server-390/lib/trino-main-390.jar,,optimizer.prefer-partial-aggregation,"",false
-390,trino-server-390/lib/trino-main-390.jar,,exchange.compression-enabled,"",false
-390,trino-server-390/lib/trino-main-390.jar,,http-server.authentication.jwt.principal-field,"",false
-390,trino-server-390/lib/trino-main-390.jar,,sink.max-broadcast-buffer-size,"",false
-390,trino-server-390/lib/trino-main-390.jar,,query.remote-task.min-error-duration,"",false
-390,trino-server-390/lib/trino-main-390.jar,,http-server.authentication.oauth2.jwks-url,"URL of the authorization server's JWKS (JSON Web Key Set) endpoint",false
-390,trino-server-390/lib/trino-main-390.jar,,http-server.authentication.oauth2.jwks-url,"URL of the authorization server's JWKS (JSON Web Key Set) endpoint",false
-390,trino-server-390/lib/trino-main-390.jar,,failure-injection.request-timeout,"Period after which requests blocked to emulate a timeout are released",false
-390,trino-server-390/lib/trino-main-390.jar,,sql.default-catalog,"",false
-390,trino-server-390/lib/trino-main-390.jar,,shutdown.grace-period,"",false
-390,trino-server-390/lib/trino-main-390.jar,,protocol.v1.prepared-statement-compression.length-threshold,"Compression is applied to prepared statements longer than the configured value",false
-390,trino-server-390/lib/trino-main-390.jar,,enable-coordinator-dynamic-filters-distribution,"Enable distribution of dynamic filters from coordinator to all workers",false
-390,trino-server-390/lib/trino-main-390.jar,,node-scheduler.max-pending-splits-per-task,"",false
-390,trino-server-390/lib/trino-main-390.jar,,enable-forced-exchange-below-group-id,"",false
-390,trino-server-390/lib/trino-main-390.jar,,exchange.deduplication-buffer-size,"",false
-390,trino-server-390/lib/trino-main-390.jar,,redistribute-writes,"",false
-390,trino-server-390/lib/trino-main-390.jar,,colocated-joins-enabled,"Experimental: Use a colocated join when possible",false
 390,trino-server-390/lib/trino-main-390.jar,,exchange.client-threads,"",false
 390,trino-server-390/lib/trino-main-390.jar,,query.low-memory-killer.delay,"Delay between cluster running low on memory and invoking killer",false
 390,trino-server-390/lib/trino-main-390.jar,,query.max-execution-time,"",false
@@ -1013,3 +996,20 @@ version,jar,plugin,config,description,is_deprecated
 390,trino-server-390/lib/trino-main-390.jar,,query-manager.required-workers,"Minimum number of active workers that must be available before a query will start",false
 390,trino-server-390/lib/trino-main-390.jar,,task.max-partial-aggregation-memory,"",false
 390,trino-server-390/lib/trino-main-390.jar,,task.cpu-timer-enabled,"",false
+390,trino-server-390/lib/trino-main-390.jar,,optimizer.prefer-partial-aggregation,"",false
+390,trino-server-390/lib/trino-main-390.jar,,exchange.compression-enabled,"",false
+390,trino-server-390/lib/trino-main-390.jar,,http-server.authentication.jwt.principal-field,"",false
+390,trino-server-390/lib/trino-main-390.jar,,sink.max-broadcast-buffer-size,"",false
+390,trino-server-390/lib/trino-main-390.jar,,query.remote-task.min-error-duration,"",false
+390,trino-server-390/lib/trino-main-390.jar,,http-server.authentication.oauth2.jwks-url,"URL of the authorization server's JWKS (JSON Web Key Set) endpoint",false
+390,trino-server-390/lib/trino-main-390.jar,,http-server.authentication.oauth2.jwks-url,"URL of the authorization server's JWKS (JSON Web Key Set) endpoint",false
+390,trino-server-390/lib/trino-main-390.jar,,failure-injection.request-timeout,"Period after which requests blocked to emulate a timeout are released",false
+390,trino-server-390/lib/trino-main-390.jar,,sql.default-catalog,"",false
+390,trino-server-390/lib/trino-main-390.jar,,shutdown.grace-period,"",false
+390,trino-server-390/lib/trino-main-390.jar,,protocol.v1.prepared-statement-compression.length-threshold,"Compression is applied to prepared statements longer than the configured value",false
+390,trino-server-390/lib/trino-main-390.jar,,enable-coordinator-dynamic-filters-distribution,"Enable distribution of dynamic filters from coordinator to all workers",false
+390,trino-server-390/lib/trino-main-390.jar,,node-scheduler.max-pending-splits-per-task,"",false
+390,trino-server-390/lib/trino-main-390.jar,,enable-forced-exchange-below-group-id,"",false
+390,trino-server-390/lib/trino-main-390.jar,,exchange.deduplication-buffer-size,"",false
+390,trino-server-390/lib/trino-main-390.jar,,redistribute-writes,"",false
+390,trino-server-390/lib/trino-main-390.jar,,colocated-joins-enabled,"Experimental: Use a colocated join when possible",false

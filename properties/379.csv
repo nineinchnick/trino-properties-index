@@ -32,6 +32,7 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/kinesis/trino-kinesis-379.jar,kinesis,kinesis.access-key,"S3 Access Key to access s3 locations",false
 379,trino-server-379/plugin/clickhouse/trino-clickhouse-379.jar,clickhouse,clickhouse.map-string-as-varchar,"Map ClickHouse String and FixedString as varchar instead of varbinary",false
 379,trino-server-379/plugin/clickhouse/trino-clickhouse-379.jar,clickhouse,clickhouse.legacy-driver,"Whether to use a legacy driver",false
+379,trino-server-379/plugin/clickhouse/trino-base-jdbc-379.jar,clickhouse,decimal-mapping,"Decimal mapping for unspecified and exceeding precision decimals. STRICT skips them. ALLOW_OVERFLOW requires setting proper decimal scale and rounding mode",false
 379,trino-server-379/plugin/clickhouse/trino-base-jdbc-379.jar,clickhouse,remote-query-async-cancellation.enabled,"Enable asynchronous remote query cancellation",false
 379,trino-server-379/plugin/clickhouse/trino-base-jdbc-379.jar,clickhouse,metadata.cache-ttl,"Determines how long meta information will be cached",false
 379,trino-server-379/plugin/clickhouse/trino-base-jdbc-379.jar,clickhouse,keystore-file-path,"",false
@@ -69,16 +70,15 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/clickhouse/trino-base-jdbc-379.jar,clickhouse,complex-expression-pushdown.enabled,"",false
 379,trino-server-379/plugin/clickhouse/trino-base-jdbc-379.jar,clickhouse,keystore-password-credential-password,"",false
 379,trino-server-379/plugin/clickhouse/trino-base-jdbc-379.jar,clickhouse,experimental.join-pushdown.automatic.max-join-to-tables-ratio,"If estimated join output size is greater than or equal to ratio * sum of table sizes, then join pushdown will not be performed",false
-379,trino-server-379/plugin/clickhouse/trino-base-jdbc-379.jar,clickhouse,decimal-mapping,"Decimal mapping for unspecified and exceeding precision decimals. STRICT skips them. ALLOW_OVERFLOW requires setting proper decimal scale and rounding mode",false
 379,trino-server-379/plugin/postgresql/trino-postgresql-379.jar,postgresql,postgresql.include-system-tables,"",false
 379,trino-server-379/plugin/postgresql/trino-postgresql-379.jar,postgresql,postgresql.array-mapping,"",false
 379,trino-server-379/plugin/postgresql/trino-postgresql-379.jar,postgresql,postgresql.experimental.enable-string-pushdown-with-collate,"",false
+379,trino-server-379/plugin/atop/trino-atop-379.jar,atop,atop.executable-path,"",false
 379,trino-server-379/plugin/atop/trino-atop-379.jar,atop,atop.executable-read-timeout,"The timeout when reading from the atop process.",false
 379,trino-server-379/plugin/atop/trino-atop-379.jar,atop,atop.time-zone,"The timezone in which the atop data was collected. Generally the timezone of the host.",false
 379,trino-server-379/plugin/atop/trino-atop-379.jar,atop,atop.max-history-days,"",false
 379,trino-server-379/plugin/atop/trino-atop-379.jar,atop,atop.concurrent-readers-per-node,"",false
 379,trino-server-379/plugin/atop/trino-atop-379.jar,atop,atop.security,"",false
-379,trino-server-379/plugin/atop/trino-atop-379.jar,atop,atop.executable-path,"",false
 379,trino-server-379/plugin/memory/trino-memory-379.jar,memory,memory.max-data-per-node,"",false
 379,trino-server-379/plugin/memory/trino-memory-379.jar,memory,memory.enable-lazy-dynamic-filtering,"",false
 379,trino-server-379/plugin/memory/trino-memory-379.jar,memory,memory.splits-per-node,"",false
@@ -89,6 +89,7 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/accumulo/trino-accumulo-379.jar,accumulo,accumulo.cardinality.cache.expire.duration,"Sets the cardinality cache expiration",false
 379,trino-server-379/plugin/accumulo/trino-accumulo-379.jar,accumulo,accumulo.zookeeper.metadata.root,"Sets the root znode for metadata storage",false
 379,trino-server-379/plugin/accumulo/trino-accumulo-379.jar,accumulo,accumulo.username,"Sets the user to use when interacting with Accumulo. This user will require administrative permissions",false
+379,trino-server-379/plugin/pinot/trino-pinot-379.jar,pinot,pinot.max-connections-per-server,"",false
 379,trino-server-379/plugin/pinot/trino-pinot-379.jar,pinot,pinot.metadata-expiry,"",false
 379,trino-server-379/plugin/pinot/trino-pinot-379.jar,pinot,pinot.min-connections-per-server,"",false
 379,trino-server-379/plugin/pinot/trino-pinot-379.jar,pinot,pinot.aggregation-pushdown.enabled,"",false
@@ -113,7 +114,6 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/pinot/trino-pinot-379.jar,pinot,pinot.controller-urls,"",false
 379,trino-server-379/plugin/pinot/trino-pinot-379.jar,pinot,pinot.broker.authentication.user,"",false
 379,trino-server-379/plugin/pinot/trino-pinot-379.jar,pinot,pinot.non-aggregate-limit-for-broker-queries,"",false
-379,trino-server-379/plugin/pinot/trino-pinot-379.jar,pinot,pinot.max-connections-per-server,"",false
 379,trino-server-379/plugin/resource-group-managers/trino-resource-group-managers-379.jar,resource-group-managers,jmx.base-name,"",false
 379,trino-server-379/plugin/resource-group-managers/trino-resource-group-managers-379.jar,resource-group-managers,resource-groups.exact-match-selector-enabled,"",false
 379,trino-server-379/plugin/resource-group-managers/trino-resource-group-managers-379.jar,resource-group-managers,resource-groups.config-db-user,"Database user name",false
@@ -121,9 +121,10 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/resource-group-managers/trino-resource-group-managers-379.jar,resource-group-managers,resource-groups.max-refresh-interval,"Time period for which the cluster will continue to accept queries after refresh failures cause configuration to become stale",false
 379,trino-server-379/plugin/resource-group-managers/trino-resource-group-managers-379.jar,resource-group-managers,resource-groups.config-db-url,"",false
 379,trino-server-379/plugin/resource-group-managers/trino-resource-group-managers-379.jar,resource-group-managers,resource-groups.config-file,"",false
+379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.table-names,"Set of tables known to this connector. For each table, a description file may be present in the catalog folder which describes columns for the given table",false
 379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.connect-timeout,"Timeout to connect to Redis",false
 379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.hide-internal-columns,"Whether internal columns are shown in table metadata or not. Default is no",false
-379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows \"schema:table:*\" format",false
+379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows ""schema:table:*"" format",false
 379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.max-keys-per-fetch,"Get values associated with the specified number of keys in the command such as MGET(key...)",false
 379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.table-description-dir,"Folder holding the JSON description files for Redis values",false
 379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.database-index,"Index of the Redis DB to connect to",false
@@ -132,7 +133,6 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.key-delimiter,"Delimiter for separating schema name and table name in the KEY prefix",false
 379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.default-schema,"The schema name to use in the connector",false
 379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.password,"Password for a password-protected Redis server",false
-379,trino-server-379/plugin/redis/trino-redis-379.jar,redis,redis.table-names,"Set of tables known to this connector. For each table, a description file may be present in the catalog folder which describes columns for the given table",false
 379,trino-server-379/plugin/example-http/trino-example-http-379.jar,example-http,metadata-uri,"",false
 379,trino-server-379/plugin/local-file/trino-local-file-379.jar,local-file,trino-logs.http-request-log.location,"Directory or file where http request logs are written",false
 379,trino-server-379/plugin/local-file/trino-local-file-379.jar,local-file,trino-logs.http-request-log.pattern,"If log location is a directory this glob is used to match the file names in the directory",false
@@ -150,6 +150,10 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/oracle/trino-oracle-379.jar,oracle,oracle.connection-pool.min-size,"",false
 379,trino-server-379/plugin/oracle/trino-oracle-379.jar,oracle,oracle.connection-pool.inactive-timeout,"How long a connection in the pool can remain idle before it is closed",false
 379,trino-server-379/plugin/oracle/trino-oracle-379.jar,oracle,oracle.connection-pool.enabled,"",false
+379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.hide-delta-lake-tables,"Hide Delta Lake tables in table listings",false
+379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.azure.adl-client-id,"",false
+379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.max-split-iterator-threads,"",false
+379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.orc.writer.validation-mode,"Level of detail in ORC validation. Lower levels require more memory.",false
 379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.recursive-directories,"",false
 379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,parquet.use-column-index,"Enable using Parquet column indexes",false
 379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.metastore.thrift.client.ssl.trust-certificate,"Path to the trust store",false
@@ -401,10 +405,7 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.fs.new-directory-permissions,"File system permissions for new directories",false
 379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.rcfile.time-zone,"Time zone for RCFile binary read and write",false
 379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.s3.proxy.username,"",false
-379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.hide-delta-lake-tables,"Hide Delta Lake tables in table listings",false
-379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.azure.adl-client-id,"",false
-379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.max-split-iterator-threads,"",false
-379,trino-server-379/plugin/delta-lake/trino-hive-379.jar,delta-lake,hive.orc.writer.validation-mode,"Level of detail in ORC validation. Lower levels require more memory.",false
+379,trino-server-379/plugin/delta-lake/trino-delta-lake-379.jar,delta-lake,delta.table-statistics-enabled,"Expose table statistics",false
 379,trino-server-379/plugin/delta-lake/trino-delta-lake-379.jar,delta-lake,delta.max-split-size,"",false
 379,trino-server-379/plugin/delta-lake/trino-delta-lake-379.jar,delta-lake,delta.max-outstanding-splits,"Target number of buffered splits for each table scan in a query, before the scheduler tries to pause itself",false
 379,trino-server-379/plugin/delta-lake/trino-delta-lake-379.jar,delta-lake,delta.enable-non-concurrent-writes,"",false
@@ -424,7 +425,6 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/delta-lake/trino-delta-lake-379.jar,delta-lake,delta.max-partitions-per-writer,"Maximum number of partitions per writer",false
 379,trino-server-379/plugin/delta-lake/trino-delta-lake-379.jar,delta-lake,delta.hive-catalog-name,"Catalog to redirect to when a Hive table is referenced",false
 379,trino-server-379/plugin/delta-lake/trino-delta-lake-379.jar,delta-lake,delta.vacuum.min-retention,"Minimal retention period for vacuum procedure",false
-379,trino-server-379/plugin/delta-lake/trino-delta-lake-379.jar,delta-lake,delta.table-statistics-enabled,"Expose table statistics",false
 379,trino-server-379/plugin/session-property-managers/trino-session-property-managers-379.jar,session-property-managers,session-property-manager.db.url,"",false
 379,trino-server-379/plugin/session-property-managers/trino-session-property-managers-379.jar,session-property-managers,session-property-manager.config-file,"",false
 379,trino-server-379/plugin/session-property-managers/trino-session-property-managers-379.jar,session-property-managers,session-property-manager.db.refresh-period,"",false
@@ -552,6 +552,8 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/kafka/trino-kafka-379.jar,kafka,kafka.ssl.endpoint-identification-algorithm,"The endpoint identification algorithm to validate server hostname using server certificate",false
 379,trino-server-379/plugin/kafka/trino-kafka-379.jar,kafka,kafka.ssl.keystore.password,"The store password for the key store file",false
 379,trino-server-379/plugin/kafka/trino-kafka-379.jar,kafka,kafka.timestamp-upper-bound-force-push-down-enabled,"timestamp upper bound force pushing down enabled",false
+379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.splits-per-node,"",false
+379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.username,"",false
 379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.password,"",false
 379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.contact-points,"",false
 379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.speculative-execution.limit,"",false
@@ -581,8 +583,6 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.client.so-linger,"",false
 379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.load-policy.dc-aware.allow-remote-dc-for-local,"",false
 379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.tls.truststore-path,"",false
-379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.splits-per-node,"",false
-379,trino-server-379/plugin/cassandra/trino-cassandra-379.jar,cassandra,cassandra.username,"",false
 379,trino-server-379/plugin/mysql/trino-mysql-379.jar,mysql,mysql.connection-timeout,"",false
 379,trino-server-379/plugin/mysql/trino-mysql-379.jar,mysql,mysql.auto-reconnect,"",false
 379,trino-server-379/plugin/mysql/trino-mysql-379.jar,mysql,mysql.max-reconnects,"",false
@@ -595,8 +595,9 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/http-event-listener/trino-http-event-listener-379.jar,http-event-listener,http-event-listener.log-split,"Will log io.trino.spi.eventlistener.SplitCompletedEvent",false
 379,trino-server-379/plugin/http-event-listener/trino-http-event-listener-379.jar,http-event-listener,http-event-listener.connect-retry-delay,"Delay in seconds between retries",false
 379,trino-server-379/plugin/http-event-listener/trino-http-event-listener-379.jar,http-event-listener,http-event-listener.connect-ingest-uri,"URL of receiving server. Explicitly set the scheme https:// to use symmetric encryption",false
-379,trino-server-379/plugin/http-event-listener/trino-http-event-listener-379.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: \"Header-Name-1: header value 1, Header-Value-2: header value 2, ...\" ",false
+379,trino-server-379/plugin/http-event-listener/trino-http-event-listener-379.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: ""Header-Name-1: header value 1, Header-Value-2: header value 2, ..."" ",false
 379,trino-server-379/plugin/http-event-listener/trino-http-event-listener-379.jar,http-event-listener,http-event-listener.connect-max-delay,"Maximum delay between retries. This should be used with exponential backoff.",false
+379,trino-server-379/plugin/kudu/trino-kudu-379.jar,kudu,kudu.client.default-operation-timeout,"",false
 379,trino-server-379/plugin/kudu/trino-kudu-379.jar,kudu,kudu.authentication.client.keytab,"Kudu Kerberos client keytab location",false
 379,trino-server-379/plugin/kudu/trino-kudu-379.jar,kudu,kudu.authentication.server.principal.primary,"The 'primary' portion of the kudu service principal name",false
 379,trino-server-379/plugin/kudu/trino-kudu-379.jar,kudu,kudu.schema-emulation.prefix,"",false
@@ -609,7 +610,7 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/kudu/trino-kudu-379.jar,kudu,kudu.grouped-execution.enabled,"",false
 379,trino-server-379/plugin/kudu/trino-kudu-379.jar,kudu,kudu.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters",false
 379,trino-server-379/plugin/kudu/trino-kudu-379.jar,kudu,kudu.authentication.config,"Kudu Kerberos service configuration file",false
-379,trino-server-379/plugin/kudu/trino-kudu-379.jar,kudu,kudu.client.default-operation-timeout,"",false
+379,trino-server-379/plugin/password-authenticators/trino-password-authenticators-379.jar,password-authenticators,ldap.cache-ttl,"",false
 379,trino-server-379/plugin/password-authenticators/trino-password-authenticators-379.jar,password-authenticators,file.auth-token-cache.max-size,"Max number of cached authenticated passwords",false
 379,trino-server-379/plugin/password-authenticators/trino-password-authenticators-379.jar,password-authenticators,salesforce.cache-size,"Maximum size of the cache that holds authenticated users.  Default is 4096 entries.",false
 379,trino-server-379/plugin/password-authenticators/trino-password-authenticators-379.jar,password-authenticators,salesforce.allowed-organizations,"Comma separated list of Salesforce 18 Character Organization Ids.",false
@@ -622,13 +623,12 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/password-authenticators/trino-password-authenticators-379.jar,password-authenticators,ldap.user-base-dn,"Base distinguished name of the user. Example: dc=example,dc=com",false
 379,trino-server-379/plugin/password-authenticators/trino-password-authenticators-379.jar,password-authenticators,salesforce.cache-expire-duration,"Expire duration for an entry in cache since last write.",false
 379,trino-server-379/plugin/password-authenticators/trino-password-authenticators-379.jar,password-authenticators,ldap.group-auth-pattern,"Custom group authorization check query. Example: &(objectClass=user)(memberOf=cn=group)(user=username)",false
-379,trino-server-379/plugin/password-authenticators/trino-password-authenticators-379.jar,password-authenticators,ldap.cache-ttl,"",false
+379,trino-server-379/plugin/prometheus/trino-prometheus-379.jar,prometheus,prometheus.bearer.token.file,"File holding bearer token if needed for access to Prometheus",false
 379,trino-server-379/plugin/prometheus/trino-prometheus-379.jar,prometheus,prometheus.read-timeout,"How much time a query to Prometheus has before timing out",false
 379,trino-server-379/plugin/prometheus/trino-prometheus-379.jar,prometheus,prometheus.uri,"Where to find Prometheus coordinator host",false
 379,trino-server-379/plugin/prometheus/trino-prometheus-379.jar,prometheus,prometheus.query.chunk.size.duration,"The duration of each query to Prometheus",false
 379,trino-server-379/plugin/prometheus/trino-prometheus-379.jar,prometheus,prometheus.max.query.range.duration,"Width of overall query to Prometheus, will be divided into prometheus.query.chunk.size.duration queries",false
 379,trino-server-379/plugin/prometheus/trino-prometheus-379.jar,prometheus,prometheus.cache.ttl,"How long values from this config file are cached",false
-379,trino-server-379/plugin/prometheus/trino-prometheus-379.jar,prometheus,prometheus.bearer.token.file,"File holding bearer token if needed for access to Prometheus",false
 379,trino-server-379/plugin/exchange-filesystem/trino-exchange-filesystem-379.jar,exchange-filesystem,exchange.s3.max-error-retries,"",false
 379,trino-server-379/plugin/exchange-filesystem/trino-exchange-filesystem-379.jar,exchange-filesystem,exchange.s3.aws-secret-key,"",false
 379,trino-server-379/plugin/exchange-filesystem/trino-exchange-filesystem-379.jar,exchange-filesystem,exchange.max-page-storage-size,"Max storage size of a page written to a sink, including the page itself and its size represented as an int",false
@@ -648,6 +648,7 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/exchange-filesystem/trino-exchange-filesystem-379.jar,exchange-filesystem,exchange.s3.retry-mode,"",false
 379,trino-server-379/plugin/exchange-filesystem/trino-exchange-filesystem-379.jar,exchange-filesystem,exchange.s3.async-client-connection-acquisition-timeout,"",false
 379,trino-server-379/plugin/exchange-filesystem/trino-exchange-filesystem-379.jar,exchange-filesystem,exchange.sink-max-file-size,"Max size of files written by exchange sinks",false
+379,trino-server-379/plugin/elasticsearch/trino-elasticsearch-379.jar,elasticsearch,elasticsearch.default-schema-name,"Default schema name to use",false
 379,trino-server-379/plugin/elasticsearch/trino-elasticsearch-379.jar,elasticsearch,elasticsearch.backoff-max-delay,"Maximum delay to wait between backpressure retries",false
 379,trino-server-379/plugin/elasticsearch/trino-elasticsearch-379.jar,elasticsearch,elasticsearch.ignore-publish-address,"",false
 379,trino-server-379/plugin/elasticsearch/trino-elasticsearch-379.jar,elasticsearch,elasticsearch.tls.keystore-path,"",false
@@ -675,9 +676,15 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/plugin/elasticsearch/trino-elasticsearch-379.jar,elasticsearch,elasticsearch.aws.external-id,"Optional external id to pass to AWS STS while assuming a role",false
 379,trino-server-379/plugin/elasticsearch/trino-elasticsearch-379.jar,elasticsearch,elasticsearch.tls.verify-hostnames,"",false
 379,trino-server-379/plugin/elasticsearch/trino-elasticsearch-379.jar,elasticsearch,elasticsearch.aws.access-key,"",false
-379,trino-server-379/plugin/elasticsearch/trino-elasticsearch-379.jar,elasticsearch,elasticsearch.default-schema-name,"Default schema name to use",false
 379,trino-server-379/plugin/singlestore/trino-singlestore-379.jar,singlestore,singlestore.auto-reconnect,"",false
 379,trino-server-379/plugin/singlestore/trino-singlestore-379.jar,singlestore,singlestore.connection-timeout,"",false
+379,trino-server-379/lib/trino-main-379.jar,,pages-index.eager-compaction-enabled,"",false
+379,trino-server-379/lib/trino-main-379.jar,,http-server.authentication.krb5.service-name,"",false
+379,trino-server-379/lib/trino-main-379.jar,,fault-tolerant-execution-task-memory-estimation-quantile,"What quantile of memory usage of completed tasks to look at when estimating memory usage for upcoming tasks",false
+379,trino-server-379/lib/trino-main-379.jar,,exchange.data-integrity-verification,"",false
+379,trino-server-379/lib/trino-main-379.jar,,retry-initial-delay,"Initial delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt up to 'retry_max_delay'",false
+379,trino-server-379/lib/trino-main-379.jar,,dynamic-filtering.large-broadcast.range-row-limit-per-driver,"",false
+379,trino-server-379/lib/trino-main-379.jar,,plugin.dir,"",false
 379,trino-server-379/lib/trino-main-379.jar,,parse-decimal-literals-as-double,"",false
 379,trino-server-379/lib/trino-main-379.jar,,dynamic-filtering.large-partitioned.max-size-per-driver,"",false
 379,trino-server-379/lib/trino-main-379.jar,,protocol.v1.prepared-statement-compression.min-gain,"Prepared statement compression is not applied if the size gain is less than the configured value",false
@@ -957,10 +964,3 @@ version,jar,plugin,config,description,is_deprecated
 379,trino-server-379/lib/trino-main-379.jar,,sql.forced-session-time-zone,"User session time zone overriding value sent by client",false
 379,trino-server-379/lib/trino-main-379.jar,,query-manager.required-workers-max-wait,"Maximum time to wait for minimum number of workers before the query is failed",false
 379,trino-server-379/lib/trino-main-379.jar,,catalog.config-dir,"",false
-379,trino-server-379/lib/trino-main-379.jar,,pages-index.eager-compaction-enabled,"",false
-379,trino-server-379/lib/trino-main-379.jar,,http-server.authentication.krb5.service-name,"",false
-379,trino-server-379/lib/trino-main-379.jar,,fault-tolerant-execution-task-memory-estimation-quantile,"What quantile of memory usage of completed tasks to look at when estimating memory usage for upcoming tasks",false
-379,trino-server-379/lib/trino-main-379.jar,,exchange.data-integrity-verification,"",false
-379,trino-server-379/lib/trino-main-379.jar,,retry-initial-delay,"Initial delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt up to 'retry_max_delay'",false
-379,trino-server-379/lib/trino-main-379.jar,,dynamic-filtering.large-broadcast.range-row-limit-per-driver,"",false
-379,trino-server-379/lib/trino-main-379.jar,,plugin.dir,"",false

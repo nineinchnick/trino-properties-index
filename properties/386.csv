@@ -1,7 +1,4 @@
 version,jar,plugin,config,description,is_deprecated
-386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,jmx.base-name,"",false
-386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,ldap.timeout.read,"Timeout for reading data from LDAP",false
-386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,security.refresh-period,"",false
 386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,ldap.allow-insecure,"Allow insecure connection to the LDAP server",false
 386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,ldap.url,"URL of the LDAP server",false
 386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,ldap.ssl.keystore.path,"Path to the PEM or JKS key store",false
@@ -11,9 +8,9 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,ldap.ssl.truststore.password,"Password for the trust store",false
 386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,ldap.ssl.truststore.path,"Path to the PEM or JKS trust store",false
 386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,ldap.timeout.connect,"Timeout for establishing a connection",false
-386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.sleep-time,"Sleep time between fetch attempt retries",false
-386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.default-schema,"Sets default schema for kinesis catalogs",false
-386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.table-description-refresh-interval,"How often to get the table description from S3",false
+386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,jmx.base-name,"",false
+386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,ldap.timeout.read,"Timeout for reading data from LDAP",false
+386,trino-server-386/plugin/kinesis/trino-plugin-toolkit-386.jar,kinesis,security.refresh-period,"",false
 386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.aws-region,"Region to set while creating S3 client",false
 386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.access-key,"S3 Access Key to access s3 locations",false
 386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.batch-size,"Limit maximum number of rows to return in a batch",false
@@ -30,15 +27,11 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.dynamo-write-capacity,"DynamoDB read capacity to be set in client",false
 386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.iterator-from-timestamp,"Whether to use start timestamp from shard iterator",false
 386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.max-batches,"Maximum number of calls to Kinesis per query",false
+386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.sleep-time,"Sleep time between fetch attempt retries",false
+386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.default-schema,"Sets default schema for kinesis catalogs",false
+386,trino-server-386/plugin/kinesis/trino-kinesis-386.jar,kinesis,kinesis.table-description-refresh-interval,"How often to get the table description from S3",false
 386,trino-server-386/plugin/clickhouse/trino-clickhouse-386.jar,clickhouse,clickhouse.legacy-driver,"Whether to use a legacy driver",false
 386,trino-server-386/plugin/clickhouse/trino-clickhouse-386.jar,clickhouse,clickhouse.map-string-as-varchar,"Map ClickHouse String and FixedString as varchar instead of varbinary",false
-386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,keystore-type,"",false
-386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,experimental.join-pushdown.automatic.max-table-size,"Maximum table size to be considered for join pushdown",false
-386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,case-insensitive-name-matching,"",false
-386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,connection-url,"",false
-386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,connection-credential-file,"Location of the file where credentials are present",false
-386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,connection-password,"Password for JDBC client",false
-386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,connection-user,"user name for JDBC client",false
 386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,decimal-rounding-mode,"Rounding mode for mapping unspecified and exceeding precision decimals. Not used whendecimal_mappingis set to STRICT",false
 386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,keystore-file-path,"",false
 386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,metadata.cache-ttl,"Determines how long meta information will be cached",false
@@ -70,29 +63,32 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,write.batch-size,"Maximum number of rows to write in a single batch",false
 386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,keystore-password-credential-name,"",false
 386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,case-insensitive-name-matching.cache-ttl,"",false
+386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,keystore-type,"",false
+386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,experimental.join-pushdown.automatic.max-table-size,"Maximum table size to be considered for join pushdown",false
+386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,case-insensitive-name-matching,"",false
+386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,connection-url,"",false
+386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,connection-credential-file,"Location of the file where credentials are present",false
+386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,connection-password,"Password for JDBC client",false
+386,trino-server-386/plugin/clickhouse/trino-base-jdbc-386.jar,clickhouse,connection-user,"user name for JDBC client",false
 386,trino-server-386/plugin/postgresql/trino-postgresql-386.jar,postgresql,postgresql.experimental.enable-string-pushdown-with-collate,"",false
 386,trino-server-386/plugin/postgresql/trino-postgresql-386.jar,postgresql,postgresql.array-mapping,"",false
 386,trino-server-386/plugin/postgresql/trino-postgresql-386.jar,postgresql,postgresql.include-system-tables,"",false
-386,trino-server-386/plugin/atop/trino-atop-386.jar,atop,atop.time-zone,"The timezone in which the atop data was collected. Generally the timezone of the host.",false
-386,trino-server-386/plugin/atop/trino-atop-386.jar,atop,atop.executable-read-timeout,"The timeout when reading from the atop process.",false
 386,trino-server-386/plugin/atop/trino-atop-386.jar,atop,atop.executable-path,"",false
 386,trino-server-386/plugin/atop/trino-atop-386.jar,atop,atop.security,"",false
 386,trino-server-386/plugin/atop/trino-atop-386.jar,atop,atop.concurrent-readers-per-node,"",false
 386,trino-server-386/plugin/atop/trino-atop-386.jar,atop,atop.max-history-days,"",false
+386,trino-server-386/plugin/atop/trino-atop-386.jar,atop,atop.time-zone,"The timezone in which the atop data was collected. Generally the timezone of the host.",false
+386,trino-server-386/plugin/atop/trino-atop-386.jar,atop,atop.executable-read-timeout,"The timeout when reading from the atop process.",false
 386,trino-server-386/plugin/memory/trino-memory-386.jar,memory,memory.splits-per-node,"",false
 386,trino-server-386/plugin/memory/trino-memory-386.jar,memory,memory.enable-lazy-dynamic-filtering,"",false
 386,trino-server-386/plugin/memory/trino-memory-386.jar,memory,memory.max-data-per-node,"",false
-386,trino-server-386/plugin/accumulo/trino-accumulo-386.jar,accumulo,accumulo.cardinality.cache.size,"Sets the cardinality cache size",false
 386,trino-server-386/plugin/accumulo/trino-accumulo-386.jar,accumulo,accumulo.username,"Sets the user to use when interacting with Accumulo. This user will require administrative permissions",false
 386,trino-server-386/plugin/accumulo/trino-accumulo-386.jar,accumulo,accumulo.zookeeper.metadata.root,"Sets the root znode for metadata storage",false
 386,trino-server-386/plugin/accumulo/trino-accumulo-386.jar,accumulo,accumulo.cardinality.cache.expire.duration,"Sets the cardinality cache expiration",false
 386,trino-server-386/plugin/accumulo/trino-accumulo-386.jar,accumulo,accumulo.password,"Sets the password for the configured user",false
 386,trino-server-386/plugin/accumulo/trino-accumulo-386.jar,accumulo,accumulo.zookeepers,"ZooKeeper quorum connect string for Accumulo",false
 386,trino-server-386/plugin/accumulo/trino-accumulo-386.jar,accumulo,accumulo.instance,"Accumulo instance name",false
-386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.controller.authentication.password,"",false
-386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.segments-per-split,"",false
-386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.prefer-broker-queries,"",false
-386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.aggregation-pushdown.enabled,"",false
+386,trino-server-386/plugin/accumulo/trino-accumulo-386.jar,accumulo,accumulo.cardinality.cache.size,"Sets the cardinality cache size",false
 386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.min-connections-per-server,"",false
 386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.metadata-expiry,"",false
 386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.max-connections-per-server,"",false
@@ -114,17 +110,17 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.estimated-size-in-bytes-for-non-numeric-column,"",false
 386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.max-backlog-per-server,"",false
 386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.connection-timeout,"",false
-386,trino-server-386/plugin/resource-group-managers/trino-resource-group-managers-386.jar,resource-group-managers,jmx.base-name,"",false
+386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.controller.authentication.password,"",false
+386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.segments-per-split,"",false
+386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.prefer-broker-queries,"",false
+386,trino-server-386/plugin/pinot/trino-pinot-386.jar,pinot,pinot.aggregation-pushdown.enabled,"",false
 386,trino-server-386/plugin/resource-group-managers/trino-resource-group-managers-386.jar,resource-group-managers,resource-groups.config-file,"",false
 386,trino-server-386/plugin/resource-group-managers/trino-resource-group-managers-386.jar,resource-group-managers,resource-groups.config-db-url,"",false
 386,trino-server-386/plugin/resource-group-managers/trino-resource-group-managers-386.jar,resource-group-managers,resource-groups.max-refresh-interval,"Time period for which the cluster will continue to accept queries after refresh failures cause configuration to become stale",false
 386,trino-server-386/plugin/resource-group-managers/trino-resource-group-managers-386.jar,resource-group-managers,resource-groups.config-db-password,"Database password",false
 386,trino-server-386/plugin/resource-group-managers/trino-resource-group-managers-386.jar,resource-group-managers,resource-groups.config-db-user,"Database user name",false
 386,trino-server-386/plugin/resource-group-managers/trino-resource-group-managers-386.jar,resource-group-managers,resource-groups.exact-match-selector-enabled,"",false
-386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.nodes,"Seed nodes for Redis cluster. At least one must exist",false
-386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.table-description-cache-ttl,"The cache time for redis table description files",false
-386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.key-delimiter,"Delimiter for separating schema name and table name in the KEY prefix",false
-386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.database-index,"Index of the Redis DB to connect to",false
+386,trino-server-386/plugin/resource-group-managers/trino-resource-group-managers-386.jar,resource-group-managers,jmx.base-name,"",false
 386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.default-schema,"The schema name to use in the connector",false
 386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.table-description-dir,"Folder holding the JSON description files for Redis values",false
 386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.connect-timeout,"Timeout to connect to Redis",false
@@ -132,68 +128,27 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.user,"Username for a Redis server",false
 386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.hide-internal-columns,"Whether internal columns are shown in table metadata or not. Default is no",false
 386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.scan-count,"Count parameter for Redis scan command",false
-386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows \"schema:table:*\" format",false
+386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows ""schema:table:*"" format",false
 386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.table-names,"Set of tables known to this connector. For each table, a description file may be present in the catalog folder which describes columns for the given table",false
 386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.max-keys-per-fetch,"Get values associated with the specified number of keys in the command such as MGET(key...)",false
+386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.nodes,"Seed nodes for Redis cluster. At least one must exist",false
+386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.table-description-cache-ttl,"The cache time for redis table description files",false
+386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.key-delimiter,"Delimiter for separating schema name and table name in the KEY prefix",false
+386,trino-server-386/plugin/redis/trino-redis-386.jar,redis,redis.database-index,"Index of the Redis DB to connect to",false
 386,trino-server-386/plugin/example-http/trino-example-http-386.jar,example-http,metadata-uri,"",false
 386,trino-server-386/plugin/local-file/trino-local-file-386.jar,local-file,trino-logs.http-request-log.pattern,"If log location is a directory this glob is used to match the file names in the directory",false
 386,trino-server-386/plugin/local-file/trino-local-file-386.jar,local-file,trino-logs.http-request-log.location,"Directory or file where http request logs are written",false
-386,trino-server-386/plugin/jmx/trino-jmx-386.jar,jmx,jmx.max-entries,"",false
 386,trino-server-386/plugin/jmx/trino-jmx-386.jar,jmx,jmx.dump-tables,"",false
 386,trino-server-386/plugin/jmx/trino-jmx-386.jar,jmx,jmx.dump-period,"",false
-386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.synonyms.enabled,"",false
-386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.remarks-reporting.enabled,"",false
+386,trino-server-386/plugin/jmx/trino-jmx-386.jar,jmx,jmx.max-entries,"",false
 386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.connection-pool.enabled,"",false
 386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.connection-pool.inactive-timeout,"How long a connection in the pool can remain idle before it is closed",false
 386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.connection-pool.min-size,"",false
 386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.number.rounding-mode,"",false
 386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.connection-pool.max-size,"",false
 386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.number.default-scale,"Default Trino DECIMAL scale for Oracle NUMBER data type",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.orc.writer.string-statistics-limit,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.partition-batch-size.max,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.user-metastore-cache-ttl,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.hdfs.socks-proxy,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.abfs.oauth.endpoint,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.adl-refresh-url,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.ssl.key-password,"Password for the key store",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.skip-deletion-for-alter,"Skip deletion of old partition data when a partition is deleted and then inserted in the same transaction",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.fs.new-directory-permissions,"File system permissions for new directories",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.allow-add-column,"Allow Hive connector to add column",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.cache.read-mode,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.optimize-mismatched-bucket-count,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore-timeout,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.min-backoff-delay,"Minimum delay between metastore request retries",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.validate-bucketing,"Verify that data is bucketed correctly when reading",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.temporary-staging-directory-enabled,"Should use (if possible) temporary staging directory for write operations",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.per-transaction-metastore-cache-maximum-size,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.cache.enabled,"Experimental: Cache HDFS file segments to distributed local storage",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.catalog.dir,"Hive file-based metastore catalog directory",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.force-local-scheduling,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.hive-views.legacy-translation,"Use legacy Hive view translation mechanism",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.wasb-access-key,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.s3.max-error-retries,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.file-status-cache-tables,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.split-loader-concurrency,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.user,"Hive file-based metastore username for file access",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.ssl.enabled,"Whether TLS security is enabled",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.dfs.connect.max-retries,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.s3.proxy.protocol,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.hdfs.trino.principal,"Trino principal used to access HDFS",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.allow-drop-column,"Allow Hive connector to drop column",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.orc.writer.validation-percentage,"Percentage of ORC files to validate after write by re-reading the whole file",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.ssl.trust-certificate-password,"Password for the trust store",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.s3.storage-class,"AWS S3 storage class to use when writing the data",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.max-open-sort-files,"Maximum number of writer temporary files to read in one pass",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.adl-credential,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.orc.writer.dictionary-max-memory,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.adl-proxy-host,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,parquet.max-buffer-size,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.assume-canonical-partition-keys,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.glue.partitions-segments,"Number of segments for partitioned Glue tables",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore-recording-path,"",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.ssl.trust-certificate,"Path to the trust store",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.hdfs.wire-encryption.enabled,"Should be turned on when HDFS wire encryption is enabled",false
-386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.table-statistics-enabled,"Enable use of table statistics",false
+386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.synonyms.enabled,"",false
+386,trino-server-386/plugin/oracle/trino-oracle-386.jar,oracle,oracle.remarks-reporting.enabled,"",false
 386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,parquet.max-merge-distance,"",false
 386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.delete-schema-locations-fallback,"Whether schema locations should be deleted when Trino can't determine whether they contain external files.",false
 386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.propagate-table-scan-sorting-properties,"Use sorted table layout to generate more efficient execution plans. May lead to incorrect results if files are not sorted as per table definition.",false
@@ -408,11 +363,51 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.version-compatibility,"",false
 386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.user-metastore-cache-maximum-size,"",false
 386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.temporary-staging-directory-path,"Location of temporary staging directory for write operations. Use ${USER} placeholder to use different location for each user.",false
-386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.minimum-assigned-split-weight,"Minimum weight that a split can be assigned",false
-386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.max-outstanding-splits,"Target number of buffered splits for each table scan in a query, before the scheduler tries to pause itself",false
-386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.table-statistics-enabled,"Expose table statistics",false
-386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.max-initial-split-size,"",false
-386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.experimental.ignore-checkpoint-write-failures,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.orc.writer.string-statistics-limit,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.partition-batch-size.max,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.user-metastore-cache-ttl,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.hdfs.socks-proxy,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.abfs.oauth.endpoint,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.adl-refresh-url,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.ssl.key-password,"Password for the key store",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.skip-deletion-for-alter,"Skip deletion of old partition data when a partition is deleted and then inserted in the same transaction",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.fs.new-directory-permissions,"File system permissions for new directories",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.allow-add-column,"Allow Hive connector to add column",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.cache.read-mode,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.optimize-mismatched-bucket-count,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore-timeout,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.min-backoff-delay,"Minimum delay between metastore request retries",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.validate-bucketing,"Verify that data is bucketed correctly when reading",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.temporary-staging-directory-enabled,"Should use (if possible) temporary staging directory for write operations",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.per-transaction-metastore-cache-maximum-size,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.cache.enabled,"Experimental: Cache HDFS file segments to distributed local storage",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.catalog.dir,"Hive file-based metastore catalog directory",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.force-local-scheduling,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.hive-views.legacy-translation,"Use legacy Hive view translation mechanism",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.wasb-access-key,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.s3.max-error-retries,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.file-status-cache-tables,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.split-loader-concurrency,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.user,"Hive file-based metastore username for file access",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.ssl.enabled,"Whether TLS security is enabled",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.dfs.connect.max-retries,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.s3.proxy.protocol,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.hdfs.trino.principal,"Trino principal used to access HDFS",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.allow-drop-column,"Allow Hive connector to drop column",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.orc.writer.validation-percentage,"Percentage of ORC files to validate after write by re-reading the whole file",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.ssl.trust-certificate-password,"Password for the trust store",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.s3.storage-class,"AWS S3 storage class to use when writing the data",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.max-open-sort-files,"Maximum number of writer temporary files to read in one pass",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.adl-credential,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.orc.writer.dictionary-max-memory,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.azure.adl-proxy-host,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,parquet.max-buffer-size,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.assume-canonical-partition-keys,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.glue.partitions-segments,"Number of segments for partitioned Glue tables",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore-recording-path,"",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.metastore.thrift.client.ssl.trust-certificate,"Path to the trust store",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.hdfs.wire-encryption.enabled,"Should be turned on when HDFS wire encryption is enabled",false
+386,trino-server-386/plugin/delta-lake/trino-hive-386.jar,delta-lake,hive.table-statistics-enabled,"Enable use of table statistics",false
 386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.default-checkpoint-writing-interval,"How often (in number of transactions) to write checkpoint of transaction log",false
 386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.checkpoint-row-statistics-writing.enabled,"",false
 386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.hive-catalog-name,"Catalog to redirect to when a Hive table is referenced",false
@@ -433,13 +428,16 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.parquet.time-zone,"Time zone for Parquet read and write",false
 386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters during split generation",false
 386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.enable-non-concurrent-writes,"",false
-386,trino-server-386/plugin/session-property-managers/trino-session-property-managers-386.jar,session-property-managers,session-property-manager.db.url,"",false
+386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.minimum-assigned-split-weight,"Minimum weight that a split can be assigned",false
+386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.max-outstanding-splits,"Target number of buffered splits for each table scan in a query, before the scheduler tries to pause itself",false
+386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.table-statistics-enabled,"Expose table statistics",false
+386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.max-initial-split-size,"",false
+386,trino-server-386/plugin/delta-lake/trino-delta-lake-386.jar,delta-lake,delta.experimental.ignore-checkpoint-write-failures,"",false
 386,trino-server-386/plugin/session-property-managers/trino-session-property-managers-386.jar,session-property-managers,session-property-manager.db.username,"",false
 386,trino-server-386/plugin/session-property-managers/trino-session-property-managers-386.jar,session-property-managers,session-property-manager.db.password,"",false
 386,trino-server-386/plugin/session-property-managers/trino-session-property-managers-386.jar,session-property-managers,session-property-manager.db.refresh-period,"",false
 386,trino-server-386/plugin/session-property-managers/trino-session-property-managers-386.jar,session-property-managers,session-property-manager.config-file,"",false
-386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.view-materialization-dataset,"The dataset where the materialized view is going to be created",false
-386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.credentials-file,"The path to the JSON credentials file",false
+386,trino-server-386/plugin/session-property-managers/trino-session-property-managers-386.jar,session-property-managers,session-property-manager.db.url,"",false
 386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.service-cache-ttl,"Duration for which BigQuery client service instances are cached",false
 386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.views-cache-ttl,"Duration for which the materialization of a view will be cached and reused",false
 386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.case-insensitive-name-matching,"Match dataset and table names case-insensitively",false
@@ -453,8 +451,8 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.view-materialization-project,"The project where the materialized view is going to be created",false
 386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.parent-project-id,"The Google Cloud Project ID to bill for the export",false
 386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.skip-view-materialization,"Skip materializing views",false
-386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.required-replica-set,"",false
-386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.max-wait-time,"",false
+386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.view-materialization-dataset,"The dataset where the materialized view is going to be created",false
+386,trino-server-386/plugin/bigquery/trino-bigquery-386.jar,bigquery,bigquery.credentials-file,"The path to the JSON credentials file",false
 386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.cursor-batch-size,"",false
 386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.ssl.enabled,"",false
 386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.min-connections-per-host,"",false
@@ -470,11 +468,8 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.write-concern,"",false
 386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.connection-timeout,"",false
 386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.seeds,"",false
-386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.minimum-assigned-split-weight,"Minimum weight that a split can be assigned",false
-386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.file-format,"",false
-386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.catalog.type,"",false
-386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.security,"",false
-386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.hive-catalog-name,"Catalog to redirect to when a Hive table is referenced",false
+386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.required-replica-set,"",false
+386,trino-server-386/plugin/mongodb/trino-mongodb-386.jar,mongodb,mongodb.max-wait-time,"",false
 386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.table-statistics-enabled,"Enable use of table statistics",false
 386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.expire_snapshots.min-retention,"Minimal retention period for expire_snapshot procedure",false
 386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.compression-codec,"",false
@@ -487,25 +482,17 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.use-file-size-from-metadata,"",false
 386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.format-version,"Default Iceberg table format version",false
 386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters during split generation",false
-386,trino-server-386/plugin/phoenix5/trino-phoenix5-386.jar,phoenix5,phoenix.max-scans-per-split,"Maximum number of HBase scans that will be performed in a single split.",false
+386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.minimum-assigned-split-weight,"Minimum weight that a split can be assigned",false
+386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.file-format,"",false
+386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.catalog.type,"",false
+386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.security,"",false
+386,trino-server-386/plugin/iceberg/trino-iceberg-386.jar,iceberg,iceberg.hive-catalog-name,"Catalog to redirect to when a Hive table is referenced",false
 386,trino-server-386/plugin/phoenix5/trino-phoenix5-386.jar,phoenix5,phoenix.connection-url,"",false
 386,trino-server-386/plugin/phoenix5/trino-phoenix5-386.jar,phoenix5,phoenix.config.resources,"",false
+386,trino-server-386/plugin/phoenix5/trino-phoenix5-386.jar,phoenix5,phoenix.max-scans-per-split,"Maximum number of HBase scans that will be performed in a single split.",false
 386,trino-server-386/plugin/thrift/trino-thrift-386.jar,thrift,trino-thrift.lookup-requests-concurrency,"",false
 386,trino-server-386/plugin/thrift/trino-thrift-386.jar,thrift,trino-thrift.max-response-size,"",false
 386,trino-server-386/plugin/thrift/trino-thrift-386.jar,thrift,trino-thrift.metadata-refresh-threads,"",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.orc.max-read-size,"",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.orc.nested-lazy,"",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.balancer-enabled,"",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.one-split-per-bucket-threshold,"Experimental: Maximum bucket count at which to produce multiple splits per bucket",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.organization-interval,"How long to wait between table organization iterations",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,backup.provider,"Backup provider to use (supported types: file)",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,backup.directory,"Base directory to use for the backup copy of shard data",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,raptor.startup-grace-period,"Minimum uptime before allowing bucket or shard reassignments",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,metadata.db.type,"Metadata database type (supported types: h2, mysql)",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.shard-recovery-timeout,"Maximum time to wait for a shard to recover from backup while running a query",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.max-buffer-size,"Maximum data to buffer before flushing to disk",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.ejector-interval,"How often to check for local shards that need ejection to balance capacity",false
-386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,raptor.local-clean-time,"How long to wait after discovery before cleaning local shards",false
 386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.orc.stream-buffer-size,"",false
 386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,raptor.reassignment-interval,"Minimum interval between reassignments for different nodes",false
 386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,backup.timeout-threads,"Maximum number of timeout threads for backup operations",false
@@ -539,15 +526,23 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.missing-shard-discovery-interval,"How often to check the database and local file system missing shards",false
 386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.max-recovery-threads,"Maximum number of threads to use for recovery",false
 386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.orc.max-merge-distance,"",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.orc.max-read-size,"",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.orc.nested-lazy,"",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.balancer-enabled,"",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.one-split-per-bucket-threshold,"Experimental: Maximum bucket count at which to produce multiple splits per bucket",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.organization-interval,"How long to wait between table organization iterations",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,backup.provider,"Backup provider to use (supported types: file)",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,backup.directory,"Base directory to use for the backup copy of shard data",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,raptor.startup-grace-period,"Minimum uptime before allowing bucket or shard reassignments",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,metadata.db.type,"Metadata database type (supported types: h2, mysql)",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.shard-recovery-timeout,"Maximum time to wait for a shard to recover from backup while running a query",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.max-buffer-size,"Maximum data to buffer before flushing to disk",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,storage.ejector-interval,"How often to check for local shards that need ejection to balance capacity",false
+386,trino-server-386/plugin/raptor-legacy/trino-raptor-legacy-386.jar,raptor-legacy,raptor.local-clean-time,"How long to wait after discovery before cleaning local shards",false
 386,trino-server-386/plugin/google-sheets/trino-google-sheets-386.jar,google-sheets,credentials-path,"Credential file path to google service account",false
 386,trino-server-386/plugin/google-sheets/trino-google-sheets-386.jar,google-sheets,metadata-sheet-id,"Metadata sheet id containing table sheet mapping",false
 386,trino-server-386/plugin/google-sheets/trino-google-sheets-386.jar,google-sheets,sheets-data-expire-after-write,"Sheets data expire after write duration",false
 386,trino-server-386/plugin/google-sheets/trino-google-sheets-386.jar,google-sheets,sheets-data-max-cache-size,"Sheet data max cache size",false
-386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.confluent-subjects-cache-refresh-interval,"The interval that the topic to subjects cache will be refreshed",false
-386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.ssl.keystore.location,"The location of the key store file. This can be used for two-way authentication for client",false
-386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.security-protocol,"Kafka communication security protocol",false
-386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.table-description-dir,"Folder holding JSON description files for Kafka topics",false
-386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.ssl.key.password,"The password of the private key in the key store file",false
 386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.ssl.truststore.password,"The password for the trust store file",false
 386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.nodes,"Seed nodes for Kafka cluster. At least one must exist",false
 386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.timestamp-upper-bound-force-push-down-enabled,"timestamp upper bound force pushing down enabled",false
@@ -566,14 +561,11 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.confluent-schema-registry-client-cache-size,"The maximum number of subjects that can be stored in the Confluent Schema Registry client cache",false
 386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.ssl.truststore.location,"The location of the trust store file",false
 386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.empty-field-strategy,"How to handle struct types with no fields: ignore, add a boolean field named 'dummy' or fail the query",false
-386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.partition-size-for-batch-select,"",false
-386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.allow-drop-table,"Allow Cassandra connector to drop table",false
-386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.load-policy.use-dc-aware,"",false
-386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.batch-size,"",false
-386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.tls.keystore-path,"",false
-386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.split-size,"",false
-386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.load-policy.dc-aware.used-hosts-per-remote-dc,"",false
-386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.speculative-execution.delay,"",false
+386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.confluent-subjects-cache-refresh-interval,"The interval that the topic to subjects cache will be refreshed",false
+386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.ssl.keystore.location,"The location of the key store file. This can be used for two-way authentication for client",false
+386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.security-protocol,"Kafka communication security protocol",false
+386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.table-description-dir,"Folder holding JSON description files for Kafka topics",false
+386,trino-server-386/plugin/kafka/trino-kafka-386.jar,kafka,kafka.ssl.key.password,"The password of the private key in the key store file",false
 386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.speculative-execution.limit,"",false
 386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.contact-points,"",false
 386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.password,"",false
@@ -597,6 +589,14 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.tls.truststore-password,"",false
 386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.load-policy.token-aware.shuffle-replicas,"",false
 386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.native-protocol-port,"",false
+386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.partition-size-for-batch-select,"",false
+386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.allow-drop-table,"Allow Cassandra connector to drop table",false
+386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.load-policy.use-dc-aware,"",false
+386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.batch-size,"",false
+386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.tls.keystore-path,"",false
+386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.split-size,"",false
+386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.load-policy.dc-aware.used-hosts-per-remote-dc,"",false
+386,trino-server-386/plugin/cassandra/trino-cassandra-386.jar,cassandra,cassandra.speculative-execution.delay,"",false
 386,trino-server-386/plugin/mysql/trino-mysql-386.jar,mysql,mysql.jdbc.use-information-schema,"Value of useInformationSchema MySQL JDBC driver connection property",false
 386,trino-server-386/plugin/mysql/trino-mysql-386.jar,mysql,mysql.max-reconnects,"",false
 386,trino-server-386/plugin/mysql/trino-mysql-386.jar,mysql,mysql.auto-reconnect,"",false
@@ -604,16 +604,15 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/sqlserver/trino-sqlserver-386.jar,sqlserver,sqlserver.bulk-copy-for-write.lock-destination-table,"Obtain a Bulk Update lock on destination table on write",false
 386,trino-server-386/plugin/sqlserver/trino-sqlserver-386.jar,sqlserver,sqlserver.bulk-copy-for-write.enabled,"Use SQL Server Bulk Copy API for writes",false
 386,trino-server-386/plugin/sqlserver/trino-sqlserver-386.jar,sqlserver,sqlserver.snapshot-isolation.disabled,"Disables automatic use of snapshot isolation for transactions issued by Trino in SQL Server",false
-386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.connect-backoff-base,"Base used for exponential backoff when retying on server error. Formula is attemptDelay = retryDelay * backoffBase ^ attemptCount. Attempt counting starts from 0. Leave empty or set to 1 to disable.",false
 386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.connect-max-delay,"Maximum delay between retries. This should be used with exponential backoff.",false
-386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: \"Header-Name-1: header value 1, Header-Value-2: header value 2, ...\" ",false
+386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: ""Header-Name-1: header value 1, Header-Value-2: header value 2, ..."" ",false
 386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.connect-ingest-uri,"URL of receiving server. Explicitly set the scheme https:// to use symmetric encryption",false
 386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.connect-retry-delay,"Delay in seconds between retries",false
 386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.log-split,"Will log io.trino.spi.eventlistener.SplitCompletedEvent",false
 386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.log-completed,"Will log io.trino.spi.eventlistener.QueryCompletedEvent",false
 386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.log-created,"Will log io.trino.spi.eventlistener.QueryCreatedEvent",false
 386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.connect-retry-count,"Number of retries on server error",false
-386,trino-server-386/plugin/kudu/trino-kudu-386.jar,kudu,kudu.authentication.client.keytab,"Kudu Kerberos client keytab location",false
+386,trino-server-386/plugin/http-event-listener/trino-http-event-listener-386.jar,http-event-listener,http-event-listener.connect-backoff-base,"Base used for exponential backoff when retying on server error. Formula is attemptDelay = retryDelay * backoffBase ^ attemptCount. Attempt counting starts from 0. Leave empty or set to 1 to disable.",false
 386,trino-server-386/plugin/kudu/trino-kudu-386.jar,kudu,kudu.client.default-operation-timeout,"",false
 386,trino-server-386/plugin/kudu/trino-kudu-386.jar,kudu,kudu.authentication.config,"Kudu Kerberos service configuration file",false
 386,trino-server-386/plugin/kudu/trino-kudu-386.jar,kudu,kudu.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters",false
@@ -626,8 +625,7 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/kudu/trino-kudu-386.jar,kudu,kudu.authentication.client.principal,"Kudu Kerberos client principal",false
 386,trino-server-386/plugin/kudu/trino-kudu-386.jar,kudu,kudu.schema-emulation.prefix,"",false
 386,trino-server-386/plugin/kudu/trino-kudu-386.jar,kudu,kudu.authentication.server.principal.primary,"The 'primary' portion of the kudu service principal name",false
-386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,salesforce.allowed-organizations,"Comma separated list of Salesforce 18 Character Organization Ids.",false
-386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,salesforce.cache-size,"Maximum size of the cache that holds authenticated users.  Default is 4096 entries.",false
+386,trino-server-386/plugin/kudu/trino-kudu-386.jar,kudu,kudu.authentication.client.keytab,"Kudu Kerberos client keytab location",false
 386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,file.auth-token-cache.max-size,"Max number of cached authenticated passwords",false
 386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,ldap.cache-ttl,"",false
 386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,ldap.group-auth-pattern,"Custom group authorization check query. Example: &(objectClass=user)(memberOf=cn=group)(user=username)",false
@@ -639,17 +637,16 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,file.refresh-period,"How often to reload the group file",false
 386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,ldap.bind-password,"Bind password used. Example: password1234",false
 386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,file.password-file,"Location of the file that provides user names and passwords",false
-386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.cache.ttl,"How long values from this config file are cached",false
-386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.auth.password,"",false
-386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.auth.user,"",false
+386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,salesforce.allowed-organizations,"Comma separated list of Salesforce 18 Character Organization Ids.",false
+386,trino-server-386/plugin/password-authenticators/trino-password-authenticators-386.jar,password-authenticators,salesforce.cache-size,"Maximum size of the cache that holds authenticated users.  Default is 4096 entries.",false
 386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.query.chunk.size.duration,"The duration of each query to Prometheus",false
 386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.read-timeout,"How much time a query to Prometheus has before timing out",false
 386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.bearer.token.file,"File holding bearer token if needed for access to Prometheus",false
 386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.uri,"Where to find Prometheus coordinator host",false
 386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.max.query.range.duration,"Width of overall query to Prometheus, will be divided into prometheus.query.chunk.size.duration queries",false
-386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.sink-buffer-pool-min-size,"",false
-386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.s3.async-client-max-pending-connection-acquires,"",false
-386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.s3.max-error-retries,"",false
+386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.cache.ttl,"How long values from this config file are cached",false
+386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.auth.password,"",false
+386,trino-server-386/plugin/prometheus/trino-prometheus-386.jar,prometheus,prometheus.auth.user,"",false
 386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.azure.block-size,"Block size for Azure High-Throughput Block Blob",false
 386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.sink-max-file-size,"Max size of files written by exchange sinks",false
 386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.s3.external-id,"External ID for the IAM role trust policy when connecting to S3",false
@@ -672,12 +669,9 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.s3.iam-role,"ARN of an IAM role to assume when connecting to S3",false
 386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.s3.retry-mode,"",false
 386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.max-output-partition-count,"",false
-386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.tls.keystore-password,"",false
-386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.aws.region,"",false
-386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.http-thread-count,"Number of threads handling HTTP connections to Elasticsearch",false
-386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.scroll-timeout,"Scroll timeout",false
-386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.host,"",false
-386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.tls.keystore-path,"",false
+386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.sink-buffer-pool-min-size,"",false
+386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.s3.async-client-max-pending-connection-acquires,"",false
+386,trino-server-386/plugin/exchange-filesystem/trino-exchange-filesystem-386.jar,exchange-filesystem,exchange.s3.max-error-retries,"",false
 386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.ignore-publish-address,"",false
 386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.backoff-max-delay,"Maximum delay to wait between backpressure retries",false
 386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.default-schema-name,"Default schema name to use",false
@@ -700,80 +694,14 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.node-refresh-interval,"How often to refresh the list of available Elasticsearch nodes",false
 386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.auth.password,"",false
 386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.max-retry-time,"Maximum timeout in case of multiple retries",false
+386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.tls.keystore-password,"",false
+386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.aws.region,"",false
+386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.http-thread-count,"Number of threads handling HTTP connections to Elasticsearch",false
+386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.scroll-timeout,"Scroll timeout",false
+386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.host,"",false
+386,trino-server-386/plugin/elasticsearch/trino-elasticsearch-386.jar,elasticsearch,elasticsearch.tls.keystore-path,"",false
 386,trino-server-386/plugin/singlestore/trino-singlestore-386.jar,singlestore,singlestore.connection-timeout,"",false
 386,trino-server-386/plugin/singlestore/trino-singlestore-386.jar,singlestore,singlestore.auto-reconnect,"",false
-386,trino-server-386/lib/trino-main-386.jar,,web-ui.authentication.type,"Authentication type for the web ui",false
-386,trino-server-386/lib/trino-main-386.jar,,task-retry-attempts-per-task,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.oidc.discovery,"Enable OpenID Provider Issuer discovery",false
-386,trino-server-386/lib/trino-main-386.jar,,sql.default-catalog,"",false
-386,trino-server-386/lib/trino-main-386.jar,,query.max-cpu-time,"",false
-386,trino-server-386/lib/trino-main-386.jar,,failure-injection.expiration-period,"Period after which an injected failure is considered expired and will no longer be triggering a failure",false
-386,trino-server-386/lib/trino-main-386.jar,,exchange.acknowledge-pages,"",false
-386,trino-server-386/lib/trino-main-386.jar,,catalog.disabled-catalogs,"",false
-386,trino-server-386/lib/trino-main-386.jar,,task.min-drivers-per-task,"Minimum number of drivers guaranteed to run per task given there is sufficient work to do",false
-386,trino-server-386/lib/trino-main-386.jar,,node-scheduler.network-topology.type,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.oidc.use-userinfo-endpoint,"Use userinfo endpoint from OpenID connect metadata document",false
-386,trino-server-386/lib/trino-main-386.jar,,memory-revoking-threshold,"Revoke memory when memory pool is filled over threshold",false
-386,trino-server-386/lib/trino-main-386.jar,,optimizer.use-mark-distinct,"",false
-386,trino-server-386/lib/trino-main-386.jar,,task.client.timeout,"",false
-386,trino-server-386/lib/trino-main-386.jar,,optimizer.max-reordered-joins,"The maximum number of tables to reorder in cost-based join reordering",false
-386,trino-server-386/lib/trino-main-386.jar,,testing-warning-collector.add-warnings,"Adds a warning each time getWarnings is called",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.jwt.principal-field,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.jwt.required-issuer,"",false
-386,trino-server-386/lib/trino-main-386.jar,,fault-tolerant-execution-task-memory-estimation-quantile,"What quantile of memory usage of completed tasks to look at when estimating memory usage for upcoming tasks",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.insecure.user-mapping.file,"",false
-386,trino-server-386/lib/trino-main-386.jar,,fault-tolerant-execution-preserve-input-partitions-in-write-stage,"Ensure single task reads single hash partitioned input partition for stages which write table data",false
-386,trino-server-386/lib/trino-main-386.jar,,query.max-scan-physical-bytes,"",false
-386,trino-server-386/lib/trino-main-386.jar,,deprecated.legacy-catalog-roles,"Enable legacy role management syntax that assumed all roles are catalog scoped",false
-386,trino-server-386/lib/trino-main-386.jar,,driver.max-page-partitioning-buffer-size,"",false
-386,trino-server-386/lib/trino-main-386.jar,,query.min-schedule-split-batch-size,"",false
-386,trino-server-386/lib/trino-main-386.jar,,task.max-worker-threads,"",false
-386,trino-server-386/lib/trino-main-386.jar,,node-scheduler.network-topology.subnet.cidr-prefix-lengths,"",false
-386,trino-server-386/lib/trino-main-386.jar,,task.max-local-exchange-buffer-size,"",false
-386,trino-server-386/lib/trino-main-386.jar,,query-results.compression-enabled,"",false
-386,trino-server-386/lib/trino-main-386.jar,,node-scheduler.policy,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.access-token-issuer,"The required issuer for access tokens",false
-386,trino-server-386/lib/trino-main-386.jar,,internal-communication.shared-secret,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.insecure.user-mapping.pattern,"",false
-386,trino-server-386/lib/trino-main-386.jar,,optimizer.join-partitioned-build-min-row-count,"Minimum number of join build side rows required to use partitioned join lookup",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.access-token-issuer,"The required issuer for access tokens",false
-386,trino-server-386/lib/trino-main-386.jar,,spill-compression-enabled,"",false
-386,trino-server-386/lib/trino-main-386.jar,,regex-library,"",false
-386,trino-server-386/lib/trino-main-386.jar,,statistics-precalculation-for-pushdown.enabled,"",false
-386,trino-server-386/lib/trino-main-386.jar,,warning-collector.max-warnings,"",false
-386,trino-server-386/lib/trino-main-386.jar,,concurrent-lifespans-per-task,"Experimental: Default number of lifespans that run in parallel on each task when grouped execution is enabled",false
-386,trino-server-386/lib/trino-main-386.jar,,sink.max-buffer-size,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.user-mapping.file,"File containing rules for mapping user",false
-386,trino-server-386/lib/trino-main-386.jar,,retry-initial-delay,"Initial delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt up to 'retry_max_delay'",false
-386,trino-server-386/lib/trino-main-386.jar,,task.info-update-interval,"Interval between updating task data",false
-386,trino-server-386/lib/trino-main-386.jar,,fault-tolerant-execution-min-task-split-count,"Minimal number of splits for a single fault tolerant task (count based)",false
-386,trino-server-386/lib/trino-main-386.jar,,query.info-url-template,"",false
-386,trino-server-386/lib/trino-main-386.jar,,exchange.page-buffer-client.max-callback-threads,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.krb5.user-mapping.pattern,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.krb5.name-type,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.principal-field,"The claim to use as the principal",false
-386,trino-server-386/lib/trino-main-386.jar,,exchange.max-buffer-size,"",false
-386,trino-server-386/lib/trino-main-386.jar,,query.low-memory-killer.policy,"",false
-386,trino-server-386/lib/trino-main-386.jar,,node-scheduler.optimized-local-scheduling,"",false
-386,trino-server-386/lib/trino-main-386.jar,,task.level-time-multiplier,"Factor that determines the target scheduled time for a level relative to the next",false
-386,trino-server-386/lib/trino-main-386.jar,,dynamic-filtering.large-broadcast.max-size-per-driver,"",false
-386,trino-server-386/lib/trino-main-386.jar,,dynamic-filtering.large-partitioned.max-distinct-values-per-driver,"",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.oidc.discovery.timeout,"OpenID Connect discovery timeout",false
-386,trino-server-386/lib/trino-main-386.jar,,adaptive-partial-aggregation.min-rows,"Minimum number of processed rows before partial aggregation might be adaptively turned off",false
-386,trino-server-386/lib/trino-main-386.jar,,internal-communication.http2.enabled,"Enable the HTTP/2 transport",false
-386,trino-server-386/lib/trino-main-386.jar,,optimizer.push-table-write-through-union,"",false
-386,trino-server-386/lib/trino-main-386.jar,,distributed-index-joins-enabled,"",false
-386,trino-server-386/lib/trino-main-386.jar,,task.task-notification-threads,"Number of threads used for internal task event notifications",false
-386,trino-server-386/lib/trino-main-386.jar,,optimizer.join-reordering-strategy,"The strategy to use for reordering joins",false
-386,trino-server-386/lib/trino-main-386.jar,,filter-and-project-min-output-page-size,"",false
-386,trino-server-386/lib/trino-main-386.jar,,exchange.max-error-duration,"",false
-386,trino-server-386/lib/trino-main-386.jar,,adaptive-partial-aggregation.enabled,"",false
-386,trino-server-386/lib/trino-main-386.jar,,exchange.concurrent-request-multiplier,"",false
-386,trino-server-386/lib/trino-main-386.jar,,retry-delay-scale-factor,"Factor by which retry delay is scaled on subsequent failures",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.jwks-url,"URL of the authorization server's JWKS (JSON Web Key Set) endpoint",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.jwks-url,"URL of the authorization server's JWKS (JSON Web Key Set) endpoint",false
-386,trino-server-386/lib/trino-main-386.jar,,fault-tolerant-execution-target-task-split-count,"Target number of splits for a single fault tolerant task (split weight aware)",false
-386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.user-mapping.pattern,"Regex to match against user name",false
 386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.challenge-timeout,"Maximum duration of OAuth2 authorization challenge",false
 386,trino-server-386/lib/trino-main-386.jar,,re2j.dfa-retries,"",false
 386,trino-server-386/lib/trino-main-386.jar,,cpu-cost-weight,"",false
@@ -1000,3 +928,75 @@ version,jar,plugin,config,description,is_deprecated
 386,trino-server-386/lib/trino-main-386.jar,,optimizer.join-multi-clause-independence-factor,"Scales the strength of independence assumption for selectivity estimates of multi-clause joins",false
 386,trino-server-386/lib/trino-main-386.jar,,web-ui.user,"",false
 386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.max-clock-skew,"Max clock skew between the Authorization Server and the coordinator",false
+386,trino-server-386/lib/trino-main-386.jar,,web-ui.authentication.type,"Authentication type for the web ui",false
+386,trino-server-386/lib/trino-main-386.jar,,task-retry-attempts-per-task,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.oidc.discovery,"Enable OpenID Provider Issuer discovery",false
+386,trino-server-386/lib/trino-main-386.jar,,sql.default-catalog,"",false
+386,trino-server-386/lib/trino-main-386.jar,,query.max-cpu-time,"",false
+386,trino-server-386/lib/trino-main-386.jar,,failure-injection.expiration-period,"Period after which an injected failure is considered expired and will no longer be triggering a failure",false
+386,trino-server-386/lib/trino-main-386.jar,,exchange.acknowledge-pages,"",false
+386,trino-server-386/lib/trino-main-386.jar,,catalog.disabled-catalogs,"",false
+386,trino-server-386/lib/trino-main-386.jar,,task.min-drivers-per-task,"Minimum number of drivers guaranteed to run per task given there is sufficient work to do",false
+386,trino-server-386/lib/trino-main-386.jar,,node-scheduler.network-topology.type,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.oidc.use-userinfo-endpoint,"Use userinfo endpoint from OpenID connect metadata document",false
+386,trino-server-386/lib/trino-main-386.jar,,memory-revoking-threshold,"Revoke memory when memory pool is filled over threshold",false
+386,trino-server-386/lib/trino-main-386.jar,,optimizer.use-mark-distinct,"",false
+386,trino-server-386/lib/trino-main-386.jar,,task.client.timeout,"",false
+386,trino-server-386/lib/trino-main-386.jar,,optimizer.max-reordered-joins,"The maximum number of tables to reorder in cost-based join reordering",false
+386,trino-server-386/lib/trino-main-386.jar,,testing-warning-collector.add-warnings,"Adds a warning each time getWarnings is called",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.jwt.principal-field,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.jwt.required-issuer,"",false
+386,trino-server-386/lib/trino-main-386.jar,,fault-tolerant-execution-task-memory-estimation-quantile,"What quantile of memory usage of completed tasks to look at when estimating memory usage for upcoming tasks",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.insecure.user-mapping.file,"",false
+386,trino-server-386/lib/trino-main-386.jar,,fault-tolerant-execution-preserve-input-partitions-in-write-stage,"Ensure single task reads single hash partitioned input partition for stages which write table data",false
+386,trino-server-386/lib/trino-main-386.jar,,query.max-scan-physical-bytes,"",false
+386,trino-server-386/lib/trino-main-386.jar,,deprecated.legacy-catalog-roles,"Enable legacy role management syntax that assumed all roles are catalog scoped",false
+386,trino-server-386/lib/trino-main-386.jar,,driver.max-page-partitioning-buffer-size,"",false
+386,trino-server-386/lib/trino-main-386.jar,,query.min-schedule-split-batch-size,"",false
+386,trino-server-386/lib/trino-main-386.jar,,task.max-worker-threads,"",false
+386,trino-server-386/lib/trino-main-386.jar,,node-scheduler.network-topology.subnet.cidr-prefix-lengths,"",false
+386,trino-server-386/lib/trino-main-386.jar,,task.max-local-exchange-buffer-size,"",false
+386,trino-server-386/lib/trino-main-386.jar,,query-results.compression-enabled,"",false
+386,trino-server-386/lib/trino-main-386.jar,,node-scheduler.policy,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.access-token-issuer,"The required issuer for access tokens",false
+386,trino-server-386/lib/trino-main-386.jar,,internal-communication.shared-secret,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.insecure.user-mapping.pattern,"",false
+386,trino-server-386/lib/trino-main-386.jar,,optimizer.join-partitioned-build-min-row-count,"Minimum number of join build side rows required to use partitioned join lookup",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.access-token-issuer,"The required issuer for access tokens",false
+386,trino-server-386/lib/trino-main-386.jar,,spill-compression-enabled,"",false
+386,trino-server-386/lib/trino-main-386.jar,,regex-library,"",false
+386,trino-server-386/lib/trino-main-386.jar,,statistics-precalculation-for-pushdown.enabled,"",false
+386,trino-server-386/lib/trino-main-386.jar,,warning-collector.max-warnings,"",false
+386,trino-server-386/lib/trino-main-386.jar,,concurrent-lifespans-per-task,"Experimental: Default number of lifespans that run in parallel on each task when grouped execution is enabled",false
+386,trino-server-386/lib/trino-main-386.jar,,sink.max-buffer-size,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.user-mapping.file,"File containing rules for mapping user",false
+386,trino-server-386/lib/trino-main-386.jar,,retry-initial-delay,"Initial delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt up to 'retry_max_delay'",false
+386,trino-server-386/lib/trino-main-386.jar,,task.info-update-interval,"Interval between updating task data",false
+386,trino-server-386/lib/trino-main-386.jar,,fault-tolerant-execution-min-task-split-count,"Minimal number of splits for a single fault tolerant task (count based)",false
+386,trino-server-386/lib/trino-main-386.jar,,query.info-url-template,"",false
+386,trino-server-386/lib/trino-main-386.jar,,exchange.page-buffer-client.max-callback-threads,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.krb5.user-mapping.pattern,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.krb5.name-type,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.principal-field,"The claim to use as the principal",false
+386,trino-server-386/lib/trino-main-386.jar,,exchange.max-buffer-size,"",false
+386,trino-server-386/lib/trino-main-386.jar,,query.low-memory-killer.policy,"",false
+386,trino-server-386/lib/trino-main-386.jar,,node-scheduler.optimized-local-scheduling,"",false
+386,trino-server-386/lib/trino-main-386.jar,,task.level-time-multiplier,"Factor that determines the target scheduled time for a level relative to the next",false
+386,trino-server-386/lib/trino-main-386.jar,,dynamic-filtering.large-broadcast.max-size-per-driver,"",false
+386,trino-server-386/lib/trino-main-386.jar,,dynamic-filtering.large-partitioned.max-distinct-values-per-driver,"",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.oidc.discovery.timeout,"OpenID Connect discovery timeout",false
+386,trino-server-386/lib/trino-main-386.jar,,adaptive-partial-aggregation.min-rows,"Minimum number of processed rows before partial aggregation might be adaptively turned off",false
+386,trino-server-386/lib/trino-main-386.jar,,internal-communication.http2.enabled,"Enable the HTTP/2 transport",false
+386,trino-server-386/lib/trino-main-386.jar,,optimizer.push-table-write-through-union,"",false
+386,trino-server-386/lib/trino-main-386.jar,,distributed-index-joins-enabled,"",false
+386,trino-server-386/lib/trino-main-386.jar,,task.task-notification-threads,"Number of threads used for internal task event notifications",false
+386,trino-server-386/lib/trino-main-386.jar,,optimizer.join-reordering-strategy,"The strategy to use for reordering joins",false
+386,trino-server-386/lib/trino-main-386.jar,,filter-and-project-min-output-page-size,"",false
+386,trino-server-386/lib/trino-main-386.jar,,exchange.max-error-duration,"",false
+386,trino-server-386/lib/trino-main-386.jar,,adaptive-partial-aggregation.enabled,"",false
+386,trino-server-386/lib/trino-main-386.jar,,exchange.concurrent-request-multiplier,"",false
+386,trino-server-386/lib/trino-main-386.jar,,retry-delay-scale-factor,"Factor by which retry delay is scaled on subsequent failures",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.jwks-url,"URL of the authorization server's JWKS (JSON Web Key Set) endpoint",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.jwks-url,"URL of the authorization server's JWKS (JSON Web Key Set) endpoint",false
+386,trino-server-386/lib/trino-main-386.jar,,fault-tolerant-execution-target-task-split-count,"Target number of splits for a single fault tolerant task (split weight aware)",false
+386,trino-server-386/lib/trino-main-386.jar,,http-server.authentication.oauth2.user-mapping.pattern,"Regex to match against user name",false

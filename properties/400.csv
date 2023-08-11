@@ -30,7 +30,6 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/kinesis/trino-plugin-toolkit-400.jar,kinesis,ldap.ssl.truststore.path,"Path to the PEM or JKS trust store",false
 400,trino-server-400/plugin/kinesis/trino-plugin-toolkit-400.jar,kinesis,ldap.timeout.connect,"Timeout for establishing a connection",false
 400,trino-server-400/plugin/kinesis/trino-plugin-toolkit-400.jar,kinesis,jmx.base-name,"",false
-400,trino-server-400/plugin/clickhouse/trino-base-jdbc-400.jar,clickhouse,keystore-user-credential-name,"",false
 400,trino-server-400/plugin/clickhouse/trino-base-jdbc-400.jar,clickhouse,write.batch-size,"Maximum number of rows to write in a single batch",false
 400,trino-server-400/plugin/clickhouse/trino-base-jdbc-400.jar,clickhouse,keystore-password-credential-name,"",false
 400,trino-server-400/plugin/clickhouse/trino-base-jdbc-400.jar,clickhouse,keystore-password,"",false
@@ -70,6 +69,7 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/clickhouse/trino-base-jdbc-400.jar,clickhouse,metadata.cache-ttl,"Determines how long meta information will be cached",false
 400,trino-server-400/plugin/clickhouse/trino-base-jdbc-400.jar,clickhouse,case-insensitive-name-matching,"",false
 400,trino-server-400/plugin/clickhouse/trino-base-jdbc-400.jar,clickhouse,case-insensitive-name-matching.config-file.refresh-period,"",false
+400,trino-server-400/plugin/clickhouse/trino-base-jdbc-400.jar,clickhouse,keystore-user-credential-name,"",false
 400,trino-server-400/plugin/clickhouse/trino-clickhouse-400.jar,clickhouse,clickhouse.legacy-driver,"Whether to use a legacy driver",false
 400,trino-server-400/plugin/clickhouse/trino-clickhouse-400.jar,clickhouse,clickhouse.map-string-as-varchar,"Map ClickHouse String and FixedString as varchar instead of varbinary",false
 400,trino-server-400/plugin/postgresql/trino-postgresql-400.jar,postgresql,postgresql.experimental.enable-string-pushdown-with-collate,"",false
@@ -100,8 +100,6 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/hudi/trino-hdfs-400.jar,hudi,hive.dfs-timeout,"",false
 400,trino-server-400/plugin/hudi/trino-hdfs-400.jar,hudi,hive.fs.new-directory-permissions,"File system permissions for new directories",false
 400,trino-server-400/plugin/hudi/trino-hdfs-400.jar,hudi,hive.dfs.domain-socket-path,"",false
-400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.s3.endpoint,"",false
-400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.azure.abfs.oauth.secret,"",false
 400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.metastore,"",false
 400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.propagate-table-scan-sorting-properties,"Use sorted table layout to generate more efficient execution plans. May lead to incorrect results if files are not sorted as per table definition.",false
 400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.delegate-transactional-managed-table-location-to-metastore,"When transactional, managed table is created via Trino the location will not be set in request sent to HMS and location will be determined by metastore; if this value is set to true, CREATE TABLE AS queries are not supported.",false
@@ -349,6 +347,8 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.table-statistics-enabled,"Enable use of table statistics",false
 400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.size-based-split-weights-enabled,"",false
 400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.s3.external-id,"External ID for the IAM role trust policy when connecting to S3",false
+400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.s3.endpoint,"",false
+400,trino-server-400/plugin/hudi/trino-hive-400.jar,hudi,hive.azure.abfs.oauth.secret,"",false
 400,trino-server-400/plugin/hudi/trino-hudi-400.jar,hudi,hudi.parquet.use-column-names,"Access Parquet columns using names from the file. If disabled, then columns are accessed using index.Only applicable to Parquet file format.",false
 400,trino-server-400/plugin/hudi/trino-hudi-400.jar,hudi,hudi.minimum-assigned-split-weight,"Minimum weight that a split can be assigned when size based split weights are enabled.",false
 400,trino-server-400/plugin/hudi/trino-hudi-400.jar,hudi,hudi.max-splits-per-second,"Rate at which splits are enqueued for processing. The queue will throttle if this rate limit is breached.",false
@@ -410,7 +410,6 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/resource-group-managers/trino-resource-group-managers-400.jar,resource-group-managers,resource-groups.config-db-user,"Database user name",false
 400,trino-server-400/plugin/resource-group-managers/trino-resource-group-managers-400.jar,resource-group-managers,resource-groups.exact-match-selector-enabled,"",false
 400,trino-server-400/plugin/resource-group-managers/trino-resource-group-managers-400.jar,resource-group-managers,jmx.base-name,"",false
-400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.table-description-cache-ttl,"The cache time for redis table description files",false
 400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.key-delimiter,"Delimiter for separating schema name and table name in the KEY prefix",false
 400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.database-index,"Index of the Redis DB to connect to",false
 400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.default-schema,"The schema name to use in the connector",false
@@ -420,10 +419,11 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.user,"Username for a Redis server",false
 400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.hide-internal-columns,"Whether internal columns are shown in table metadata or not. Default is no",false
 400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.scan-count,"Count parameter for Redis scan command",false
-400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows \"schema:table:*\" format",false
+400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows ""schema:table:*"" format",false
 400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.table-names,"Set of tables known to this connector. For each table, a description file may be present in the catalog folder which describes columns for the given table",false
 400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.max-keys-per-fetch,"Get values associated with the specified number of keys in the command such as MGET(key...)",false
 400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.nodes,"Seed nodes for Redis cluster. At least one must exist",false
+400,trino-server-400/plugin/redis/trino-redis-400.jar,redis,redis.table-description-cache-ttl,"The cache time for redis table description files",false
 400,trino-server-400/plugin/example-http/trino-example-http-400.jar,example-http,metadata-uri,"",false
 400,trino-server-400/plugin/local-file/trino-local-file-400.jar,local-file,trino-logs.http-request-log.pattern,"If log location is a directory this glob is used to match the file names in the directory",false
 400,trino-server-400/plugin/local-file/trino-local-file-400.jar,local-file,trino-logs.http-request-log.location,"Directory or file where http request logs are written",false
@@ -438,7 +438,6 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/oracle/trino-oracle-400.jar,oracle,oracle.connection-pool.max-size,"",false
 400,trino-server-400/plugin/oracle/trino-oracle-400.jar,oracle,oracle.number.default-scale,"Default Trino DECIMAL scale for Oracle NUMBER data type",false
 400,trino-server-400/plugin/oracle/trino-oracle-400.jar,oracle,oracle.synonyms.enabled,"",false
-400,trino-server-400/plugin/delta-lake/trino-delta-lake-400.jar,delta-lake,delta.delete-schema-locations-fallback,"Whether schema locations should be deleted when Trino can't determine whether they contain external files.",false
 400,trino-server-400/plugin/delta-lake/trino-delta-lake-400.jar,delta-lake,delta.max-outstanding-splits,"Target number of buffered splits for each table scan in a query, before the scheduler tries to pause itself",false
 400,trino-server-400/plugin/delta-lake/trino-delta-lake-400.jar,delta-lake,delta.metadata.live-files.cache-ttl,"Caching duration for Delta data file metadata (e.g. table schema, partition info)",false
 400,trino-server-400/plugin/delta-lake/trino-delta-lake-400.jar,delta-lake,delta.unique-table-location,"Use randomized, unique table locations",false
@@ -466,12 +465,12 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/delta-lake/trino-delta-lake-400.jar,delta-lake,delta.metadata.live-files.cache-size,"Maximum in memory cache size for Delta data file metadata (e.g. file path, statistics, partition values). Defaults to 10% of the available heap size.",false
 400,trino-server-400/plugin/delta-lake/trino-delta-lake-400.jar,delta-lake,delta.target-max-file-size,"Target maximum size of written files; the actual size may be larger",false
 400,trino-server-400/plugin/delta-lake/trino-delta-lake-400.jar,delta-lake,delta.max-splits-per-second,"Throttles the maximum number of splits that can be assigned to tasks per second",false
+400,trino-server-400/plugin/delta-lake/trino-delta-lake-400.jar,delta-lake,delta.delete-schema-locations-fallback,"Whether schema locations should be deleted when Trino can't determine whether they contain external files.",false
 400,trino-server-400/plugin/session-property-managers/trino-session-property-managers-400.jar,session-property-managers,session-property-manager.db.url,"",false
 400,trino-server-400/plugin/session-property-managers/trino-session-property-managers-400.jar,session-property-managers,session-property-manager.db.username,"",false
 400,trino-server-400/plugin/session-property-managers/trino-session-property-managers-400.jar,session-property-managers,session-property-manager.db.password,"",false
 400,trino-server-400/plugin/session-property-managers/trino-session-property-managers-400.jar,session-property-managers,session-property-manager.db.refresh-period,"",false
 400,trino-server-400/plugin/session-property-managers/trino-session-property-managers-400.jar,session-property-managers,session-property-manager.config-file,"",false
-400,trino-server-400/plugin/bigquery/trino-bigquery-400.jar,bigquery,bigquery.query-results-cache.enabled,"",false
 400,trino-server-400/plugin/bigquery/trino-bigquery-400.jar,bigquery,bigquery.views-enabled,"Enables the connector to read from views and not only tables",false
 400,trino-server-400/plugin/bigquery/trino-bigquery-400.jar,bigquery,bigquery.channel-pool.max-rpc-per-channel,"",false
 400,trino-server-400/plugin/bigquery/trino-bigquery-400.jar,bigquery,bigquery.case-insensitive-name-matching,"Match dataset and table names case-insensitively",false
@@ -491,6 +490,7 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/bigquery/trino-bigquery-400.jar,bigquery,bigquery.views-cache-ttl,"Duration for which the materialization of a view will be cached and reused",false
 400,trino-server-400/plugin/bigquery/trino-bigquery-400.jar,bigquery,bigquery.parallelism,"The number of partitions to split the data into.",false
 400,trino-server-400/plugin/bigquery/trino-bigquery-400.jar,bigquery,bigquery.credentials-file,"The path to the JSON credentials file",false
+400,trino-server-400/plugin/bigquery/trino-bigquery-400.jar,bigquery,bigquery.query-results-cache.enabled,"",false
 400,trino-server-400/plugin/mongodb/trino-mongodb-400.jar,mongodb,mongodb.required-replica-set,"",false
 400,trino-server-400/plugin/mongodb/trino-mongodb-400.jar,mongodb,mongodb.max-wait-time,"",false
 400,trino-server-400/plugin/mongodb/trino-mongodb-400.jar,mongodb,mongodb.cursor-batch-size,"",false
@@ -583,7 +583,6 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/google-sheets/trino-google-sheets-400.jar,google-sheets,metadata-sheet-id,"Metadata sheet id containing table sheet mapping",false
 400,trino-server-400/plugin/google-sheets/trino-google-sheets-400.jar,google-sheets,sheets-data-expire-after-write,"Sheets data expire after write duration",false
 400,trino-server-400/plugin/google-sheets/trino-google-sheets-400.jar,google-sheets,sheets-data-max-cache-size,"Sheet data max cache size",false
-400,trino-server-400/plugin/kafka/trino-kafka-400.jar,kafka,kafka.confluent-subjects-cache-refresh-interval,"The interval that the topic to subjects cache will be refreshed",false
 400,trino-server-400/plugin/kafka/trino-kafka-400.jar,kafka,kafka.ssl.keystore.location,"The location of the key store file. This can be used for two-way authentication for client",false
 400,trino-server-400/plugin/kafka/trino-kafka-400.jar,kafka,kafka.security-protocol,"Kafka communication security protocol",false
 400,trino-server-400/plugin/kafka/trino-kafka-400.jar,kafka,kafka.table-description-dir,"Folder holding JSON description files for Kafka topics",false
@@ -606,7 +605,7 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/kafka/trino-kafka-400.jar,kafka,kafka.confluent-schema-registry-client-cache-size,"The maximum number of subjects that can be stored in the Confluent Schema Registry client cache",false
 400,trino-server-400/plugin/kafka/trino-kafka-400.jar,kafka,kafka.ssl.truststore.location,"The location of the trust store file",false
 400,trino-server-400/plugin/kafka/trino-kafka-400.jar,kafka,kafka.empty-field-strategy,"How to handle struct types with no fields: ignore, add a boolean field named 'dummy' or fail the query",false
-400,trino-server-400/plugin/cassandra/trino-cassandra-400.jar,cassandra,cassandra.username,"",false
+400,trino-server-400/plugin/kafka/trino-kafka-400.jar,kafka,kafka.confluent-subjects-cache-refresh-interval,"The interval that the topic to subjects cache will be refreshed",false
 400,trino-server-400/plugin/cassandra/trino-cassandra-400.jar,cassandra,cassandra.native-protocol-port,"",false
 400,trino-server-400/plugin/cassandra/trino-cassandra-400.jar,cassandra,cassandra.fetch-size,"",false
 400,trino-server-400/plugin/cassandra/trino-cassandra-400.jar,cassandra,cassandra.tls.truststore-path,"",false
@@ -634,6 +633,7 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/cassandra/trino-cassandra-400.jar,cassandra,cassandra.batch-size,"",false
 400,trino-server-400/plugin/cassandra/trino-cassandra-400.jar,cassandra,cassandra.partition-size-for-batch-select,"",false
 400,trino-server-400/plugin/cassandra/trino-cassandra-400.jar,cassandra,cassandra.speculative-execution.delay,"",false
+400,trino-server-400/plugin/cassandra/trino-cassandra-400.jar,cassandra,cassandra.username,"",false
 400,trino-server-400/plugin/mysql/trino-mysql-400.jar,mysql,mysql.jdbc.use-information-schema,"Value of useInformationSchema MySQL JDBC driver connection property",false
 400,trino-server-400/plugin/mysql/trino-mysql-400.jar,mysql,mysql.max-reconnects,"",false
 400,trino-server-400/plugin/mysql/trino-mysql-400.jar,mysql,mysql.auto-reconnect,"",false
@@ -643,7 +643,7 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/sqlserver/trino-sqlserver-400.jar,sqlserver,sqlserver.snapshot-isolation.disabled,"Disables automatic use of snapshot isolation for transactions issued by Trino in SQL Server",false
 400,trino-server-400/plugin/http-event-listener/trino-http-event-listener-400.jar,http-event-listener,http-event-listener.connect-backoff-base,"Base used for exponential backoff when retying on server error. Formula is attemptDelay = retryDelay * backoffBase ^ attemptCount. Attempt counting starts from 0. Leave empty or set to 1 to disable.",false
 400,trino-server-400/plugin/http-event-listener/trino-http-event-listener-400.jar,http-event-listener,http-event-listener.connect-max-delay,"Maximum delay between retries. This should be used with exponential backoff.",false
-400,trino-server-400/plugin/http-event-listener/trino-http-event-listener-400.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: \"Header-Name-1: header value 1, Header-Value-2: header value 2, ...\" ",false
+400,trino-server-400/plugin/http-event-listener/trino-http-event-listener-400.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: ""Header-Name-1: header value 1, Header-Value-2: header value 2, ..."" ",false
 400,trino-server-400/plugin/http-event-listener/trino-http-event-listener-400.jar,http-event-listener,http-event-listener.connect-ingest-uri,"URL of receiving server. Explicitly set the scheme https:// to use symmetric encryption",false
 400,trino-server-400/plugin/http-event-listener/trino-http-event-listener-400.jar,http-event-listener,http-event-listener.connect-retry-delay,"Delay in seconds between retries",false
 400,trino-server-400/plugin/http-event-listener/trino-http-event-listener-400.jar,http-event-listener,http-event-listener.log-split,"Will log io.trino.spi.eventlistener.SplitCompletedEvent",false
@@ -684,7 +684,6 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/prometheus/trino-prometheus-400.jar,prometheus,prometheus.query.chunk.size.duration,"The duration of each query to Prometheus",false
 400,trino-server-400/plugin/prometheus/trino-prometheus-400.jar,prometheus,prometheus.case-insensitive-name-matching,"Where to match the prometheus metric name case insensitively ",false
 400,trino-server-400/plugin/prometheus/trino-prometheus-400.jar,prometheus,prometheus.uri,"Where to find Prometheus coordinator host",false
-400,trino-server-400/plugin/exchange-filesystem/trino-exchange-filesystem-400.jar,exchange-filesystem,exchange.max-page-storage-size,"Max storage size of a page written to a sink, including the page itself and its size represented as an int",false
 400,trino-server-400/plugin/exchange-filesystem/trino-exchange-filesystem-400.jar,exchange-filesystem,exchange.s3.max-error-retries,"",false
 400,trino-server-400/plugin/exchange-filesystem/trino-exchange-filesystem-400.jar,exchange-filesystem,exchange.s3.async-client-connection-acquisition-timeout,"",false
 400,trino-server-400/plugin/exchange-filesystem/trino-exchange-filesystem-400.jar,exchange-filesystem,exchange.gcs.json-key,"Your Google Cloud Platform service account key in JSON format. Not to be set together with `exchange.gcs.json-key-file-path`",false
@@ -713,7 +712,7 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/exchange-filesystem/trino-exchange-filesystem-400.jar,exchange-filesystem,exchange.s3.aws-access-key,"",false
 400,trino-server-400/plugin/exchange-filesystem/trino-exchange-filesystem-400.jar,exchange-filesystem,exchange.s3.external-id,"External ID for the IAM role trust policy when connecting to S3",false
 400,trino-server-400/plugin/exchange-filesystem/trino-exchange-filesystem-400.jar,exchange-filesystem,exchange.s3.async-client-max-pending-connection-acquires,"",false
-400,trino-server-400/plugin/elasticsearch/trino-elasticsearch-400.jar,elasticsearch,elasticsearch.scroll-timeout,"Scroll timeout",false
+400,trino-server-400/plugin/exchange-filesystem/trino-exchange-filesystem-400.jar,exchange-filesystem,exchange.max-page-storage-size,"Max storage size of a page written to a sink, including the page itself and its size represented as an int",false
 400,trino-server-400/plugin/elasticsearch/trino-elasticsearch-400.jar,elasticsearch,elasticsearch.tls.verify-hostnames,"",false
 400,trino-server-400/plugin/elasticsearch/trino-elasticsearch-400.jar,elasticsearch,elasticsearch.aws.external-id,"Optional external id to pass to AWS STS while assuming a role",false
 400,trino-server-400/plugin/elasticsearch/trino-elasticsearch-400.jar,elasticsearch,elasticsearch.backoff-max-delay,"Maximum delay to wait between backpressure retries",false
@@ -742,12 +741,9 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/plugin/elasticsearch/trino-elasticsearch-400.jar,elasticsearch,elasticsearch.http-thread-count,"Number of threads handling HTTP connections to Elasticsearch",false
 400,trino-server-400/plugin/elasticsearch/trino-elasticsearch-400.jar,elasticsearch,elasticsearch.request-timeout,"Elasticsearch request timeout",false
 400,trino-server-400/plugin/elasticsearch/trino-elasticsearch-400.jar,elasticsearch,elasticsearch.tls.truststore-password,"",false
+400,trino-server-400/plugin/elasticsearch/trino-elasticsearch-400.jar,elasticsearch,elasticsearch.scroll-timeout,"Scroll timeout",false
 400,trino-server-400/plugin/singlestore/trino-singlestore-400.jar,singlestore,singlestore.connection-timeout,"",false
 400,trino-server-400/plugin/singlestore/trino-singlestore-400.jar,singlestore,singlestore.auto-reconnect,"",false
-400,trino-server-400/lib/trino-main-400.jar,,pages-index.eager-compaction-enabled,"",false
-400,trino-server-400/lib/trino-main-400.jar,,query.info-url-template,"",false
-400,trino-server-400/lib/trino-main-400.jar,,query.execution-policy,"",false
-400,trino-server-400/lib/trino-main-400.jar,,http-server.authentication.oauth2.client-secret,"Client secret",false
 400,trino-server-400/lib/trino-main-400.jar,,legacy.allow-set-view-authorization,"For security reasons ALTER VIEW SET AUTHORIZATION is disabled for SECURITY DEFINER; setting this option to true will re-enable this functionality",false
 400,trino-server-400/lib/trino-main-400.jar,,retry-delay-scale-factor,"Factor by which retry delay is scaled on subsequent failures",false
 400,trino-server-400/lib/trino-main-400.jar,,cpu-cost-weight,"",false
@@ -1061,3 +1057,7 @@ version,jar,plugin,config,description,is_deprecated
 400,trino-server-400/lib/trino-main-400.jar,,exchange.deduplication-buffer-size,"",false
 400,trino-server-400/lib/trino-main-400.jar,,http-server.authentication.insecure.user-mapping.pattern,"",false
 400,trino-server-400/lib/trino-main-400.jar,,query.max-queued-queries,"",false
+400,trino-server-400/lib/trino-main-400.jar,,pages-index.eager-compaction-enabled,"",false
+400,trino-server-400/lib/trino-main-400.jar,,query.info-url-template,"",false
+400,trino-server-400/lib/trino-main-400.jar,,query.execution-policy,"",false
+400,trino-server-400/lib/trino-main-400.jar,,http-server.authentication.oauth2.client-secret,"Client secret",false

@@ -1,4 +1,20 @@
 version,jar,plugin,config,description,is_deprecated
+421,trino-server-421/lib/trino-main-421.jar,,catalog.config-dir,"",false
+421,trino-server-421/lib/trino-main-421.jar,,http-server.authentication.jwt.required-issuer,"",false
+421,trino-server-421/lib/trino-main-421.jar,,query.max-memory-per-node,"",false
+421,trino-server-421/lib/trino-main-421.jar,,optimizer.enable-intermediate-aggregations,"",false
+421,trino-server-421/lib/trino-main-421.jar,,catalog.store,"",false
+421,trino-server-421/lib/trino-main-421.jar,,dynamic-filtering.large.max-size-per-driver,"",false
+421,trino-server-421/lib/trino-main-421.jar,,plugin.dir,"",false
+421,trino-server-421/lib/trino-main-421.jar,,task.writer-count,"Number of local parallel table writers per task when prefer partitioning and task writer scaling are not used",false
+421,trino-server-421/lib/trino-main-421.jar,,exchange.client-threads,"",false
+421,trino-server-421/lib/trino-main-421.jar,,fault-tolerant-execution-max-partition-count,"Maximum number of partitions for distributed joins and aggregations executed with fault tolerant execution enabled",false
+421,trino-server-421/lib/trino-main-421.jar,,fault-tolerant-execution-max-task-split-count,"Maximal number of splits for a single fault tolerant task (count based)",false
+421,trino-server-421/lib/trino-main-421.jar,,http-server.authentication.krb5.keytab,"",false
+421,trino-server-421/lib/trino-main-421.jar,,node-scheduler.allowed-no-matching-node-period,"How long scheduler should wait before failing a query for which hard task requirements (e.g. node exposing specific catalog) cannot be satisfied",false
+421,trino-server-421/lib/trino-main-421.jar,,http-server.authentication.jwt.key-file,"",false
+421,trino-server-421/lib/trino-main-421.jar,,shutdown.grace-period,"",false
+421,trino-server-421/lib/trino-main-421.jar,,internal-communication.https.truststore.path,"",false
 421,trino-server-421/lib/trino-main-421.jar,,fault-tolerant-execution-arbitrary-distribution-compute-task-target-size-max,"Max target input size for non-writer task of arbitrary distribution of fault-tolerant execution",false
 421,trino-server-421/lib/trino-main-421.jar,,spiller-threads,"",false
 421,trino-server-421/lib/trino-main-421.jar,,task.scale-writers.max-writer-count,"Maximum number of writers per task up to which scaling will happen if task.scale-writers.enabled is set",false
@@ -336,22 +352,6 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/lib/trino-main-421.jar,,deprecated.omit-datetime-type-precision,"Enable compatibility mode for legacy clients when rendering datetime type names with default precision",false
 421,trino-server-421/lib/trino-main-421.jar,,query.max-length,"",false
 421,trino-server-421/lib/trino-main-421.jar,,catalog.config-dir,"",false
-421,trino-server-421/lib/trino-main-421.jar,,catalog.config-dir,"",false
-421,trino-server-421/lib/trino-main-421.jar,,http-server.authentication.jwt.required-issuer,"",false
-421,trino-server-421/lib/trino-main-421.jar,,query.max-memory-per-node,"",false
-421,trino-server-421/lib/trino-main-421.jar,,optimizer.enable-intermediate-aggregations,"",false
-421,trino-server-421/lib/trino-main-421.jar,,catalog.store,"",false
-421,trino-server-421/lib/trino-main-421.jar,,dynamic-filtering.large.max-size-per-driver,"",false
-421,trino-server-421/lib/trino-main-421.jar,,plugin.dir,"",false
-421,trino-server-421/lib/trino-main-421.jar,,task.writer-count,"Number of local parallel table writers per task when prefer partitioning and task writer scaling are not used",false
-421,trino-server-421/lib/trino-main-421.jar,,exchange.client-threads,"",false
-421,trino-server-421/lib/trino-main-421.jar,,fault-tolerant-execution-max-partition-count,"Maximum number of partitions for distributed joins and aggregations executed with fault tolerant execution enabled",false
-421,trino-server-421/lib/trino-main-421.jar,,fault-tolerant-execution-max-task-split-count,"Maximal number of splits for a single fault tolerant task (count based)",false
-421,trino-server-421/lib/trino-main-421.jar,,http-server.authentication.krb5.keytab,"",false
-421,trino-server-421/lib/trino-main-421.jar,,node-scheduler.allowed-no-matching-node-period,"How long scheduler should wait before failing a query for which hard task requirements (e.g. node exposing specific catalog) cannot be satisfied",false
-421,trino-server-421/lib/trino-main-421.jar,,http-server.authentication.jwt.key-file,"",false
-421,trino-server-421/lib/trino-main-421.jar,,shutdown.grace-period,"",false
-421,trino-server-421/lib/trino-main-421.jar,,internal-communication.https.truststore.path,"",false
 421,trino-server-421/lib/trino-plugin-toolkit-421.jar,,ldap.ssl.truststore.password,"Password for the trust store",false
 421,trino-server-421/lib/trino-plugin-toolkit-421.jar,,ldap.timeout.read,"Timeout for reading data from LDAP",false
 421,trino-server-421/lib/trino-plugin-toolkit-421.jar,,jmx.base-name,"",false
@@ -365,6 +365,10 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/lib/trino-plugin-toolkit-421.jar,,ldap.ssl.truststore.path,"Path to the PEM or JKS trust store",false
 421,trino-server-421/lib/trino-plugin-toolkit-421.jar,,security.json-pointer,"JSON pointer (RFC 6901) to mappings inside JSON config",false
 421,trino-server-421/lib/trino-plugin-toolkit-421.jar,,ldap.timeout.connect,"Timeout for establishing a connection",false
+421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,dynamic-filtering.enabled,"Wait for dynamic filters before starting JDBC query",false
+421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,jdbc-types-mapped-to-varchar,"",false
+421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,join-pushdown.enabled,"Enable join pushdown",false
+421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,connection-user,"user name for JDBC client",false
 421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,metadata.cache-maximum-size,"Maximum number of objects stored in the metadata cache",false
 421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,connection-url,"",false
 421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,insert.non-transactional-insert.enabled,"Do not create temporary table during insert. This means that the write operation can fail and leave the table in an inconsistent state.",false
@@ -406,10 +410,8 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,experimental.join-pushdown.automatic.max-join-to-tables-ratio,"If estimated join output size is greater than or equal to ratio * sum of table sizes, then join pushdown will not be performed",false
 421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,write.batch-size,"Maximum number of rows to write in a single batch",false
 421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,domain-compaction-threshold,"Maximum ranges to allow in a tuple domain without compacting it",false
-421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,dynamic-filtering.enabled,"Wait for dynamic filters before starting JDBC query",false
-421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,jdbc-types-mapped-to-varchar,"",false
-421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,join-pushdown.enabled,"Enable join pushdown",false
-421,trino-server-421/plugin/druid/trino-base-jdbc-421.jar,druid,connection-user,"user name for JDBC client",false
+421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.broker.authentication.password,"",false
+421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.grpc.proxy-uri,"",false
 421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.controller.authentication.type,"",false
 421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.grpc.tls.ssl-provider,"",false
 421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.target-segment-page-size,"",false
@@ -442,15 +444,13 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.prefer-broker-queries,"",false
 421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.broker.authentication.user,"",false
 421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.grpc.tls.keystore-path,"",false
-421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.broker.authentication.password,"",false
-421,trino-server-421/plugin/pinot/trino-pinot-421.jar,pinot,pinot.grpc.proxy-uri,"",false
+421,trino-server-421/plugin/accumulo/trino-accumulo-421.jar,accumulo,accumulo.username,"Sets the user to use when interacting with Accumulo. This user will require administrative permissions",false
 421,trino-server-421/plugin/accumulo/trino-accumulo-421.jar,accumulo,accumulo.cardinality.cache.size,"Sets the cardinality cache size",false
 421,trino-server-421/plugin/accumulo/trino-accumulo-421.jar,accumulo,accumulo.instance,"Accumulo instance name",false
 421,trino-server-421/plugin/accumulo/trino-accumulo-421.jar,accumulo,accumulo.zookeepers,"ZooKeeper quorum connect string for Accumulo",false
 421,trino-server-421/plugin/accumulo/trino-accumulo-421.jar,accumulo,accumulo.password,"Sets the password for the configured user",false
 421,trino-server-421/plugin/accumulo/trino-accumulo-421.jar,accumulo,accumulo.cardinality.cache.expire.duration,"Sets the cardinality cache expiration",false
 421,trino-server-421/plugin/accumulo/trino-accumulo-421.jar,accumulo,accumulo.zookeeper.metadata.root,"Sets the root znode for metadata storage",false
-421,trino-server-421/plugin/accumulo/trino-accumulo-421.jar,accumulo,accumulo.username,"Sets the user to use when interacting with Accumulo. This user will require administrative permissions",false
 421,trino-server-421/plugin/redshift/trino-redshift-421.jar,redshift,redshift.use-legacy-type-mapping,"",false
 421,trino-server-421/plugin/http-event-listener/trino-http-event-listener-421.jar,http-event-listener,http-event-listener.connect-max-delay,"Maximum delay between retries. This should be used with exponential backoff.",false
 421,trino-server-421/plugin/http-event-listener/trino-http-event-listener-421.jar,http-event-listener,http-event-listener.connect-backoff-base,"Base used for exponential backoff when retying on server error. Formula is attemptDelay = retryDelay * backoffBase ^ attemptCount. Attempt counting starts from 0. Leave empty or set to 1 to disable.",false
@@ -460,7 +460,7 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/http-event-listener/trino-http-event-listener-421.jar,http-event-listener,http-event-listener.log-split,"Will log io.trino.spi.eventlistener.SplitCompletedEvent",false
 421,trino-server-421/plugin/http-event-listener/trino-http-event-listener-421.jar,http-event-listener,http-event-listener.connect-retry-delay,"Delay in seconds between retries",false
 421,trino-server-421/plugin/http-event-listener/trino-http-event-listener-421.jar,http-event-listener,http-event-listener.connect-ingest-uri,"URL of receiving server. Explicitly set the scheme https:// to use symmetric encryption",false
-421,trino-server-421/plugin/http-event-listener/trino-http-event-listener-421.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: \"Header-Name-1: header value 1, Header-Value-2: header value 2, ...\" ",false
+421,trino-server-421/plugin/http-event-listener/trino-http-event-listener-421.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: ""Header-Name-1: header value 1, Header-Value-2: header value 2, ..."" ",false
 421,trino-server-421/plugin/kudu/trino-kudu-421.jar,kudu,kudu.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters",false
 421,trino-server-421/plugin/kudu/trino-kudu-421.jar,kudu,kudu.authentication.client.keytab,"Kudu Kerberos client keytab location",false
 421,trino-server-421/plugin/kudu/trino-kudu-421.jar,kudu,kudu.authentication.config,"Kudu Kerberos service configuration file",false
@@ -473,6 +473,7 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/kudu/trino-kudu-421.jar,kudu,kudu.schema-emulation.enabled,"",false
 421,trino-server-421/plugin/kudu/trino-kudu-421.jar,kudu,kudu.authentication.client.principal,"Kudu Kerberos client principal",false
 421,trino-server-421/plugin/kudu/trino-kudu-421.jar,kudu,kudu.schema-emulation.prefix,"",false
+421,trino-server-421/plugin/google-sheets/trino-google-sheets-421.jar,google-sheets,gsheets.data-cache-ttl,"Sheets data expire after write duration",false
 421,trino-server-421/plugin/google-sheets/trino-google-sheets-421.jar,google-sheets,gsheets.credentials-path,"Credential file path to google service account",false
 421,trino-server-421/plugin/google-sheets/trino-google-sheets-421.jar,google-sheets,gsheets.max-data-cache-size,"Sheet data max cache size",false
 421,trino-server-421/plugin/google-sheets/trino-google-sheets-421.jar,google-sheets,gsheets.write-timeout,"Timeout when writing to Google Sheets API",false
@@ -480,7 +481,7 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/google-sheets/trino-google-sheets-421.jar,google-sheets,gsheets.credentials-key,"The base64 encoded credentials key",false
 421,trino-server-421/plugin/google-sheets/trino-google-sheets-421.jar,google-sheets,gsheets.connection-timeout,"Timeout when connection to Google Sheets API",false
 421,trino-server-421/plugin/google-sheets/trino-google-sheets-421.jar,google-sheets,gsheets.read-timeout,"Timeout when reading from Google Sheets API",false
-421,trino-server-421/plugin/google-sheets/trino-google-sheets-421.jar,google-sheets,gsheets.data-cache-ttl,"Sheets data expire after write duration",false
+421,trino-server-421/plugin/elasticsearch/trino-elasticsearch-421.jar,elasticsearch,elasticsearch.aws.external-id,"Optional external id to pass to AWS STS while assuming a role",false
 421,trino-server-421/plugin/elasticsearch/trino-elasticsearch-421.jar,elasticsearch,elasticsearch.tls.verify-hostnames,"",false
 421,trino-server-421/plugin/elasticsearch/trino-elasticsearch-421.jar,elasticsearch,elasticsearch.aws.access-key,"",false
 421,trino-server-421/plugin/elasticsearch/trino-elasticsearch-421.jar,elasticsearch,elasticsearch.default-schema-name,"Default schema name to use",false
@@ -508,7 +509,6 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/elasticsearch/trino-elasticsearch-421.jar,elasticsearch,elasticsearch.tls.truststore-path,"",false
 421,trino-server-421/plugin/elasticsearch/trino-elasticsearch-421.jar,elasticsearch,elasticsearch.security,"",false
 421,trino-server-421/plugin/elasticsearch/trino-elasticsearch-421.jar,elasticsearch,elasticsearch.port,"",false
-421,trino-server-421/plugin/elasticsearch/trino-elasticsearch-421.jar,elasticsearch,elasticsearch.aws.external-id,"Optional external id to pass to AWS STS while assuming a role",false
 421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.password,"Password for a password-protected Redis server",false
 421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.connect-timeout,"Timeout to connect to Redis",false
 421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.table-description-dir,"Folder holding the JSON description files for Redis values",false
@@ -519,10 +519,11 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.nodes,"Seed nodes for Redis cluster. At least one must exist",false
 421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.max-keys-per-fetch,"Get values associated with the specified number of keys in the command such as MGET(key...)",false
 421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.table-names,"Set of tables known to this connector. For each table, a description file may be present in the catalog folder which describes columns for the given table",false
-421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows \"schema:table:*\" format",false
+421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows ""schema:table:*"" format",false
 421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.scan-count,"Count parameter for Redis scan command",false
 421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.hide-internal-columns,"Whether internal columns are shown in table metadata or not. Default is no",false
 421,trino-server-421/plugin/redis/trino-redis-421.jar,redis,redis.user,"Username for a Redis server",false
+421,trino-server-421/plugin/password-authenticators/trino-password-authenticators-421.jar,password-authenticators,ldap.group-auth-pattern,"Custom group authorization check query. Example: &(objectClass=user)(memberOf=cn=group)(user=username)",false
 421,trino-server-421/plugin/password-authenticators/trino-password-authenticators-421.jar,password-authenticators,ldap.cache-ttl,"",false
 421,trino-server-421/plugin/password-authenticators/trino-password-authenticators-421.jar,password-authenticators,file.auth-token-cache.max-size,"Max number of cached authenticated passwords",false
 421,trino-server-421/plugin/password-authenticators/trino-password-authenticators-421.jar,password-authenticators,salesforce.cache-size,"Maximum size of the cache that holds authenticated users.  Default is 4096 entries.",false
@@ -535,7 +536,6 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/password-authenticators/trino-password-authenticators-421.jar,password-authenticators,file.refresh-period,"How often to reload the password file",false
 421,trino-server-421/plugin/password-authenticators/trino-password-authenticators-421.jar,password-authenticators,ldap.user-base-dn,"Base distinguished name of the user. Example: dc=example,dc=com",false
 421,trino-server-421/plugin/password-authenticators/trino-password-authenticators-421.jar,password-authenticators,salesforce.cache-expire-duration,"Expire duration for an entry in cache since last write.",false
-421,trino-server-421/plugin/password-authenticators/trino-password-authenticators-421.jar,password-authenticators,ldap.group-auth-pattern,"Custom group authorization check query. Example: &(objectClass=user)(memberOf=cn=group)(user=username)",false
 421,trino-server-421/plugin/local-file/trino-local-file-421.jar,local-file,trino-logs.http-request-log.location,"Directory or file where http request logs are written",false
 421,trino-server-421/plugin/local-file/trino-local-file-421.jar,local-file,trino-logs.http-request-log.pattern,"If log location is a directory this glob is used to match the file names in the directory",false
 421,trino-server-421/plugin/singlestore/trino-singlestore-421.jar,singlestore,singlestore.auto-reconnect,"",false
@@ -543,6 +543,9 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/memory/trino-memory-421.jar,memory,memory.max-data-per-node,"",false
 421,trino-server-421/plugin/memory/trino-memory-421.jar,memory,memory.enable-lazy-dynamic-filtering,"",false
 421,trino-server-421/plugin/memory/trino-memory-421.jar,memory,memory.splits-per-node,"",false
+421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,backup.http.uri,"Backup service base URI",false
+421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,backup.threads,"Maximum number of shards to backup at once",false
+421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,storage.max-shard-size,"Approximate maximum uncompressed size of a shard",false
 421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,storage.max-shard-rows,"Approximate maximum number of rows per shard",false
 421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,storage.compaction-enabled,"",false
 421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,raptor.max-completed-transaction-age,"Maximum time a record of a successful or failed transaction is kept",false
@@ -586,9 +589,6 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,raptor.reassignment-delay,"Minimum delay before allowing reassignments for a node",false
 421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,raptor.backup-cleaner-interval,"How often to check for backup shards that need to be cleaned up",false
 421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,storage.orc.tiny-stripe-threshold,"",false
-421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,backup.http.uri,"Backup service base URI",false
-421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,backup.threads,"Maximum number of shards to backup at once",false
-421,trino-server-421/plugin/raptor-legacy/trino-raptor-legacy-421.jar,raptor-legacy,storage.max-shard-size,"Approximate maximum uncompressed size of a shard",false
 421,trino-server-421/plugin/jmx/trino-jmx-421.jar,jmx,jmx.dump-tables,"",false
 421,trino-server-421/plugin/jmx/trino-jmx-421.jar,jmx,jmx.max-entries,"",false
 421,trino-server-421/plugin/jmx/trino-jmx-421.jar,jmx,jmx.dump-period,"",false
@@ -619,6 +619,9 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/atop/trino-atop-421.jar,atop,atop.concurrent-readers-per-node,"",false
 421,trino-server-421/plugin/hive/trino-filesystem-manager-421.jar,hive,fs.hadoop.enabled,"",false
 421,trino-server-421/plugin/hive/trino-filesystem-manager-421.jar,hive,fs.native-s3.enabled,"",false
+421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.metastore.glue.catalogid,"Hive Glue metastore catalog id",false
+421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.orc.writer.validation-mode,"Level of detail in ORC validation. Lower levels require more memory.",false
+421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,parquet.max-read-block-size,"",false
 421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.skip-target-cleanup-on-rollback,"Skip deletion of target directories when a metastore operation fails",false
 421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.metastore.glue.endpoint-url,"Glue API endpoint URL",false
 421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.validate-bucketing,"Verify that data is bucketed correctly when reading",false
@@ -819,9 +822,7 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.rcfile.writer.validate,"Validate RCFile after write by re-reading the whole file",false
 421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.metastore.thrift.client.ssl.trust-certificate-password,"Password for the trust store",false
 421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.minimum-assigned-split-weight,"Minimum weight that a split can be assigned when size based split weights are enabled",false
-421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.metastore.glue.catalogid,"Hive Glue metastore catalog id",false
-421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,hive.orc.writer.validation-mode,"Level of detail in ORC validation. Lower levels require more memory.",false
-421,trino-server-421/plugin/hive/trino-hive-421.jar,hive,parquet.max-read-block-size,"",false
+421,trino-server-421/plugin/hive/trino-filesystem-s3-421.jar,hive,s3.role-session-name,"Role session name to use when connecting to S3",false
 421,trino-server-421/plugin/hive/trino-filesystem-s3-421.jar,hive,s3.requester-pays,"",false
 421,trino-server-421/plugin/hive/trino-filesystem-s3-421.jar,hive,s3.sse.kms-key-id,"KMS Key ID to use for S3 server-side encryption with KMS-managed key",false
 421,trino-server-421/plugin/hive/trino-filesystem-s3-421.jar,hive,s3.streaming.part-size,"Part size for S3 streaming upload",false
@@ -838,7 +839,9 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/hive/trino-filesystem-s3-421.jar,hive,s3.aws-secret-key,"",false
 421,trino-server-421/plugin/hive/trino-filesystem-s3-421.jar,hive,s3.path-style-access,"Use path-style access for all requests to S3",false
 421,trino-server-421/plugin/hive/trino-filesystem-s3-421.jar,hive,s3.sts.endpoint,"",false
-421,trino-server-421/plugin/hive/trino-filesystem-s3-421.jar,hive,s3.role-session-name,"Role session name to use when connecting to S3",false
+421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.dfs.connect.timeout,"",false
+421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.s3.max-backoff-time,"",false
+421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.azure.adl-client-id,"",false
 421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.gcs.json-key-file-path,"JSON key file used to access Google Cloud Storage",false
 421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.s3.proxy.protocol,"",false
 421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.cache.read-mode,"",false
@@ -928,9 +931,7 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.cache.enabled,"Experimental: Cache HDFS file segments to distributed local storage",false
 421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.s3-file-system-type,"",false
 421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.s3.proxy.password,"",false
-421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.dfs.connect.timeout,"",false
-421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.s3.max-backoff-time,"",false
-421,trino-server-421/plugin/hive/trino-hdfs-421.jar,hive,hive.azure.adl-client-id,"",false
+421,trino-server-421/plugin/delta-lake/trino-delta-lake-421.jar,delta-lake,delta.minimum-assigned-split-weight,"Minimum weight that a split can be assigned",false
 421,trino-server-421/plugin/delta-lake/trino-delta-lake-421.jar,delta-lake,delta.checkpoint-row-statistics-writing.enabled,"",false
 421,trino-server-421/plugin/delta-lake/trino-delta-lake-421.jar,delta-lake,delta.security,"Authorization checks for Delta Lake connector",false
 421,trino-server-421/plugin/delta-lake/trino-delta-lake-421.jar,delta-lake,delta.metadata.cache-size,"Maximum number of Delta table metadata entries to cache",false
@@ -962,7 +963,6 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/delta-lake/trino-delta-lake-421.jar,delta-lake,delta.projection-pushdown-enabled,"Read only required fields from a row type",false
 421,trino-server-421/plugin/delta-lake/trino-delta-lake-421.jar,delta-lake,delta.hive-catalog-name,"Catalog to redirect to when a Hive table is referenced",false
 421,trino-server-421/plugin/delta-lake/trino-delta-lake-421.jar,delta-lake,delta.table-statistics-enabled,"Expose table statistics",false
-421,trino-server-421/plugin/delta-lake/trino-delta-lake-421.jar,delta-lake,delta.minimum-assigned-split-weight,"Minimum weight that a split can be assigned",false
 421,trino-server-421/plugin/oracle/trino-oracle-421.jar,oracle,oracle.remarks-reporting.enabled,"",false
 421,trino-server-421/plugin/oracle/trino-oracle-421.jar,oracle,oracle.synonyms.enabled,"",false
 421,trino-server-421/plugin/oracle/trino-oracle-421.jar,oracle,oracle.number.default-scale,"Default Trino DECIMAL scale for Oracle NUMBER data type",false
@@ -1016,6 +1016,7 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/hudi/trino-hudi-421.jar,hudi,hudi.split-generator-parallelism,"Number of threads to generate splits from partitions.",false
 421,trino-server-421/plugin/hudi/trino-hudi-421.jar,hudi,hudi.standard-split-weight-size,"The split size corresponding to the standard weight (1.0) when size based split weights are enabled.",false
 421,trino-server-421/plugin/hudi/trino-hudi-421.jar,hudi,hudi.minimum-assigned-split-weight,"Minimum weight that a split can be assigned when size based split weights are enabled.",false
+421,trino-server-421/plugin/iceberg/trino-iceberg-421.jar,iceberg,iceberg.rest-catalog.session,"Type of REST catalog sessionType to use when communicating with REST catalog Server",false
 421,trino-server-421/plugin/iceberg/trino-iceberg-421.jar,iceberg,iceberg.rest-catalog.uri,"The URI to the REST server",false
 421,trino-server-421/plugin/iceberg/trino-iceberg-421.jar,iceberg,iceberg.use-file-size-from-metadata,"",false
 421,trino-server-421/plugin/iceberg/trino-iceberg-421.jar,iceberg,iceberg.rest-catalog.oauth2.token,"The Bearer token which will be used for interactions with the server",false
@@ -1053,12 +1054,13 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/iceberg/trino-iceberg-421.jar,iceberg,iceberg.target-max-file-size,"Target maximum size of written files; the actual size may be larger",false
 421,trino-server-421/plugin/iceberg/trino-iceberg-421.jar,iceberg,iceberg.rest-catalog.oauth2.credential,"The credential to exchange for a token in the OAuth2 client credentials flow with the server",false
 421,trino-server-421/plugin/iceberg/trino-iceberg-421.jar,iceberg,iceberg.unique-table-location,"Use randomized, unique table locations",false
-421,trino-server-421/plugin/iceberg/trino-iceberg-421.jar,iceberg,iceberg.rest-catalog.session,"Type of REST catalog sessionType to use when communicating with REST catalog Server",false
 421,trino-server-421/plugin/example-http/trino-example-http-421.jar,example-http,metadata-uri,"",false
 421,trino-server-421/plugin/sqlserver/trino-sqlserver-421.jar,sqlserver,sqlserver.bulk-copy-for-write.enabled,"Use SQL Server Bulk Copy API for writes",false
 421,trino-server-421/plugin/sqlserver/trino-sqlserver-421.jar,sqlserver,sqlserver.bulk-copy-for-write.lock-destination-table,"Obtain a Bulk Update lock on destination table on write",false
 421,trino-server-421/plugin/sqlserver/trino-sqlserver-421.jar,sqlserver,sqlserver.snapshot-isolation.disabled,"Disables automatic use of snapshot isolation for transactions issued by Trino in SQL Server",false
 421,trino-server-421/plugin/sqlserver/trino-sqlserver-421.jar,sqlserver,sqlserver.experimental.stored-procedure-table-function-enabled,"Allows accessing Stored procedure as a table function",false
+421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.rpc-timeout,"",false
+421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.rpc-retry-delay-multiplier,"",false
 421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.rpc-proxy.keystore-password,"Password to a Java keystore file",false
 421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.query-results-cache.enabled,"",false
 421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.case-insensitive-name-matching,"Match dataset and table names case-insensitively",false
@@ -1094,8 +1096,7 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.job.label-name,"Adds label with the given name to the BigQuery job",false
 421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.rpc-proxy.uri,"Proxy URI (host and port only)",false
 421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.view-materialization-project,"The project where the materialized view is going to be created",false
-421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.rpc-timeout,"",false
-421,trino-server-421/plugin/bigquery/trino-bigquery-421.jar,bigquery,bigquery.rpc-retry-delay-multiplier,"",false
+421,trino-server-421/plugin/mongodb/trino-mongodb-421.jar,mongodb,mongodb.cursor-batch-size,"",false
 421,trino-server-421/plugin/mongodb/trino-mongodb-421.jar,mongodb,mongodb.connection-timeout,"",false
 421,trino-server-421/plugin/mongodb/trino-mongodb-421.jar,mongodb,mongodb.max-connection-idle-time,"",false
 421,trino-server-421/plugin/mongodb/trino-mongodb-421.jar,mongodb,mongodb.schema-collection,"",false
@@ -1115,7 +1116,6 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/mongodb/trino-mongodb-421.jar,mongodb,mongodb.min-connections-per-host,"",false
 421,trino-server-421/plugin/mongodb/trino-mongodb-421.jar,mongodb,mongodb.socket-timeout,"",false
 421,trino-server-421/plugin/mongodb/trino-mongodb-421.jar,mongodb,mongodb.tls.truststore-password,"",false
-421,trino-server-421/plugin/mongodb/trino-mongodb-421.jar,mongodb,mongodb.cursor-batch-size,"",false
 421,trino-server-421/plugin/cassandra/trino-cassandra-421.jar,cassandra,cassandra.load-policy.dc-aware.allow-remote-dc-for-local,"",false
 421,trino-server-421/plugin/cassandra/trino-cassandra-421.jar,cassandra,cassandra.splits-per-node,"",false
 421,trino-server-421/plugin/cassandra/trino-cassandra-421.jar,cassandra,cassandra.load-policy.use-dc-aware,"",false
@@ -1144,6 +1144,9 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/cassandra/trino-cassandra-421.jar,cassandra,cassandra.retry-policy,"",false
 421,trino-server-421/plugin/cassandra/trino-cassandra-421.jar,cassandra,cassandra.contact-points,"",false
 421,trino-server-421/plugin/cassandra/trino-cassandra-421.jar,cassandra,cassandra.speculative-execution.limit,"",false
+421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.s3.iam-role,"ARN of an IAM role to assume when connecting to S3",false
+421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.base-directories,"List of base directories separated by commas",false
+421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.s3.path-style-access,"Use path-style access for all request to S3",false
 421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.gcs.json-key-file-path,"Path to the JSON file that contains your Google Cloud Platform service account key. Not to be set together with `exchange.gcs.json-key`",false
 421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.s3.retry-mode,"",false
 421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.s3.endpoint,"",false
@@ -1170,9 +1173,7 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.file-listing-parallelism,"Max parallelism of file listing calls when enumerating spooling files. The actual parallelism will depend on implementation",false
 421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.source-max-files-per-reader,"",false
 421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.sink-buffers-per-partition,"",false
-421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.s3.iam-role,"ARN of an IAM role to assume when connecting to S3",false
-421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.base-directories,"List of base directories separated by commas",false
-421,trino-server-421/plugin/exchange-filesystem/trino-exchange-filesystem-421.jar,exchange-filesystem,exchange.s3.path-style-access,"Use path-style access for all request to S3",false
+421,trino-server-421/plugin/resource-group-managers/trino-resource-group-managers-421.jar,resource-group-managers,resource-groups.config-db-password,"Database password",false
 421,trino-server-421/plugin/resource-group-managers/trino-resource-group-managers-421.jar,resource-group-managers,resource-groups.refresh-interval,"How often the cluster reloads from the database",false
 421,trino-server-421/plugin/resource-group-managers/trino-resource-group-managers-421.jar,resource-group-managers,resource-groups.max-refresh-interval,"Time period for which the cluster will continue to accept queries after refresh failures cause configuration to become stale",false
 421,trino-server-421/plugin/resource-group-managers/trino-resource-group-managers-421.jar,resource-group-managers,resource-groups.config-db-url,"",false
@@ -1180,7 +1181,6 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/resource-group-managers/trino-resource-group-managers-421.jar,resource-group-managers,jmx.base-name,"",false
 421,trino-server-421/plugin/resource-group-managers/trino-resource-group-managers-421.jar,resource-group-managers,resource-groups.exact-match-selector-enabled,"",false
 421,trino-server-421/plugin/resource-group-managers/trino-resource-group-managers-421.jar,resource-group-managers,resource-groups.config-file,"",false
-421,trino-server-421/plugin/resource-group-managers/trino-resource-group-managers-421.jar,resource-group-managers,resource-groups.config-db-password,"Database password",false
 421,trino-server-421/plugin/mysql/trino-mysql-421.jar,mysql,mysql.jdbc.use-information-schema,"Value of useInformationSchema MySQL JDBC driver connection property",false
 421,trino-server-421/plugin/mysql/trino-mysql-421.jar,mysql,mysql.connection-timeout,"",false
 421,trino-server-421/plugin/mysql/trino-mysql-421.jar,mysql,mysql.auto-reconnect,"",false
@@ -1196,6 +1196,7 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/postgresql/trino-postgresql-421.jar,postgresql,postgresql.include-system-tables,"",false
 421,trino-server-421/plugin/postgresql/trino-postgresql-421.jar,postgresql,postgresql.array-mapping,"",false
 421,trino-server-421/plugin/postgresql/trino-postgresql-421.jar,postgresql,postgresql.experimental.enable-string-pushdown-with-collate,"",false
+421,trino-server-421/plugin/prometheus/trino-prometheus-421.jar,prometheus,prometheus.query.chunk.size.duration,"The duration of each query to Prometheus",false
 421,trino-server-421/plugin/prometheus/trino-prometheus-421.jar,prometheus,prometheus.read-timeout,"How much time a query to Prometheus has before timing out",false
 421,trino-server-421/plugin/prometheus/trino-prometheus-421.jar,prometheus,prometheus.auth.user,"",false
 421,trino-server-421/plugin/prometheus/trino-prometheus-421.jar,prometheus,prometheus.max.query.range.duration,"Width of overall query to Prometheus, will be divided into prometheus.query.chunk.size.duration queries",false
@@ -1204,6 +1205,5 @@ version,jar,plugin,config,description,is_deprecated
 421,trino-server-421/plugin/prometheus/trino-prometheus-421.jar,prometheus,prometheus.bearer.token.file,"File holding bearer token if needed for access to Prometheus",false
 421,trino-server-421/plugin/prometheus/trino-prometheus-421.jar,prometheus,prometheus.uri,"Where to find Prometheus coordinator host",false
 421,trino-server-421/plugin/prometheus/trino-prometheus-421.jar,prometheus,prometheus.case-insensitive-name-matching,"Where to match the prometheus metric name case insensitively ",false
-421,trino-server-421/plugin/prometheus/trino-prometheus-421.jar,prometheus,prometheus.query.chunk.size.duration,"The duration of each query to Prometheus",false
 421,trino-server-421/plugin/exchange-hdfs/trino-exchange-hdfs-421.jar,exchange-hdfs,exchange.hdfs.block-size,"Block size for HDFS storage",false
 421,trino-server-421/plugin/exchange-hdfs/trino-exchange-hdfs-421.jar,exchange-hdfs,hdfs.config.resources,"",false

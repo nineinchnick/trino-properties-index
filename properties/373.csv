@@ -1,4 +1,5 @@
 version,jar,plugin,config,description,is_deprecated
+373,trino-server-373/plugin/memsql/trino-base-jdbc-373.jar,memsql,remote-query-async-cancellation.enabled,"Enable asynchronous remote query cancellation",false
 373,trino-server-373/plugin/memsql/trino-base-jdbc-373.jar,memsql,decimal-default-scale,"Default decimal scale for mapping unspecified and exceeding precision decimals. Not used when decimal_mapping is set to STRICT",false
 373,trino-server-373/plugin/memsql/trino-base-jdbc-373.jar,memsql,keystore-password,"",false
 373,trino-server-373/plugin/memsql/trino-base-jdbc-373.jar,memsql,case-insensitive-name-matching.cache-ttl,"",false
@@ -32,12 +33,13 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/memsql/trino-base-jdbc-373.jar,memsql,connection-password,"Password for JDBC client",false
 373,trino-server-373/plugin/memsql/trino-base-jdbc-373.jar,memsql,metadata.cache-ttl,"Determines how long meta information will be cached",false
 373,trino-server-373/plugin/memsql/trino-base-jdbc-373.jar,memsql,unsupported-type-handling,"Unsupported type handling strategy",false
-373,trino-server-373/plugin/memsql/trino-base-jdbc-373.jar,memsql,remote-query-async-cancellation.enabled,"Enable asynchronous remote query cancellation",false
 373,trino-server-373/plugin/memsql/trino-plugin-toolkit-373.jar,memsql,security.refresh-period,"",false
 373,trino-server-373/plugin/memsql/trino-plugin-toolkit-373.jar,memsql,security.config-file,"",false
 373,trino-server-373/plugin/memsql/trino-plugin-toolkit-373.jar,memsql,jmx.base-name,"",false
 373,trino-server-373/plugin/memsql/trino-memsql-373.jar,memsql,memsql.connection-timeout,"",false
 373,trino-server-373/plugin/memsql/trino-memsql-373.jar,memsql,memsql.auto-reconnect,"",false
+373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.access-key,"S3 Access Key to access s3 locations",false
+373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.batch-size,"Limit maximum number of rows to return in a batch",false
 373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.dynamo-read-capacity,"DynamoDB read capacity to be set in client",false
 373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.fetch-attempts,"Maximum number of attempts to fetch the next batch from a shard iterator",false
 373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.table-description-location,"S3 or local filesystem directory location where table schema descriptions are present",false
@@ -55,8 +57,6 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.default-schema,"Sets default schema for kinesis catalogs",false
 373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.table-description-refresh-interval,"How often to get the table description from S3",false
 373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.aws-region,"Region to set while creating S3 client",false
-373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.access-key,"S3 Access Key to access s3 locations",false
-373,trino-server-373/plugin/kinesis/trino-kinesis-373.jar,kinesis,kinesis.batch-size,"Limit maximum number of rows to return in a batch",false
 373,trino-server-373/plugin/clickhouse/trino-clickhouse-373.jar,clickhouse,clickhouse.legacy-driver,"Whether to use a legacy driver",false
 373,trino-server-373/plugin/clickhouse/trino-clickhouse-373.jar,clickhouse,clickhouse.map-string-as-varchar,"Map ClickHouse String and FixedString as varchar instead of varbinary",false
 373,trino-server-373/plugin/postgresql/trino-postgresql-373.jar,postgresql,postgresql.experimental.enable-string-pushdown-with-collate,"",false
@@ -71,12 +71,12 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/exchange/trino-exchange-373.jar,exchange,exchange.s3.upload.part-size,"Part size for S3 multi-part upload",false
 373,trino-server-373/plugin/exchange/trino-exchange-373.jar,exchange,exchange.base-directory,"",false
 373,trino-server-373/plugin/exchange/trino-exchange-373.jar,exchange,exchange.s3.region,"",false
+373,trino-server-373/plugin/atop/trino-atop-373.jar,atop,atop.security,"",false
 373,trino-server-373/plugin/atop/trino-atop-373.jar,atop,atop.concurrent-readers-per-node,"",false
 373,trino-server-373/plugin/atop/trino-atop-373.jar,atop,atop.max-history-days,"",false
 373,trino-server-373/plugin/atop/trino-atop-373.jar,atop,atop.time-zone,"The timezone in which the atop data was collected. Generally the timezone of the host.",false
 373,trino-server-373/plugin/atop/trino-atop-373.jar,atop,atop.executable-read-timeout,"The timeout when reading from the atop process.",false
 373,trino-server-373/plugin/atop/trino-atop-373.jar,atop,atop.executable-path,"",false
-373,trino-server-373/plugin/atop/trino-atop-373.jar,atop,atop.security,"",false
 373,trino-server-373/plugin/memory/trino-memory-373.jar,memory,memory.splits-per-node,"",false
 373,trino-server-373/plugin/memory/trino-memory-373.jar,memory,memory.enable-lazy-dynamic-filtering,"",false
 373,trino-server-373/plugin/memory/trino-memory-373.jar,memory,memory.max-data-per-node,"",false
@@ -87,6 +87,7 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/accumulo/trino-accumulo-373.jar,accumulo,accumulo.zookeepers,"ZooKeeper quorum connect string for Accumulo",false
 373,trino-server-373/plugin/accumulo/trino-accumulo-373.jar,accumulo,accumulo.instance,"Accumulo instance name",false
 373,trino-server-373/plugin/accumulo/trino-accumulo-373.jar,accumulo,accumulo.cardinality.cache.size,"Sets the cardinality cache size",false
+373,trino-server-373/plugin/pinot/trino-pinot-373.jar,pinot,pinot.max-connections-per-server,"",false
 373,trino-server-373/plugin/pinot/trino-pinot-373.jar,pinot,pinot.non-aggregate-limit-for-broker-queries,"",false
 373,trino-server-373/plugin/pinot/trino-pinot-373.jar,pinot,pinot.broker.authentication.user,"",false
 373,trino-server-373/plugin/pinot/trino-pinot-373.jar,pinot,pinot.controller-urls,"",false
@@ -111,7 +112,6 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/pinot/trino-pinot-373.jar,pinot,pinot.aggregation-pushdown.enabled,"",false
 373,trino-server-373/plugin/pinot/trino-pinot-373.jar,pinot,pinot.min-connections-per-server,"",false
 373,trino-server-373/plugin/pinot/trino-pinot-373.jar,pinot,pinot.metadata-expiry,"",false
-373,trino-server-373/plugin/pinot/trino-pinot-373.jar,pinot,pinot.max-connections-per-server,"",false
 373,trino-server-373/plugin/resource-group-managers/trino-resource-group-managers-373.jar,resource-group-managers,resource-groups.config-file,"",false
 373,trino-server-373/plugin/resource-group-managers/trino-resource-group-managers-373.jar,resource-group-managers,resource-groups.config-db-url,"",false
 373,trino-server-373/plugin/resource-group-managers/trino-resource-group-managers-373.jar,resource-group-managers,resource-groups.max-refresh-interval,"Time period for which the cluster will continue to accept queries after refresh failures cause configuration to become stale",false
@@ -119,6 +119,8 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/resource-group-managers/trino-resource-group-managers-373.jar,resource-group-managers,resource-groups.config-db-user,"Database user name",false
 373,trino-server-373/plugin/resource-group-managers/trino-resource-group-managers-373.jar,resource-group-managers,resource-groups.exact-match-selector-enabled,"",false
 373,trino-server-373/plugin/resource-group-managers/trino-resource-group-managers-373.jar,resource-group-managers,jmx.base-name,"",false
+373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.nodes,"",false
+373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.key-prefix-schema-table,"",false
 373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.key-delimiter,"",false
 373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.default-schema,"",false
 373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.hide-internal-columns,"",false
@@ -128,8 +130,6 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.table-description-dir,"",false
 373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.scan-count,"",false
 373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.password,"",false
-373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.nodes,"",false
-373,trino-server-373/plugin/redis/trino-redis-373.jar,redis,redis.key-prefix-schema-table,"",false
 373,trino-server-373/plugin/example-http/trino-example-http-373.jar,example-http,metadata-uri,"",false
 373,trino-server-373/plugin/local-file/trino-local-file-373.jar,local-file,trino-logs.http-request-log.pattern,"If log location is a directory this glob is used to match the file names in the directory",false
 373,trino-server-373/plugin/local-file/trino-local-file-373.jar,local-file,trino-logs.http-request-log.location,"Directory or file where http request logs are written",false
@@ -147,6 +147,8 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/oracle/trino-oracle-373.jar,oracle,oracle.number.default-scale,"Default Trino DECIMAL scale for Oracle NUMBER data type",false
 373,trino-server-373/plugin/oracle/trino-oracle-373.jar,oracle,oracle.synonyms.enabled,"",false
 373,trino-server-373/plugin/oracle/trino-oracle-373.jar,oracle,oracle.remarks-reporting.enabled,"",false
+373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.checkpoint-row-statistics-writing.enabled,"",false
+373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.domain-compaction-threshold,"Maximum ranges to allow in a tuple domain without compacting it",false
 373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.max-partitions-per-writer,"Maximum number of partitions per writer",false
 373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.enable-non-concurrent-writes,"",false
 373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.experimental.ignore-checkpoint-write-failures,"",false
@@ -164,8 +166,21 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.metadata.live-files.cache-size,"Maximum in memory cache size for Delta data file metadata (e.g. file path, statistics, partition values). Defaults to 10% of the available heap size.",false
 373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.compression-codec,"Compression codec to use when writing new data files",false
 373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.default-checkpoint-writing-interval,"How often (in number of transactions) to write checkpoint of transaction log",false
-373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.checkpoint-row-statistics-writing.enabled,"",false
-373,trino-server-373/plugin/delta-lake/trino-delta-lake-373.jar,delta-lake,delta.domain-compaction-threshold,"Maximum ranges to allow in a tuple domain without compacting it",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.glue.max-connections,"Max number of concurrent connections to Glue",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.max-initial-split-size,"",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.split-loader-concurrency,"",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.thrift.client.socks-proxy,"",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.dfs.domain-socket-path,"",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.glue.catalogid,"Hive Glue metastore catalog id",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.write-validation-threads,"Number of threads used for verifying data after a write",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.ignore-corrupted-statistics,"Ignore corrupted statistics rather than failing",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.version-compatibility,"",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,parquet.writer.block-size,"",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.client.keytab,"Hive Metastore client keytab location",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.thrift.client.max-retries,"Maximum number of retry attempts for metastore requests",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.max-concurrent-metastore-drops,"",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore-recording-duration,"",false
+373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.azure.adl-refresh-url,"",false
 373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.orc.tiny-stripe-threshold,"",false
 373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.orc.writer.writer-identification,"",false
 373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.file-status-cache-tables,"",false
@@ -403,26 +418,12 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.s3.skip-glacier-objects,"",false
 373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.cache.location,"",false
 373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.s3.security-mapping.colon-replacement,"Value used in place of colon for IAM role name in extra credentials",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.glue.max-connections,"Max number of concurrent connections to Glue",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.max-initial-split-size,"",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.split-loader-concurrency,"",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.thrift.client.socks-proxy,"",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.dfs.domain-socket-path,"",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.glue.catalogid,"Hive Glue metastore catalog id",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.write-validation-threads,"Number of threads used for verifying data after a write",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.ignore-corrupted-statistics,"Ignore corrupted statistics rather than failing",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.version-compatibility,"",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,parquet.writer.block-size,"",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.client.keytab,"Hive Metastore client keytab location",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore.thrift.client.max-retries,"Maximum number of retry attempts for metastore requests",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.max-concurrent-metastore-drops,"",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.metastore-recording-duration,"",false
-373,trino-server-373/plugin/delta-lake/trino-hive-373.jar,delta-lake,hive.azure.adl-refresh-url,"",false
 373,trino-server-373/plugin/session-property-managers/trino-session-property-managers-373.jar,session-property-managers,session-property-manager.db.password,"",false
 373,trino-server-373/plugin/session-property-managers/trino-session-property-managers-373.jar,session-property-managers,session-property-manager.db.refresh-period,"",false
 373,trino-server-373/plugin/session-property-managers/trino-session-property-managers-373.jar,session-property-managers,session-property-manager.config-file,"",false
 373,trino-server-373/plugin/session-property-managers/trino-session-property-managers-373.jar,session-property-managers,session-property-manager.db.url,"",false
 373,trino-server-373/plugin/session-property-managers/trino-session-property-managers-373.jar,session-property-managers,session-property-manager.db.username,"",false
+373,trino-server-373/plugin/bigquery/trino-bigquery-373.jar,bigquery,bigquery.view-materialization-project,"The project where the materialized view is going to be created",false
 373,trino-server-373/plugin/bigquery/trino-bigquery-373.jar,bigquery,bigquery.service-cache-ttl,"Duration for which BigQuery client service instances are cached",false
 373,trino-server-373/plugin/bigquery/trino-bigquery-373.jar,bigquery,bigquery.view-expire-duration,"",false
 373,trino-server-373/plugin/bigquery/trino-bigquery-373.jar,bigquery,bigquery.views-cache-ttl,"Duration for which the materialization of a view will be cached and reused",false
@@ -435,7 +436,8 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/bigquery/trino-bigquery-373.jar,bigquery,bigquery.parallelism,"The number of partitions to split the data into.",false
 373,trino-server-373/plugin/bigquery/trino-bigquery-373.jar,bigquery,bigquery.view-materialization-dataset,"The dataset where the materialized view is going to be created",false
 373,trino-server-373/plugin/bigquery/trino-bigquery-373.jar,bigquery,bigquery.views-enabled,"Enables the connector to read from views and not only tables",false
-373,trino-server-373/plugin/bigquery/trino-bigquery-373.jar,bigquery,bigquery.view-materialization-project,"The project where the materialized view is going to be created",false
+373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.min-connections-per-host,"",false
+373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.read-preference,"",false
 373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.case-insensitive-name-matching,"",false
 373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.socket-timeout,"",false
 373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.schema-collection,"",false
@@ -451,8 +453,7 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.max-wait-time,"",false
 373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.cursor-batch-size,"",false
 373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.ssl.enabled,"",false
-373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.min-connections-per-host,"",false
-373,trino-server-373/plugin/mongodb/trino-mongodb-373.jar,mongodb,mongodb.read-preference,"",false
+373,trino-server-373/plugin/iceberg/trino-iceberg-373.jar,iceberg,iceberg.projection-pushdown-enabled,"Read only required fields from a struct",false
 373,trino-server-373/plugin/iceberg/trino-iceberg-373.jar,iceberg,iceberg.compression-codec,"",false
 373,trino-server-373/plugin/iceberg/trino-iceberg-373.jar,iceberg,iceberg.max-partitions-per-writer,"Maximum number of partitions per writer",false
 373,trino-server-373/plugin/iceberg/trino-iceberg-373.jar,iceberg,iceberg.security,"",false
@@ -462,13 +463,17 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/iceberg/trino-iceberg-373.jar,iceberg,iceberg.table-statistics-enabled,"Enable use of table statistics",false
 373,trino-server-373/plugin/iceberg/trino-iceberg-373.jar,iceberg,iceberg.unique-table-location,"Use randomized, unique table locations",false
 373,trino-server-373/plugin/iceberg/trino-iceberg-373.jar,iceberg,iceberg.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters during split generation",false
-373,trino-server-373/plugin/iceberg/trino-iceberg-373.jar,iceberg,iceberg.projection-pushdown-enabled,"Read only required fields from a struct",false
 373,trino-server-373/plugin/phoenix5/trino-phoenix5-373.jar,phoenix5,phoenix.config.resources,"",false
 373,trino-server-373/plugin/phoenix5/trino-phoenix5-373.jar,phoenix5,phoenix.max-scans-per-split,"Maximum number of HBase scans that will be performed in a single split.",false
 373,trino-server-373/plugin/phoenix5/trino-phoenix5-373.jar,phoenix5,phoenix.connection-url,"",false
 373,trino-server-373/plugin/thrift/trino-thrift-373.jar,thrift,trino-thrift.max-response-size,"",false
 373,trino-server-373/plugin/thrift/trino-thrift-373.jar,thrift,trino-thrift.metadata-refresh-threads,"",false
 373,trino-server-373/plugin/thrift/trino-thrift-373.jar,thrift,trino-thrift.lookup-requests-concurrency,"",false
+373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.organization-interval,"How long to wait between table organization iterations",false
+373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.max-organization-threads,"Maximum number of threads to use for organization",false
+373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.max-shard-size,"Approximate maximum uncompressed size of a shard",false
+373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,backup.timeout,"Timeout for per-shard backup operations",false
+373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.orc.max-read-size,"",false
 373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,raptor.security,"",false
 373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,backup.threads,"Maximum number of shards to backup at once",false
 373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.compaction-enabled,"",false
@@ -509,15 +514,13 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.ejector-interval,"How often to check for local shards that need ejection to balance capacity",false
 373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.max-recovery-threads,"Maximum number of threads to use for recovery",false
 373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.orc.lazy-read-small-ranges,"",false
-373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.organization-interval,"How long to wait between table organization iterations",false
-373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.max-organization-threads,"Maximum number of threads to use for organization",false
-373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.max-shard-size,"Approximate maximum uncompressed size of a shard",false
-373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,backup.timeout,"Timeout for per-shard backup operations",false
-373,trino-server-373/plugin/raptor-legacy/trino-raptor-legacy-373.jar,raptor-legacy,storage.orc.max-read-size,"",false
 373,trino-server-373/plugin/google-sheets/trino-google-sheets-373.jar,google-sheets,metadata-sheet-id,"Metadata sheet id containing table sheet mapping",false
 373,trino-server-373/plugin/google-sheets/trino-google-sheets-373.jar,google-sheets,sheets-data-expire-after-write,"Sheets data expire after write duration",false
 373,trino-server-373/plugin/google-sheets/trino-google-sheets-373.jar,google-sheets,sheets-data-max-cache-size,"Sheet data max cache size",false
 373,trino-server-373/plugin/google-sheets/trino-google-sheets-373.jar,google-sheets,credentials-path,"Credential file path to google service account",false
+373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.hide-internal-columns,"Whether internal columns are shown in table metadata or not. Default is no",false
+373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.ssl.truststore.location,"The location of the trust store file",false
+373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.default-schema,"Schema name to use in the connector",false
 373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.buffer-size,"Kafka message consumer buffer size",false
 373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.ssl.truststore.password,"The password for the trust store file",false
 373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.table-description-dir,"Folder holding JSON description files for Kafka topics",false
@@ -537,9 +540,9 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.table-names,"Set of tables known to this connector",false
 373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.ssl.keystore.password,"The store password for the key store file",false
 373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.table-description-supplier,"The table description supplier to use, default is FILE",false
-373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.hide-internal-columns,"Whether internal columns are shown in table metadata or not. Default is no",false
-373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.ssl.truststore.location,"The location of the trust store file",false
-373,trino-server-373/plugin/kafka/trino-kafka-373.jar,kafka,kafka.default-schema,"Schema name to use in the connector",false
+373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.password,"",false
+373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.username,"",false
+373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.splits-per-node,"",false
 373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.tls.truststore-path,"",false
 373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.load-policy.dc-aware.allow-remote-dc-for-local,"",false
 373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.client.so-linger,"",false
@@ -568,15 +571,13 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.speculative-execution.delay,"",false
 373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.speculative-execution.limit,"",false
 373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.contact-points,"",false
-373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.password,"",false
-373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.username,"",false
-373,trino-server-373/plugin/cassandra/trino-cassandra-373.jar,cassandra,cassandra.splits-per-node,"",false
 373,trino-server-373/plugin/mysql/trino-mysql-373.jar,mysql,mysql.max-reconnects,"",false
 373,trino-server-373/plugin/mysql/trino-mysql-373.jar,mysql,mysql.auto-reconnect,"",false
 373,trino-server-373/plugin/mysql/trino-mysql-373.jar,mysql,mysql.connection-timeout,"",false
 373,trino-server-373/plugin/mysql/trino-mysql-373.jar,mysql,mysql.jdbc.use-information-schema,"Value of useInformationSchema MySQL JDBC driver connection property",false
 373,trino-server-373/plugin/sqlserver/trino-sqlserver-373.jar,sqlserver,sqlserver.snapshot-isolation.disabled,"Disables automatic use of snapshot isolation for transactions issued by Trino in SQL Server",false
-373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: \"Header-Name-1: header value 1, Header-Value-2: header value 2, ...\" ",false
+373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.connect-max-delay,"Maximum delay between retries. This should be used with exponential backoff.",false
+373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: ""Header-Name-1: header value 1, Header-Value-2: header value 2, ..."" ",false
 373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.connect-ingest-uri,"URL of receiving server. Explicitly set the scheme https:// to use symmetric encryption",false
 373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.connect-retry-delay,"Delay in seconds between retries",false
 373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.log-split,"Will log io.trino.spi.eventlistener.SplitCompletedEvent",false
@@ -584,7 +585,9 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.log-created,"Will log io.trino.spi.eventlistener.QueryCreatedEvent",false
 373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.connect-retry-count,"Number of retries on server error",false
 373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.connect-backoff-base,"Base used for exponential backoff when retying on server error. Formula is attemptDelay = retryDelay * backoffBase ^ attemptCount. Attempt counting starts from 0. Leave empty or set to 1 to disable.",false
-373,trino-server-373/plugin/http-event-listener/trino-http-event-listener-373.jar,http-event-listener,http-event-listener.connect-max-delay,"Maximum delay between retries. This should be used with exponential backoff.",false
+373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.client.default-operation-timeout,"",false
+373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.authentication.config,"Kudu Kerberos service configuration file",false
+373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters",false
 373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.grouped-execution.enabled,"",false
 373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.client.default-admin-operation-timeout,"",false
 373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.client.disable-statistics,"",false
@@ -595,9 +598,9 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.schema-emulation.prefix,"",false
 373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.authentication.server.principal.primary,"The 'primary' portion of the kudu service principal name",false
 373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.authentication.client.keytab,"Kudu Kerberos client keytab location",false
-373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.client.default-operation-timeout,"",false
-373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.authentication.config,"Kudu Kerberos service configuration file",false
-373,trino-server-373/plugin/kudu/trino-kudu-373.jar,kudu,kudu.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters",false
+373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,file.refresh-period,"How often to reload the password file",false
+373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,ldap.allow-insecure,"Allow insecure connection to the LDAP server",false
+373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,ldap.timeout.connect,"Timeout for establishing a connection",false
 373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,file.group-file,"Location of the file that provides user group membership",false
 373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,ldap.ignore-referrals,"Referrals allow finding entries across multiple LDAP servers. Ignore them to only search within 1 LDAP server",false
 373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,file.refresh-period,"How often to reload the group file",false
@@ -614,15 +617,14 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,ldap.bind-dn,"Bind distinguished name. Example: CN=User Name,OU=CITY_OU,OU=STATE_OU,DC=domain,DC=domain_root",false
 373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,salesforce.cache-expire-duration,"Expire duration for an entry in cache since last write.",false
 373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,ldap.url,"URL of the LDAP server",false
-373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,file.refresh-period,"How often to reload the password file",false
-373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,ldap.allow-insecure,"Allow insecure connection to the LDAP server",false
-373,trino-server-373/plugin/password-authenticators/trino-password-authenticators-373.jar,password-authenticators,ldap.timeout.connect,"Timeout for establishing a connection",false
 373,trino-server-373/plugin/prometheus/trino-prometheus-373.jar,prometheus,prometheus.cache.ttl,"How long values from this config file are cached",false
 373,trino-server-373/plugin/prometheus/trino-prometheus-373.jar,prometheus,prometheus.max.query.range.duration,"Width of overall query to Prometheus, will be divided into prometheus.query.chunk.size.duration queries",false
 373,trino-server-373/plugin/prometheus/trino-prometheus-373.jar,prometheus,prometheus.query.chunk.size.duration,"The duration of each query to Prometheus",false
 373,trino-server-373/plugin/prometheus/trino-prometheus-373.jar,prometheus,prometheus.uri,"Where to find Prometheus coordinator host",false
 373,trino-server-373/plugin/prometheus/trino-prometheus-373.jar,prometheus,prometheus.read-timeout,"How much time a query to Prometheus has before timing out",false
 373,trino-server-373/plugin/prometheus/trino-prometheus-373.jar,prometheus,prometheus.bearer.token.file,"File holding bearer token if needed for access to Prometheus",false
+373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.default-schema-name,"Default schema name to use",false
+373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.aws.access-key,"",false
 373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.tls.verify-hostnames,"",false
 373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.aws.external-id,"Optional external id to pass to AWS STS while assuming a role",false
 373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.port,"",false
@@ -649,8 +651,32 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.tls.keystore-path,"",false
 373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.ignore-publish-address,"",false
 373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.backoff-max-delay,"Maximum delay to wait between backpressure retries",false
-373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.default-schema-name,"Default schema name to use",false
-373,trino-server-373/plugin/elasticsearch/trino-elasticsearch-373.jar,elasticsearch,elasticsearch.aws.access-key,"",false
+373,trino-server-373/lib/trino-main-373.jar,,statistics-precalculation-for-pushdown.enabled,"",false
+373,trino-server-373/lib/trino-main-373.jar,,http-server.authentication.krb5.user-mapping.file,"",false
+373,trino-server-373/lib/trino-main-373.jar,,optimizer.use-mark-distinct,"",false
+373,trino-server-373/lib/trino-main-373.jar,,optimizer.optimize-metadata-queries,"",false
+373,trino-server-373/lib/trino-main-373.jar,,management.user,"Optional fixed user for all requests to management endpoints",false
+373,trino-server-373/lib/trino-main-373.jar,,node-scheduler.max-splits-per-node,"",false
+373,trino-server-373/lib/trino-main-373.jar,,query.stage-count-warning-threshold,"Emit a warning when stage count exceeds this threshold",false
+373,trino-server-373/lib/trino-main-373.jar,,query.schedule-split-batch-size,"",false
+373,trino-server-373/lib/trino-main-373.jar,,query.hash-partition-count,"Number of partitions for distributed joins and aggregations",false
+373,trino-server-373/lib/trino-main-373.jar,,query-manager.required-workers,"Minimum number of active workers that must be available before a query will start",false
+373,trino-server-373/lib/trino-main-373.jar,,dynamic-filtering.large-broadcast.range-row-limit-per-driver,"",false
+373,trino-server-373/lib/trino-main-373.jar,,failure-injection.expiration-period,"Period after which an injected failure is considered expired and will no longer be triggering a failure",false
+373,trino-server-373/lib/trino-main-373.jar,,discovery-server.enabled,"",false
+373,trino-server-373/lib/trino-main-373.jar,,writer-min-size,"Target minimum size of writer output when scaling writers",false
+373,trino-server-373/lib/trino-main-373.jar,,http-server.https.enabled,"",false
+373,trino-server-373/lib/trino-main-373.jar,,failure-detector.enabled,"",false
+373,trino-server-373/lib/trino-main-373.jar,,task.max-local-exchange-buffer-size,"",false
+373,trino-server-373/lib/trino-main-373.jar,,http-server.authentication.allow-insecure-over-http,"Insecure authentication over HTTP (non-secure) enabled",false
+373,trino-server-373/lib/trino-main-373.jar,,task.client.timeout,"",false
+373,trino-server-373/lib/trino-main-373.jar,,failure-injection.request-timeout,"Period after which requests blocked to emulate a timeout are released",false
+373,trino-server-373/lib/trino-main-373.jar,,spill-compression-enabled,"",false
+373,trino-server-373/lib/trino-main-373.jar,,failure-detector.expiration-grace-interval,"How long to wait before 'forgetting' a service after it disappears from discovery",false
+373,trino-server-373/lib/trino-main-373.jar,,task.max-drivers-per-task,"Maximum number of drivers a task can run",false
+373,trino-server-373/lib/trino-main-373.jar,,dynamic-filtering.service-thread-count,"",false
+373,trino-server-373/lib/trino-main-373.jar,,transaction.idle-check-interval,"Time interval between idle transactions checks",false
+373,trino-server-373/lib/trino-main-373.jar,,exchange.concurrent-request-multiplier,"",false
 373,trino-server-373/lib/trino-main-373.jar,,dynamic-filtering.small-partitioned.range-row-limit-per-driver,"",false
 373,trino-server-373/lib/trino-main-373.jar,,retry-max-delay,"Maximum delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt starting from 'retry_initial_delay'",false
 373,trino-server-373/lib/trino-main-373.jar,,task.max-partial-top-n-memory,"",false
@@ -895,29 +921,3 @@ version,jar,plugin,config,description,is_deprecated
 373,trino-server-373/lib/trino-main-373.jar,,exchange.acknowledge-pages,"",false
 373,trino-server-373/lib/trino-main-373.jar,,exchange.max-error-duration,"",false
 373,trino-server-373/lib/trino-main-373.jar,,optimizer.optimize-hash-generation,"",false
-373,trino-server-373/lib/trino-main-373.jar,,statistics-precalculation-for-pushdown.enabled,"",false
-373,trino-server-373/lib/trino-main-373.jar,,http-server.authentication.krb5.user-mapping.file,"",false
-373,trino-server-373/lib/trino-main-373.jar,,optimizer.use-mark-distinct,"",false
-373,trino-server-373/lib/trino-main-373.jar,,optimizer.optimize-metadata-queries,"",false
-373,trino-server-373/lib/trino-main-373.jar,,management.user,"Optional fixed user for all requests to management endpoints",false
-373,trino-server-373/lib/trino-main-373.jar,,node-scheduler.max-splits-per-node,"",false
-373,trino-server-373/lib/trino-main-373.jar,,query.stage-count-warning-threshold,"Emit a warning when stage count exceeds this threshold",false
-373,trino-server-373/lib/trino-main-373.jar,,query.schedule-split-batch-size,"",false
-373,trino-server-373/lib/trino-main-373.jar,,query.hash-partition-count,"Number of partitions for distributed joins and aggregations",false
-373,trino-server-373/lib/trino-main-373.jar,,query-manager.required-workers,"Minimum number of active workers that must be available before a query will start",false
-373,trino-server-373/lib/trino-main-373.jar,,dynamic-filtering.large-broadcast.range-row-limit-per-driver,"",false
-373,trino-server-373/lib/trino-main-373.jar,,failure-injection.expiration-period,"Period after which an injected failure is considered expired and will no longer be triggering a failure",false
-373,trino-server-373/lib/trino-main-373.jar,,discovery-server.enabled,"",false
-373,trino-server-373/lib/trino-main-373.jar,,writer-min-size,"Target minimum size of writer output when scaling writers",false
-373,trino-server-373/lib/trino-main-373.jar,,http-server.https.enabled,"",false
-373,trino-server-373/lib/trino-main-373.jar,,failure-detector.enabled,"",false
-373,trino-server-373/lib/trino-main-373.jar,,task.max-local-exchange-buffer-size,"",false
-373,trino-server-373/lib/trino-main-373.jar,,http-server.authentication.allow-insecure-over-http,"Insecure authentication over HTTP (non-secure) enabled",false
-373,trino-server-373/lib/trino-main-373.jar,,task.client.timeout,"",false
-373,trino-server-373/lib/trino-main-373.jar,,failure-injection.request-timeout,"Period after which requests blocked to emulate a timeout are released",false
-373,trino-server-373/lib/trino-main-373.jar,,spill-compression-enabled,"",false
-373,trino-server-373/lib/trino-main-373.jar,,failure-detector.expiration-grace-interval,"How long to wait before 'forgetting' a service after it disappears from discovery",false
-373,trino-server-373/lib/trino-main-373.jar,,task.max-drivers-per-task,"Maximum number of drivers a task can run",false
-373,trino-server-373/lib/trino-main-373.jar,,dynamic-filtering.service-thread-count,"",false
-373,trino-server-373/lib/trino-main-373.jar,,transaction.idle-check-interval,"Time interval between idle transactions checks",false
-373,trino-server-373/lib/trino-main-373.jar,,exchange.concurrent-request-multiplier,"",false

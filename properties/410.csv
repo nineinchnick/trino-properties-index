@@ -1,5 +1,4 @@
 version,jar,plugin,config,description,is_deprecated
-410,trino-server-410/lib/trino-plugin-toolkit-410.jar,,ldap.timeout.read,"Timeout for reading data from LDAP",false
 410,trino-server-410/lib/trino-plugin-toolkit-410.jar,,jmx.base-name,"",false
 410,trino-server-410/lib/trino-plugin-toolkit-410.jar,,ldap.url,"URL of the LDAP server",false
 410,trino-server-410/lib/trino-plugin-toolkit-410.jar,,security.refresh-period,"",false
@@ -12,48 +11,7 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/lib/trino-plugin-toolkit-410.jar,,security.json-pointer,"JSON pointer (RFC 6901) to mappings inside JSON config",false
 410,trino-server-410/lib/trino-plugin-toolkit-410.jar,,ldap.timeout.connect,"Timeout for establishing a connection",false
 410,trino-server-410/lib/trino-plugin-toolkit-410.jar,,ldap.ssl.truststore.password,"Password for the trust store",false
-410,trino-server-410/lib/trino-main-410.jar,,warning-collector.max-warnings,"",false
-410,trino-server-410/lib/trino-main-410.jar,,http.authentication.krb5.config,"",false
-410,trino-server-410/lib/trino-main-410.jar,,query.max-planning-time,"",false
-410,trino-server-410/lib/trino-main-410.jar,,preferred-write-partitioning-min-number-of-partitions,"Use preferred write partitioning when the number of written partitions exceeds the configured threshold",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.client-secret,"Client secret",false
-410,trino-server-410/lib/trino-main-410.jar,,optimizer.optimize-hash-generation,"",false
-410,trino-server-410/lib/trino-main-410.jar,,spill-compression-enabled,"",false
-410,trino-server-410/lib/trino-main-410.jar,,node-scheduler.network-topology.file,"",false
-410,trino-server-410/lib/trino-main-410.jar,,retry-delay-scale-factor,"Factor by which retry delay is scaled on subsequent failures",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.oidc.discovery,"Enable OpenID Provider Issuer discovery",false
-410,trino-server-410/lib/trino-main-410.jar,,event-listener.config-files,"",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.krb5.name-type,"",false
-410,trino-server-410/lib/trino-main-410.jar,,scale-writers,"",false
-410,trino-server-410/lib/trino-main-410.jar,,optimizer.use-legacy-window-filter-pushdown,"",false
-410,trino-server-410/lib/trino-main-410.jar,,enable-forced-exchange-below-group-id,"",false
-410,trino-server-410/lib/trino-main-410.jar,,fault-tolerant-execution-task-memory-estimation-quantile,"What quantile of memory usage of completed tasks to look at when estimating memory usage for upcoming tasks",false
-410,trino-server-410/lib/trino-main-410.jar,,query.schedule-split-batch-size,"",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.https.enabled,"",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.jwt.user-mapping.pattern,"",false
-410,trino-server-410/lib/trino-main-410.jar,,protocol.v1.prepared-statement-compression.length-threshold,"Compression is applied to prepared statements longer than the configured value",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.access-token-issuer,"The required issuer for access tokens",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.access-token-issuer,"The required issuer for access tokens",false
-410,trino-server-410/lib/trino-main-410.jar,,enable-large-dynamic-filters,"",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.refresh-tokens.issued-token.audience,"Audience representing this coordinator instance, that will be used in issued token",false
-410,trino-server-410/lib/trino-main-410.jar,,deprecated.legacy-catalog-roles,"Enable legacy role management syntax that assumed all roles are catalog scoped",false
-410,trino-server-410/lib/trino-main-410.jar,,internal-communication.https.keystore.path,"",false
-410,trino-server-410/lib/trino-main-410.jar,,experimental.fault-tolerant-execution-force-preferred-write-partitioning-enabled,"",false
-410,trino-server-410/lib/trino-main-410.jar,,plugin.dir,"",false
-410,trino-server-410/lib/trino-main-410.jar,,fault-tolerant-execution-task-memory-growth-factor,"Factor by which estimated task memory is increased if task execution runs out of memory; value is used allocating nodes for tasks execution",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.refresh-tokens.secret-key,"Base64 encoded secret key used to encrypt generated token",false
-410,trino-server-410/lib/trino-main-410.jar,,query.max-concurrent-queries,"",false
-410,trino-server-410/lib/trino-main-410.jar,,task.status-refresh-max-wait,"",false
-410,trino-server-410/lib/trino-main-410.jar,,distributed-sort,"",false
-410,trino-server-410/lib/trino-main-410.jar,,internal-communication.shared-secret,"",false
-410,trino-server-410/lib/trino-main-410.jar,,task.split-concurrency-adjustment-interval,"",false
-410,trino-server-410/lib/trino-main-410.jar,,hide-inaccessible-columns,"When enabled non-accessible columns are silently filtered from results from SELECT * statements",false
-410,trino-server-410/lib/trino-main-410.jar,,failure-detector.enabled,"",false
-410,trino-server-410/lib/trino-main-410.jar,,protocol.v1.alternate-header-name,"Alternate header name for V1 protocol",false
-410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.state-key,"A secret key used by HMAC algorithm to sign the state parameter",false
-410,trino-server-410/lib/trino-main-410.jar,,query.remote-task.guaranteed-splits-per-task,"",false
-410,trino-server-410/lib/trino-main-410.jar,,query.max-stage-count,"",false
-410,trino-server-410/lib/trino-main-410.jar,,dynamic-filtering.large-partitioned.max-distinct-values-per-driver,"",false
+410,trino-server-410/lib/trino-plugin-toolkit-410.jar,,ldap.timeout.read,"Timeout for reading data from LDAP",false
 410,trino-server-410/lib/trino-main-410.jar,,statistics-precalculation-for-pushdown.enabled,"",false
 410,trino-server-410/lib/trino-main-410.jar,,node-scheduler.include-coordinator,"",false
 410,trino-server-410/lib/trino-main-410.jar,,task.info-update-interval,"Interval between updating task data",false
@@ -345,14 +303,48 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.insecure.user-mapping.file,"",false
 410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.certificate.user-mapping.file,"",false
 410,trino-server-410/lib/trino-main-410.jar,,transaction.idle-timeout,"Amount of time before an inactive transaction is considered expired",false
-410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,domain-compaction-threshold,"Maximum ranges to allow in a tuple domain without compacting it",false
-410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,keystore-user-credential-name,"",false
-410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,case-insensitive-name-matching.cache-ttl,"",false
-410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,case-insensitive-name-matching.config-file.refresh-period,"",false
-410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,metadata.cache-missing,"Determines if missing information will be cached",false
-410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,keystore-file-path,"",false
-410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,query.comment-format,"Format in which logs about query execution context should be added as comments sent through jdbc driver.",false
-410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,keystore-password,"",false
+410,trino-server-410/lib/trino-main-410.jar,,warning-collector.max-warnings,"",false
+410,trino-server-410/lib/trino-main-410.jar,,http.authentication.krb5.config,"",false
+410,trino-server-410/lib/trino-main-410.jar,,query.max-planning-time,"",false
+410,trino-server-410/lib/trino-main-410.jar,,preferred-write-partitioning-min-number-of-partitions,"Use preferred write partitioning when the number of written partitions exceeds the configured threshold",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.client-secret,"Client secret",false
+410,trino-server-410/lib/trino-main-410.jar,,optimizer.optimize-hash-generation,"",false
+410,trino-server-410/lib/trino-main-410.jar,,spill-compression-enabled,"",false
+410,trino-server-410/lib/trino-main-410.jar,,node-scheduler.network-topology.file,"",false
+410,trino-server-410/lib/trino-main-410.jar,,retry-delay-scale-factor,"Factor by which retry delay is scaled on subsequent failures",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.oidc.discovery,"Enable OpenID Provider Issuer discovery",false
+410,trino-server-410/lib/trino-main-410.jar,,event-listener.config-files,"",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.krb5.name-type,"",false
+410,trino-server-410/lib/trino-main-410.jar,,scale-writers,"",false
+410,trino-server-410/lib/trino-main-410.jar,,optimizer.use-legacy-window-filter-pushdown,"",false
+410,trino-server-410/lib/trino-main-410.jar,,enable-forced-exchange-below-group-id,"",false
+410,trino-server-410/lib/trino-main-410.jar,,fault-tolerant-execution-task-memory-estimation-quantile,"What quantile of memory usage of completed tasks to look at when estimating memory usage for upcoming tasks",false
+410,trino-server-410/lib/trino-main-410.jar,,query.schedule-split-batch-size,"",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.https.enabled,"",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.jwt.user-mapping.pattern,"",false
+410,trino-server-410/lib/trino-main-410.jar,,protocol.v1.prepared-statement-compression.length-threshold,"Compression is applied to prepared statements longer than the configured value",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.access-token-issuer,"The required issuer for access tokens",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.access-token-issuer,"The required issuer for access tokens",false
+410,trino-server-410/lib/trino-main-410.jar,,enable-large-dynamic-filters,"",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.refresh-tokens.issued-token.audience,"Audience representing this coordinator instance, that will be used in issued token",false
+410,trino-server-410/lib/trino-main-410.jar,,deprecated.legacy-catalog-roles,"Enable legacy role management syntax that assumed all roles are catalog scoped",false
+410,trino-server-410/lib/trino-main-410.jar,,internal-communication.https.keystore.path,"",false
+410,trino-server-410/lib/trino-main-410.jar,,experimental.fault-tolerant-execution-force-preferred-write-partitioning-enabled,"",false
+410,trino-server-410/lib/trino-main-410.jar,,plugin.dir,"",false
+410,trino-server-410/lib/trino-main-410.jar,,fault-tolerant-execution-task-memory-growth-factor,"Factor by which estimated task memory is increased if task execution runs out of memory; value is used allocating nodes for tasks execution",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.refresh-tokens.secret-key,"Base64 encoded secret key used to encrypt generated token",false
+410,trino-server-410/lib/trino-main-410.jar,,query.max-concurrent-queries,"",false
+410,trino-server-410/lib/trino-main-410.jar,,task.status-refresh-max-wait,"",false
+410,trino-server-410/lib/trino-main-410.jar,,distributed-sort,"",false
+410,trino-server-410/lib/trino-main-410.jar,,internal-communication.shared-secret,"",false
+410,trino-server-410/lib/trino-main-410.jar,,task.split-concurrency-adjustment-interval,"",false
+410,trino-server-410/lib/trino-main-410.jar,,hide-inaccessible-columns,"When enabled non-accessible columns are silently filtered from results from SELECT * statements",false
+410,trino-server-410/lib/trino-main-410.jar,,failure-detector.enabled,"",false
+410,trino-server-410/lib/trino-main-410.jar,,protocol.v1.alternate-header-name,"Alternate header name for V1 protocol",false
+410,trino-server-410/lib/trino-main-410.jar,,http-server.authentication.oauth2.state-key,"A secret key used by HMAC algorithm to sign the state parameter",false
+410,trino-server-410/lib/trino-main-410.jar,,query.remote-task.guaranteed-splits-per-task,"",false
+410,trino-server-410/lib/trino-main-410.jar,,query.max-stage-count,"",false
+410,trino-server-410/lib/trino-main-410.jar,,dynamic-filtering.large-partitioned.max-distinct-values-per-driver,"",false
 410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,query.reuse-connection,"Enables reusing JDBC connection for metadata queries to data source within a single Trino query",false
 410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,decimal-rounding-mode,"Rounding mode for mapping unspecified and exceeding precision decimals. Not used whendecimal_mappingis set to STRICT",false
 410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,keystore-password-credential-password,"",false
@@ -389,13 +381,14 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,connection-user,"user name for JDBC client",false
 410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,unsupported-type-handling,"Unsupported type handling strategy",false
 410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,metadata.schemas.cache-ttl,"Determines how long schema names list information will be cached",false
-410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.grpc.tls.ssl-provider,"",false
-410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.target-segment-page-size,"",false
-410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.count-distinct-pushdown.enabled,"Controls whether distinct count is pushed down to Pinot. Distinct count pushdown can cause Pinot to do a full scan. Aggregation pushdown must also be enabled in addition to this parameter otherwise no pushdowns will be enabled.",false
-410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.grpc.max-inbound-message-size,"",false
-410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.controller.authentication.user,"",false
-410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.metadata-expiry,"",false
-410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.max-rows-for-broker-queries,"",false
+410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,domain-compaction-threshold,"Maximum ranges to allow in a tuple domain without compacting it",false
+410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,keystore-user-credential-name,"",false
+410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,case-insensitive-name-matching.cache-ttl,"",false
+410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,case-insensitive-name-matching.config-file.refresh-period,"",false
+410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,metadata.cache-missing,"Determines if missing information will be cached",false
+410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,keystore-file-path,"",false
+410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,query.comment-format,"Format in which logs about query execution context should be added as comments sent through jdbc driver.",false
+410,trino-server-410/plugin/druid/trino-base-jdbc-410.jar,druid,keystore-password,"",false
 410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.grpc.tls.truststore-path,"",false
 410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.grpc.enabled,"",false
 410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.broker.authentication.type,"",false
@@ -423,6 +416,13 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.broker.authentication.password,"",false
 410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.grpc.proxy-uri,"",false
 410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.controller.authentication.type,"",false
+410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.grpc.tls.ssl-provider,"",false
+410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.target-segment-page-size,"",false
+410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.count-distinct-pushdown.enabled,"Controls whether distinct count is pushed down to Pinot. Distinct count pushdown can cause Pinot to do a full scan. Aggregation pushdown must also be enabled in addition to this parameter otherwise no pushdowns will be enabled.",false
+410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.grpc.max-inbound-message-size,"",false
+410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.controller.authentication.user,"",false
+410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.metadata-expiry,"",false
+410,trino-server-410/plugin/pinot/trino-pinot-410.jar,pinot,pinot.max-rows-for-broker-queries,"",false
 410,trino-server-410/plugin/accumulo/trino-accumulo-410.jar,accumulo,accumulo.cardinality.cache.size,"Sets the cardinality cache size",false
 410,trino-server-410/plugin/accumulo/trino-accumulo-410.jar,accumulo,accumulo.instance,"Accumulo instance name",false
 410,trino-server-410/plugin/accumulo/trino-accumulo-410.jar,accumulo,accumulo.zookeepers,"ZooKeeper quorum connect string for Accumulo",false
@@ -438,9 +438,8 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/http-event-listener/trino-http-event-listener-410.jar,http-event-listener,http-event-listener.log-split,"Will log io.trino.spi.eventlistener.SplitCompletedEvent",false
 410,trino-server-410/plugin/http-event-listener/trino-http-event-listener-410.jar,http-event-listener,http-event-listener.connect-retry-delay,"Delay in seconds between retries",false
 410,trino-server-410/plugin/http-event-listener/trino-http-event-listener-410.jar,http-event-listener,http-event-listener.connect-ingest-uri,"URL of receiving server. Explicitly set the scheme https:// to use symmetric encryption",false
-410,trino-server-410/plugin/http-event-listener/trino-http-event-listener-410.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: \"Header-Name-1: header value 1, Header-Value-2: header value 2, ...\" ",false
+410,trino-server-410/plugin/http-event-listener/trino-http-event-listener-410.jar,http-event-listener,http-event-listener.connect-http-headers,"List of custom custom HTTP headers provided as: ""Header-Name-1: header value 1, Header-Value-2: header value 2, ..."" ",false
 410,trino-server-410/plugin/http-event-listener/trino-http-event-listener-410.jar,http-event-listener,http-event-listener.connect-max-delay,"Maximum delay between retries. This should be used with exponential backoff.",false
-410,trino-server-410/plugin/kudu/trino-kudu-410.jar,kudu,kudu.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters",false
 410,trino-server-410/plugin/kudu/trino-kudu-410.jar,kudu,kudu.authentication.client.keytab,"Kudu Kerberos client keytab location",false
 410,trino-server-410/plugin/kudu/trino-kudu-410.jar,kudu,kudu.authentication.config,"Kudu Kerberos service configuration file",false
 410,trino-server-410/plugin/kudu/trino-kudu-410.jar,kudu,kudu.client.disable-statistics,"",false
@@ -452,16 +451,13 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/kudu/trino-kudu-410.jar,kudu,kudu.schema-emulation.enabled,"",false
 410,trino-server-410/plugin/kudu/trino-kudu-410.jar,kudu,kudu.authentication.client.principal,"Kudu Kerberos client principal",false
 410,trino-server-410/plugin/kudu/trino-kudu-410.jar,kudu,kudu.schema-emulation.prefix,"",false
-410,trino-server-410/plugin/google-sheets/trino-google-sheets-410.jar,google-sheets,gsheets.data-cache-ttl,"Sheets data expire after write duration",false
-410,trino-server-410/plugin/google-sheets/trino-google-sheets-410.jar,google-sheets,gsheets.credentials-key,"The base64 encoded credentials key",false
+410,trino-server-410/plugin/kudu/trino-kudu-410.jar,kudu,kudu.dynamic-filtering.wait-timeout,"Duration to wait for completion of dynamic filters",false
 410,trino-server-410/plugin/google-sheets/trino-google-sheets-410.jar,google-sheets,gsheets.metadata-sheet-id,"Metadata sheet id containing table sheet mapping",false
 410,trino-server-410/plugin/google-sheets/trino-google-sheets-410.jar,google-sheets,gsheets.max-data-cache-size,"Sheet data max cache size",false
 410,trino-server-410/plugin/google-sheets/trino-google-sheets-410.jar,google-sheets,gsheets.read-timeout,"",false
 410,trino-server-410/plugin/google-sheets/trino-google-sheets-410.jar,google-sheets,gsheets.credentials-path,"Credential file path to google service account",false
-410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.backoff-init-delay,"Initial delay to wait between backpressure retries",false
-410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.node-refresh-interval,"How often to refresh the list of available Elasticsearch nodes",false
-410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.tls.enabled,"",false
-410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.backoff-max-delay,"Maximum delay to wait between backpressure retries",false
+410,trino-server-410/plugin/google-sheets/trino-google-sheets-410.jar,google-sheets,gsheets.data-cache-ttl,"Sheets data expire after write duration",false
+410,trino-server-410/plugin/google-sheets/trino-google-sheets-410.jar,google-sheets,gsheets.credentials-key,"The base64 encoded credentials key",false
 410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.aws.external-id,"Optional external id to pass to AWS STS while assuming a role",false
 410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.tls.verify-hostnames,"",false
 410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.scroll-timeout,"Scroll timeout",false
@@ -487,23 +483,24 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.aws.iam-role,"Optional AWS IAM role to assume for authenticating. If set, this role will be used to get credentials to sign requests to ES.",false
 410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.tls.truststore-path,"",false
 410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.aws.access-key,"",false
-410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.table-description-dir,"Folder holding the JSON description files for Redis values",false
-410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.default-schema,"The schema name to use in the connector",false
+410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.backoff-init-delay,"Initial delay to wait between backpressure retries",false
+410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.node-refresh-interval,"How often to refresh the list of available Elasticsearch nodes",false
+410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.tls.enabled,"",false
+410,trino-server-410/plugin/elasticsearch/trino-elasticsearch-410.jar,elasticsearch,elasticsearch.backoff-max-delay,"Maximum delay to wait between backpressure retries",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.database-index,"Index of the Redis DB to connect to",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.key-delimiter,"Delimiter for separating schema name and table name in the KEY prefix",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.table-description-cache-ttl,"The cache time for redis table description files",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.nodes,"Seed nodes for Redis cluster. At least one must exist",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.max-keys-per-fetch,"Get values associated with the specified number of keys in the command such as MGET(key...)",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.table-names,"Set of tables known to this connector. For each table, a description file may be present in the catalog folder which describes columns for the given table",false
-410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows \"schema:table:*\" format",false
+410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.key-prefix-schema-table,"Whether Redis key string follows ""schema:table:*"" format",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.scan-count,"Count parameter for Redis scan command",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.hide-internal-columns,"Whether internal columns are shown in table metadata or not. Default is no",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.user,"Username for a Redis server",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.password,"Password for a password-protected Redis server",false
 410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.connect-timeout,"Timeout to connect to Redis",false
-410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,ldap.cache-ttl,"",false
-410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,file.auth-token-cache.max-size,"Max number of cached authenticated passwords",false
-410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,salesforce.cache-size,"Maximum size of the cache that holds authenticated users.  Default is 4096 entries.",false
+410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.table-description-dir,"Folder holding the JSON description files for Redis values",false
+410,trino-server-410/plugin/redis/trino-redis-410.jar,redis,redis.default-schema,"The schema name to use in the connector",false
 410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,salesforce.allowed-organizations,"Comma separated list of Salesforce 18 Character Organization Ids.",false
 410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,file.password-file,"Location of the file that provides user names and passwords",false
 410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,ldap.bind-password,"Bind password used. Example: password1234",false
@@ -514,6 +511,9 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,ldap.user-base-dn,"Base distinguished name of the user. Example: dc=example,dc=com",false
 410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,salesforce.cache-expire-duration,"Expire duration for an entry in cache since last write.",false
 410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,ldap.group-auth-pattern,"Custom group authorization check query. Example: &(objectClass=user)(memberOf=cn=group)(user=username)",false
+410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,ldap.cache-ttl,"",false
+410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,file.auth-token-cache.max-size,"Max number of cached authenticated passwords",false
+410,trino-server-410/plugin/password-authenticators/trino-password-authenticators-410.jar,password-authenticators,salesforce.cache-size,"Maximum size of the cache that holds authenticated users.  Default is 4096 entries.",false
 410,trino-server-410/plugin/local-file/trino-local-file-410.jar,local-file,trino-logs.http-request-log.location,"Directory or file where http request logs are written",false
 410,trino-server-410/plugin/local-file/trino-local-file-410.jar,local-file,trino-logs.http-request-log.pattern,"If log location is a directory this glob is used to match the file names in the directory",false
 410,trino-server-410/plugin/singlestore/trino-singlestore-410.jar,singlestore,singlestore.auto-reconnect,"",false
@@ -521,14 +521,6 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/memory/trino-memory-410.jar,memory,memory.max-data-per-node,"",false
 410,trino-server-410/plugin/memory/trino-memory-410.jar,memory,memory.enable-lazy-dynamic-filtering,"",false
 410,trino-server-410/plugin/memory/trino-memory-410.jar,memory,memory.splits-per-node,"",false
-410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.orc.lazy-read-small-ranges,"",false
-410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,backup.timeout-threads,"Maximum number of timeout threads for backup operations",false
-410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,raptor.reassignment-interval,"Minimum interval between reassignments for different nodes",false
-410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.orc.stream-buffer-size,"",false
-410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,raptor.local-clean-time,"How long to wait after discovery before cleaning local shards",false
-410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.ejector-interval,"How often to check for local shards that need ejection to balance capacity",false
-410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.max-buffer-size,"Maximum data to buffer before flushing to disk",false
-410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.shard-recovery-timeout,"Maximum time to wait for a shard to recover from backup while running a query",false
 410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,metadata.db.type,"Metadata database type (supported types: h2, mysql)",false
 410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,raptor.startup-grace-period,"Minimum uptime before allowing bucket or shard reassignments",false
 410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,backup.directory,"Base directory to use for the backup copy of shard data",false
@@ -567,11 +559,17 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.compaction-enabled,"",false
 410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,raptor.max-completed-transaction-age,"Maximum time a record of a successful or failed transaction is kept",false
 410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.balancer-interval,"How often to run the global bucket balancer",false
-410,trino-server-410/plugin/jmx/trino-jmx-410.jar,jmx,jmx.max-entries,"",false
+410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.orc.lazy-read-small-ranges,"",false
+410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,backup.timeout-threads,"Maximum number of timeout threads for backup operations",false
+410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,raptor.reassignment-interval,"Minimum interval between reassignments for different nodes",false
+410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.orc.stream-buffer-size,"",false
+410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,raptor.local-clean-time,"How long to wait after discovery before cleaning local shards",false
+410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.ejector-interval,"How often to check for local shards that need ejection to balance capacity",false
+410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.max-buffer-size,"Maximum data to buffer before flushing to disk",false
+410,trino-server-410/plugin/raptor-legacy/trino-raptor-legacy-410.jar,raptor-legacy,storage.shard-recovery-timeout,"Maximum time to wait for a shard to recover from backup while running a query",false
 410,trino-server-410/plugin/jmx/trino-jmx-410.jar,jmx,jmx.dump-period,"",false
 410,trino-server-410/plugin/jmx/trino-jmx-410.jar,jmx,jmx.dump-tables,"",false
-410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.aws-region,"Region to set while creating S3 client",false
-410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.table-description-refresh-interval,"How often to get the table description from S3",false
+410,trino-server-410/plugin/jmx/trino-jmx-410.jar,jmx,jmx.max-entries,"",false
 410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.default-schema,"Sets default schema for kinesis catalogs",false
 410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.sleep-time,"Sleep time between fetch attempt retries",false
 410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.max-batches,"Maximum number of calls to Kinesis per query",false
@@ -589,16 +587,14 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.dynamo-read-capacity,"DynamoDB read capacity to be set in client",false
 410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.batch-size,"Limit maximum number of rows to return in a batch",false
 410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.access-key,"S3 Access Key to access s3 locations",false
-410,trino-server-410/plugin/atop/trino-atop-410.jar,atop,atop.executable-path,"",false
-410,trino-server-410/plugin/atop/trino-atop-410.jar,atop,atop.executable-read-timeout,"The timeout when reading from the atop process.",false
+410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.aws-region,"Region to set while creating S3 client",false
+410,trino-server-410/plugin/kinesis/trino-kinesis-410.jar,kinesis,kinesis.table-description-refresh-interval,"How often to get the table description from S3",false
 410,trino-server-410/plugin/atop/trino-atop-410.jar,atop,atop.time-zone,"The timezone in which the atop data was collected. Generally the timezone of the host.",false
 410,trino-server-410/plugin/atop/trino-atop-410.jar,atop,atop.max-history-days,"",false
 410,trino-server-410/plugin/atop/trino-atop-410.jar,atop,atop.concurrent-readers-per-node,"",false
 410,trino-server-410/plugin/atop/trino-atop-410.jar,atop,atop.security,"",false
-410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.fs.new-file-inherit-ownership,"File system permissions for new directories",false
-410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.hdfs.trino.keytab,"Trino keytab used to access HDFS",false
-410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.hdfs.trino.credential-cache.location,"Trino credential-cache location used to access HDFS",false
-410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.hdfs.wire-encryption.enabled,"Should be turned on when HDFS wire encryption is enabled",false
+410,trino-server-410/plugin/atop/trino-atop-410.jar,atop,atop.executable-path,"",false
+410,trino-server-410/plugin/atop/trino-atop-410.jar,atop,atop.executable-read-timeout,"The timeout when reading from the atop process.",false
 410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.hdfs.trino.principal,"Trino principal used to access HDFS",false
 410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.fs.cache.max-size,"Hadoop FileSystem cache size",false
 410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.dfs.domain-socket-path,"",false
@@ -614,42 +610,10 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.hdfs.authentication.type,"HDFS authentication type",false
 410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.hdfs.impersonation.enabled,"Should Trino user be impersonated when communicating with HDFS",false
 410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.dfs.ipc-ping-interval,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.aws-secret-key,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,sequence-file.native-writer.enabled,"Use native sequence file writer",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.text.max-line-length,"Maximum line length for text files",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.connect-timeout,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.azure.abfs.oauth.client-id,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore-cache-ttl,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.azure.adl-credential,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,json.native-reader.enabled,"Use native JSON reader",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.upload-acl-type,"Canned ACL type for S3 uploads",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.streaming.part-size,"Part size for S3 streaming upload",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.skip-deletion-for-alter,"Skip deletion of old partition data when a partition is deleted and then inserted in the same transaction",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.security-mapping.refresh-period,"How often to refresh the security mapping configuration",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.file-status-cache-tables,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.security-mapping.kms-key-id-credential-name,"Name of the extra credential used to provide KMS Key ID",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,parquet.optimized-writer.validation-percentage,"Percentage of parquet files to validate after write by re-reading the whole file",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.max-concurrent-file-system-operations,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore-recording-duration,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.glue.proxy-api-id,"ID of Glue Proxy API",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.thrift.client.ssl.trust-certificate,"Path to the trust store",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.cache.disk-usage-percentage,"Percentage of disk space used for cached data",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.thrift.write-statistics-threads,"Number of threads for parallel statistics writes",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.aws-access-key,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.glue.get-partition-threads,"Number of threads for parallel partition fetches from Glue",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.compression-codec,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.allow-drop-table,"Allow Hive connector to drop table",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.orc.max-buffer-size,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,regex.native-reader.enabled,"Use native REGEX reader",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.kms-key-id,"Use an AWS KMS key for S3 data encryption",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.max-initial-splits,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.orc.max-merge-distance,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.temporary-staging-directory-enabled,"Should use (if possible) temporary staging directory for write operations",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.glue.sts.region,"AWS STS signing region for Glue authentication",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.sse.type,"Key management type for S3 server-side encryption (S3 or KMS)",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.sts.endpoint,"",false
-410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.glue.external-id,"External ID for the IAM role trust policy when connecting to Glue",false
+410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.fs.new-file-inherit-ownership,"File system permissions for new directories",false
+410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.hdfs.trino.keytab,"Trino keytab used to access HDFS",false
+410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.hdfs.trino.credential-cache.location,"Trino credential-cache location used to access HDFS",false
+410,trino-server-410/plugin/hive/trino-hdfs-410.jar,hive,hive.hdfs.wire-encryption.enabled,"Should be turned on when HDFS wire encryption is enabled",false
 410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.glue.pin-client-to-current-region,"Should the Glue client be pinned to the current EC2 region",false
 410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.replay-metastore-recording,"",false
 410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.cache.start-server-on-coordinator,"",false
@@ -883,9 +847,42 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.max-splits-per-second,"Throttles the maximum number of splits that can be assigned to tasks per second",false
 410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.orc.writer.stripe-max-rows,"",false
 410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore-recording-path,"",false
-410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.max-initial-split-size,"",false
-410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.target-max-file-size,"Target maximum size of written files; the actual size may be larger",false
-410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.metadata.live-files.cache-size,"Maximum in memory cache size for Delta data file metadata (e.g. file path, statistics, partition values). Defaults to 10% of the available heap size.",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.aws-secret-key,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,sequence-file.native-writer.enabled,"Use native sequence file writer",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.text.max-line-length,"Maximum line length for text files",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.connect-timeout,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.azure.abfs.oauth.client-id,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore-cache-ttl,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.azure.adl-credential,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,json.native-reader.enabled,"Use native JSON reader",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.upload-acl-type,"Canned ACL type for S3 uploads",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.streaming.part-size,"Part size for S3 streaming upload",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.skip-deletion-for-alter,"Skip deletion of old partition data when a partition is deleted and then inserted in the same transaction",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.security-mapping.refresh-period,"How often to refresh the security mapping configuration",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.file-status-cache-tables,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.security-mapping.kms-key-id-credential-name,"Name of the extra credential used to provide KMS Key ID",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,parquet.optimized-writer.validation-percentage,"Percentage of parquet files to validate after write by re-reading the whole file",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.max-concurrent-file-system-operations,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore-recording-duration,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.glue.proxy-api-id,"ID of Glue Proxy API",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.thrift.client.ssl.trust-certificate,"Path to the trust store",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.cache.disk-usage-percentage,"Percentage of disk space used for cached data",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.thrift.write-statistics-threads,"Number of threads for parallel statistics writes",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.aws-access-key,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.glue.get-partition-threads,"Number of threads for parallel partition fetches from Glue",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.compression-codec,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.allow-drop-table,"Allow Hive connector to drop table",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.orc.max-buffer-size,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,regex.native-reader.enabled,"Use native REGEX reader",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.kms-key-id,"Use an AWS KMS key for S3 data encryption",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.max-initial-splits,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.orc.max-merge-distance,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.temporary-staging-directory-enabled,"Should use (if possible) temporary staging directory for write operations",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.glue.sts.region,"AWS STS signing region for Glue authentication",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.sse.type,"Key management type for S3 server-side encryption (S3 or KMS)",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.s3.sts.endpoint,"",false
+410,trino-server-410/plugin/hive/trino-hive-410.jar,hive,hive.metastore.glue.external-id,"External ID for the IAM role trust policy when connecting to Glue",false
 410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.hide-non-delta-lake-tables,"Hide non-Delta Lake tables in table listings",false
 410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.per-transaction-metastore-cache-maximum-size,"",false
 410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.max-splits-per-second,"Throttles the maximum number of splits that can be assigned to tasks per second",false
@@ -914,6 +911,9 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.max-partitions-per-writer,"Maximum number of partitions per writer",false
 410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.domain-compaction-threshold,"Maximum ranges to allow in a tuple domain without compacting it",false
 410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.extended-statistics.enabled,"Enable collection (ANALYZE) and use of extended statistics.",false
+410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.max-initial-split-size,"",false
+410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.target-max-file-size,"Target maximum size of written files; the actual size may be larger",false
+410,trino-server-410/plugin/delta-lake/trino-delta-lake-410.jar,delta-lake,delta.metadata.live-files.cache-size,"Maximum in memory cache size for Delta data file metadata (e.g. file path, statistics, partition values). Defaults to 10% of the available heap size.",false
 410,trino-server-410/plugin/oracle/trino-oracle-410.jar,oracle,oracle.remarks-reporting.enabled,"",false
 410,trino-server-410/plugin/oracle/trino-oracle-410.jar,oracle,oracle.synonyms.enabled,"",false
 410,trino-server-410/plugin/oracle/trino-oracle-410.jar,oracle,oracle.number.default-scale,"Default Trino DECIMAL scale for Oracle NUMBER data type",false
@@ -930,9 +930,6 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/phoenix5/trino-phoenix5-410.jar,phoenix5,phoenix.connection-url,"",false
 410,trino-server-410/plugin/phoenix5/trino-phoenix5-410.jar,phoenix5,query.reuse-connection,"Enables reusing JDBC connection within single Trino query to run metadata queries from Coordinator to remote service",false
 410,trino-server-410/plugin/phoenix5/trino-phoenix5-410.jar,phoenix5,phoenix.config.resources,"",false
-410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.ssl.truststore.location,"The location of the trust store file",false
-410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.ssl.keystore.type,"The file format of the key store file",false
-410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.table-description-dir,"Folder holding JSON description files for Kafka topics",false
 410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.ssl.truststore.type,"The file format of the trust store file",false
 410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.table-names,"Set of tables known to this connector",false
 410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.security-protocol,"Kafka communication security protocol",false
@@ -954,9 +951,10 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.timestamp-upper-bound-force-push-down-enabled,"timestamp upper bound force pushing down enabled",false
 410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.ssl.keystore.password,"The store password for the key store file",false
 410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.hide-internal-columns,"Whether internal columns are shown in table metadata or not. Default is no",false
+410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.ssl.truststore.location,"The location of the trust store file",false
+410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.ssl.keystore.type,"The file format of the key store file",false
+410,trino-server-410/plugin/kafka/trino-kafka-410.jar,kafka,kafka.table-description-dir,"Folder holding JSON description files for Kafka topics",false
 410,trino-server-410/plugin/clickhouse/trino-clickhouse-410.jar,clickhouse,clickhouse.map-string-as-varchar,"Map ClickHouse String and FixedString as varchar instead of varbinary",false
-410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.max-splits-per-second,"Rate at which splits are enqueued for processing. The queue will throttle if this rate limit is breached.",false
-410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.minimum-assigned-split-weight,"Minimum weight that a split can be assigned when size based split weights are enabled.",false
 410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.parquet.use-column-names,"Access Parquet columns using names from the file. If disabled, then columns are accessed using index.Only applicable to Parquet file format.",false
 410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.columns-to-hide,"List of column names that will be hidden from the query output. It can be used to hide Hudi meta fields. By default, no fields are hidden.",false
 410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.min-partition-batch-size,"Minimum number of partitions returned in a single batch.",false
@@ -965,9 +963,8 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.metadata-enabled,"Fetch the list of file names and sizes from metadata rather than storage.",false
 410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.size-based-split-weights-enabled,"Unlike uniform splitting, size-based splitting ensures that each batch of splits has enough data to process. By default, it is enabled to improve performance.",false
 410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.max-partition-batch-size,"Maximum number of partitions returned in a single batch.",false
-410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.delete-schema-locations-fallback,"Whether schema locations should be deleted when Trino can't determine whether they contain external files.",false
-410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.rest-catalog.uri,"The URI to the REST server",false
-410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.unique-table-location,"Use randomized, unique table locations",false
+410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.max-splits-per-second,"Rate at which splits are enqueued for processing. The queue will throttle if this rate limit is breached.",false
+410,trino-server-410/plugin/hudi/trino-hudi-410.jar,hudi,hudi.minimum-assigned-split-weight,"Minimum weight that a split can be assigned when size based split weights are enabled.",false
 410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.rest-catalog.security,"Authorization protocol to use when communicating with the REST catalog server",false
 410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.jdbc-catalog.default-warehouse-dir,"The default warehouse directory to use for JDBC",false
 410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.target-max-file-size,"Target maximum size of written files; the actual size may be larger",false
@@ -999,12 +996,13 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.jdbc-catalog.connection-user,"User name for JDBC client",false
 410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.file-format,"",false
 410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.use-file-size-from-metadata,"",false
+410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.delete-schema-locations-fallback,"Whether schema locations should be deleted when Trino can't determine whether they contain external files.",false
+410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.rest-catalog.uri,"The URI to the REST server",false
+410,trino-server-410/plugin/iceberg/trino-iceberg-410.jar,iceberg,iceberg.unique-table-location,"Use randomized, unique table locations",false
 410,trino-server-410/plugin/example-http/trino-example-http-410.jar,example-http,metadata-uri,"",false
 410,trino-server-410/plugin/sqlserver/trino-sqlserver-410.jar,sqlserver,sqlserver.snapshot-isolation.disabled,"Disables automatic use of snapshot isolation for transactions issued by Trino in SQL Server",false
 410,trino-server-410/plugin/sqlserver/trino-sqlserver-410.jar,sqlserver,sqlserver.bulk-copy-for-write.lock-destination-table,"Obtain a Bulk Update lock on destination table on write",false
 410,trino-server-410/plugin/sqlserver/trino-sqlserver-410.jar,sqlserver,sqlserver.bulk-copy-for-write.enabled,"Use SQL Server Bulk Copy API for writes",false
-410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.channel-pool.initial-size,"",false
-410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.skip-view-materialization,"Skip materializing views",false
 410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.view-materialization-dataset,"The dataset where the materialized view is going to be created",false
 410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.views-enabled,"Enables the connector to read from views and not only tables",false
 410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.max-read-rows-retries,"The number of retries in case of retryable server issues",false
@@ -1025,7 +1023,8 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.service-cache-ttl,"Duration for which BigQuery client service instances are cached",false
 410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.channel-pool.max-rpc-per-channel,"",false
 410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.credentials-key,"The base64 encoded credentials key",false
-410,trino-server-410/plugin/mongodb/trino-mongodb-410.jar,mongodb,mongodb.read-preference,"",false
+410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.channel-pool.initial-size,"",false
+410,trino-server-410/plugin/bigquery/trino-bigquery-410.jar,bigquery,bigquery.skip-view-materialization,"Skip materializing views",false
 410,trino-server-410/plugin/mongodb/trino-mongodb-410.jar,mongodb,mongodb.socket-timeout,"",false
 410,trino-server-410/plugin/mongodb/trino-mongodb-410.jar,mongodb,mongodb.tls.truststore-password,"",false
 410,trino-server-410/plugin/mongodb/trino-mongodb-410.jar,mongodb,mongodb.tls.keystore-password,"",false
@@ -1044,9 +1043,7 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/mongodb/trino-mongodb-410.jar,mongodb,mongodb.cursor-batch-size,"",false
 410,trino-server-410/plugin/mongodb/trino-mongodb-410.jar,mongodb,mongodb.write-concern,"",false
 410,trino-server-410/plugin/mongodb/trino-mongodb-410.jar,mongodb,mongodb.case-insensitive-name-matching,"",false
-410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.tls.truststore-password,"",false
-410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.tls.enabled,"",false
-410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.client.connect-timeout,"",false
+410,trino-server-410/plugin/mongodb/trino-mongodb-410.jar,mongodb,mongodb.read-preference,"",false
 410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.tls.truststore-path,"",false
 410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.fetch-size,"",false
 410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.native-protocol-port,"",false
@@ -1072,9 +1069,9 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.splits-per-node,"",false
 410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.load-policy.use-dc-aware,"",false
 410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.load-policy.dc-aware.used-hosts-per-remote-dc,"",false
-410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.azure.connection-string,"",false
-410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.max-output-partition-count,"",false
-410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.gcs.json-key,"Your Google Cloud Platform service account key in JSON format. Not to be set together with `exchange.gcs.json-key-file-path`",false
+410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.tls.truststore-password,"",false
+410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.tls.enabled,"",false
+410,trino-server-410/plugin/cassandra/trino-cassandra-410.jar,cassandra,cassandra.client.connect-timeout,"",false
 410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.s3.async-client-connection-acquisition-timeout,"",false
 410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.s3.max-error-retries,"",false
 410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.max-page-storage-size,"Max storage size of a page written to a sink, including the page itself and its size represented as an int",false
@@ -1101,6 +1098,9 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.s3.endpoint,"",false
 410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.azure.block-size,"Block size for Azure High-Throughput Block Blob",false
 410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.s3.region,"",false
+410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.azure.connection-string,"",false
+410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.max-output-partition-count,"",false
+410,trino-server-410/plugin/exchange-filesystem/trino-exchange-filesystem-410.jar,exchange-filesystem,exchange.gcs.json-key,"Your Google Cloud Platform service account key in JSON format. Not to be set together with `exchange.gcs.json-key-file-path`",false
 410,trino-server-410/plugin/resource-group-managers/trino-resource-group-managers-410.jar,resource-group-managers,resource-groups.max-refresh-interval,"Time period for which the cluster will continue to accept queries after refresh failures cause configuration to become stale",false
 410,trino-server-410/plugin/resource-group-managers/trino-resource-group-managers-410.jar,resource-group-managers,resource-groups.config-db-url,"",false
 410,trino-server-410/plugin/resource-group-managers/trino-resource-group-managers-410.jar,resource-group-managers,resource-groups.config-db-user,"Database user name",false
@@ -1113,19 +1113,17 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/mysql/trino-mysql-410.jar,mysql,mysql.auto-reconnect,"",false
 410,trino-server-410/plugin/mysql/trino-mysql-410.jar,mysql,mysql.max-reconnects,"",false
 410,trino-server-410/plugin/mysql/trino-mysql-410.jar,mysql,mysql.jdbc.use-information-schema,"Value of useInformationSchema MySQL JDBC driver connection property",false
-410,trino-server-410/plugin/session-property-managers/trino-session-property-managers-410.jar,session-property-managers,session-property-manager.db.username,"",false
-410,trino-server-410/plugin/session-property-managers/trino-session-property-managers-410.jar,session-property-managers,session-property-manager.db.url,"",false
 410,trino-server-410/plugin/session-property-managers/trino-session-property-managers-410.jar,session-property-managers,session-property-manager.config-file,"",false
 410,trino-server-410/plugin/session-property-managers/trino-session-property-managers-410.jar,session-property-managers,session-property-manager.db.refresh-period,"",false
 410,trino-server-410/plugin/session-property-managers/trino-session-property-managers-410.jar,session-property-managers,session-property-manager.db.password,"",false
+410,trino-server-410/plugin/session-property-managers/trino-session-property-managers-410.jar,session-property-managers,session-property-manager.db.username,"",false
+410,trino-server-410/plugin/session-property-managers/trino-session-property-managers-410.jar,session-property-managers,session-property-manager.db.url,"",false
 410,trino-server-410/plugin/tpcds/trino-tpcds-410.jar,tpcds,tpcds.split-count,"Number of split to be created. If not specified the number of splits is computed as 'tpcds.splits-per-node * <number of active nodes>'",false
 410,trino-server-410/plugin/tpcds/trino-tpcds-410.jar,tpcds,tpcds.splits-per-node,"",false
 410,trino-server-410/plugin/tpcds/trino-tpcds-410.jar,tpcds,tpcds.with-no-sexism,"",false
 410,trino-server-410/plugin/postgresql/trino-postgresql-410.jar,postgresql,postgresql.include-system-tables,"",false
 410,trino-server-410/plugin/postgresql/trino-postgresql-410.jar,postgresql,postgresql.array-mapping,"",false
 410,trino-server-410/plugin/postgresql/trino-postgresql-410.jar,postgresql,postgresql.experimental.enable-string-pushdown-with-collate,"",false
-410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.max.query.range.duration,"Width of overall query to Prometheus, will be divided into prometheus.query.chunk.size.duration queries",false
-410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.cache.ttl,"How long values from this config file are cached",false
 410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.auth.password,"",false
 410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.bearer.token.file,"File holding bearer token if needed for access to Prometheus",false
 410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.uri,"Where to find Prometheus coordinator host",false
@@ -1133,5 +1131,7 @@ version,jar,plugin,config,description,is_deprecated
 410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.query.chunk.size.duration,"The duration of each query to Prometheus",false
 410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.read-timeout,"How much time a query to Prometheus has before timing out",false
 410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.auth.user,"",false
+410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.max.query.range.duration,"Width of overall query to Prometheus, will be divided into prometheus.query.chunk.size.duration queries",false
+410,trino-server-410/plugin/prometheus/trino-prometheus-410.jar,prometheus,prometheus.cache.ttl,"How long values from this config file are cached",false
 410,trino-server-410/plugin/exchange-hdfs/trino-exchange-hdfs-410.jar,exchange-hdfs,exchange.hdfs.block-size,"Block size for HDFS storage",false
 410,trino-server-410/plugin/exchange-hdfs/trino-exchange-hdfs-410.jar,exchange-hdfs,hdfs.config.resources,"",false
