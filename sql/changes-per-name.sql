@@ -34,7 +34,7 @@ properties AS (
       , name
       , min(version) AS first_version
     FROM properties
-    WHERE version > ${SOURCE} AND version < ${TARGET}
+    WHERE version > ${SOURCE} AND version <= ${TARGET}
     GROUP BY connector, name
 )
 , targets AS (
