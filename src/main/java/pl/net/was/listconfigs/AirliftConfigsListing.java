@@ -13,6 +13,7 @@
  */
 package pl.net.was.listconfigs;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.objectweb.asm.AnnotationVisitor;
@@ -217,10 +218,12 @@ public class AirliftConfigsListing
         }
     }
 
+    @SuppressFBWarnings(value = {"EI_EXPOSE_REP", "EI_EXPOSE_REP2"}, justification = "Scope is limited")
     public record Annotation(String name, Map<String, String> properties)
     {
     }
 
+    @SuppressFBWarnings(value = {"EI_EXPOSE_REP", "EI_EXPOSE_REP2"}, justification = "Scope is limited")
     public record Method(String name, Set<Annotation> annotations)
     {
         public Map<String, Map<String, String>> annotationsMap()
@@ -230,6 +233,7 @@ public class AirliftConfigsListing
         }
     }
 
+    @SuppressFBWarnings(value = {"EI_EXPOSE_REP", "EI_EXPOSE_REP2"}, justification = "Scope is limited")
     public record Jar(String name, String groupId, String artifactId, String version, Set<Method> methods)
     {
     }
