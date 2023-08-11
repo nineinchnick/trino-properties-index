@@ -68,10 +68,10 @@ cd "$SCRIPT_DIR" || exit 1
 export SOURCE TARGET
 echo "Changes per version:"
 # shellcheck disable=SC2016
-envsubst '$SOURCE $TARGET' <sql/changes-per-version.sql | sqlite3 --line
+envsubst '$SOURCE $TARGET' <sql/changes-per-version.sql | sqlite3 --line 2>&1 | grep -v 'unescaped " character'
 echo ""
 
 echo "Changes per status:"
 # shellcheck disable=SC2016
-envsubst '$SOURCE $TARGET' <sql/changes-per-status.sql | sqlite3 --line
+envsubst '$SOURCE $TARGET' <sql/changes-per-status.sql | sqlite3 --line 2>&1 | grep -v 'unescaped " character'
 echo ""
