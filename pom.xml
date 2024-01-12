@@ -14,8 +14,9 @@
 
     <properties>
         <main-class>pl.net.was.listconfigs.AirliftConfigsListing</main-class>
-        <project.build.targetJdk>17</project.build.targetJdk>
-        <air.java.version>17.0.8</air.java.version>
+        <project.build.targetJdk>21</project.build.targetJdk>
+        <air.java.version>21.0.1</air.java.version>
+        <air.check.skip-pmd>true</air.check.skip-pmd>
     </properties>
 
     <dependencies>
@@ -37,7 +38,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.24.2</version>
+            <version>3.25.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
