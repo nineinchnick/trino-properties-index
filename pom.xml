@@ -5,17 +5,20 @@
     <parent>
         <groupId>io.airlift</groupId>
         <artifactId>airbase</artifactId>
-        <version>150</version>
+        <version>194</version>
     </parent>
 
     <groupId>pl.net.was</groupId>
     <artifactId>trino-properties-index</artifactId>
     <version>0.1-SNAPSHOT</version>
 
+    <name>${project.artifactId}</name>
+    <description>Trino Properties Index</description>
+
     <properties>
         <main-class>pl.net.was.listconfigs.AirliftConfigsListing</main-class>
-        <project.build.targetJdk>21</project.build.targetJdk>
-        <air.java.version>21.0.1</air.java.version>
+        <project.build.targetJdk>23</project.build.targetJdk>
+        <air.java.version>23.0.1</air.java.version>
         <air.check.skip-pmd>true</air.check.skip-pmd>
     </properties>
 
@@ -23,12 +26,12 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
-            <version>1.25.0</version>
+            <version>1.27.1</version>
         </dependency>
         <dependency>
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>
-            <version>9.6</version>
+            <version>9.7.1</version>
         </dependency>
         <dependency>
             <groupId>com.github.spotbugs</groupId>
@@ -38,7 +41,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.25.3</version>
+            <version>3.26.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
