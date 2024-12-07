@@ -23,7 +23,7 @@ jobs:
           server-id: github
           cache: 'maven'
       - name: Build with Maven
-        run: mvn -B package
+        run: ./mvnw -B package
       - name: Update
         run:
           bash -x ./properties/update.sh -s ${{ inputs.source }} -t ${{ inputs.target }}
