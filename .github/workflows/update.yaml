@@ -26,7 +26,7 @@ jobs:
         run: ./mvnw -B package
       - name: Update
         run:
-          bash -x ./properties/update.sh -s ${{ inputs.source }} -t ${{ inputs.target }}
+          bash -x ./properties/update.sh ${{ inputs.source || format('-s {0}', inputs.source) }} ${{ inputs.target || format('-t {0}', inputs.target) }}
       - name: Commit report
         run: |
           git config user.name 'GitHub Automation'
@@ -36,4 +36,4 @@ jobs:
           git push
       - name: Report
         run:
-          bash -x ./report.sh -s ${{ inputs.source }} -t ${{ inputs.target }}
+          bash -x ./report.sh ${{ inputs.source || format('-s {0}', inputs.source) }} ${{ inputs.target || format('-t {0}', inputs.target) }}
