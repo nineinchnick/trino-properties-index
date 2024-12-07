@@ -1,0 +1,39 @@
+name: Update
+
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'Source version'
+        required: false
+      target:
+        description: 'Target version'
+        required: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '23'
+          distribution: 'temurin'
+          server-id: github
+          cache: 'maven'
+      - name: Build with Maven
+        run: mvn -B package
+      - name: Update
+        run:
+          bash -x ./properties/update.sh -s ${{ inputs.source }} -t ${{ inputs.target }}
+      - name: Commit report
+        run: |
+          git config user.name 'GitHub Automation'
+          git config user.email ''
+          git add --all properties/
+          git commit -m "Update properties"
+          git push
+      - name: Report
+        run:
+          bash -x ./report.sh -s ${{ inputs.source }} -t ${{ inputs.target }}
