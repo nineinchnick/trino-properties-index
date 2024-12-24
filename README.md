@@ -3,9 +3,10 @@
 An index of all available properties in different versions of Trino
 
 ## Usage
-
-1. Run `properties/update.sh` to extract properties.
-1. Run `report.sh -s 372 -t 399` to list added and removed properties between versions 372 (source) and 399 (target), inclusive.
+1. Install correct Java version (see `.java-version`) and make sure the `JAVA_HOME` environmental variable is set correctly.
+2. Run `./mvnw package` to build the project. 
+3. Run `properties/update.sh` to extract properties.
+4. Run `report.sh -s 372 -t 399` to list added and removed properties between versions 372 (source) and 399 (target), inclusive.
 
 Example output:
 ```bash
