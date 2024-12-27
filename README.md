@@ -43,6 +43,9 @@ save locally those properties.
 This operation may require retrieving several versions of the 
 `io.trino:trino-server:${version}:tar.gz` artifacts to the local Maven repository of the
 machine on which the tool is being used and may require multiple minutes to complete.
+Note that the current project is equipped with a [Update](.github/workflows/update.yaml)
+Github workflow specifically tailored to take care of this maintenance task over GitHub
+runners, by utilizing their fast internet connection, and ephemeral storage.
 
 Run `properties/update.sh -s 466 -t 468` to create/update locally in the properties local
 index the properties corresponding to the Trino releases 466 (source) and 468 (target),
