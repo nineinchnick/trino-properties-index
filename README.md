@@ -17,7 +17,7 @@ folder. Using an SQL query, it can search through all the Trino properties chang
 between any two Trino releases.
 
 Run `report.sh -s 372 -t 375` to list added and removed properties between releases
-372 (source) and 399 (target), inclusive.
+372 (source) and 375 (target), inclusive.
 
 Example output:
 ```bash
@@ -43,7 +43,7 @@ save locally those properties.
 This operation may require retrieving several versions of the 
 `io.trino:trino-server:${version}:tar.gz` artifacts to the local Maven repository of the
 machine on which the tool is being used and may require multiple minutes to complete.
-Note that the current project is equipped with a [Update](.github/workflows/update.yaml)
+Note that the current project is equipped with an [Update](.github/workflows/update.yaml)
 Github workflow specifically tailored to take care of this maintenance task over GitHub
 runners, by utilizing their fast internet connection, and ephemeral storage.
 
