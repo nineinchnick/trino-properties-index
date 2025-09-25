@@ -22,8 +22,10 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -72,7 +74,7 @@ public class AirliftConfigsListing
 
         Pattern pattern = Pattern.compile("/plugin/([^/]+)/");
         System.out.println("version,jar,plugin,config,description,is_deprecated");
-        try (FileInputStream fileIS = new FileInputStream(args[0]);
+        try (InputStream fileIS = Files.newInputStream(Path.of(args[0]));
                 GZIPInputStream tarGzIS = new GZIPInputStream(fileIS);
                 TarArchiveInputStream tarIS = new TarArchiveInputStream(tarGzIS)) {
             while (true) {
@@ -218,12 +220,12 @@ public class AirliftConfigsListing
         }
     }
 
-    @SuppressFBWarnings(value = {"EI_EXPOSE_REP", "EI_EXPOSE_REP2"}, justification = "Scope is limited")
+    @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "Scope is limited")
     public record Annotation(String name, Map<String, String> properties)
     {
     }
 
-    @SuppressFBWarnings(value = {"EI_EXPOSE_REP", "EI_EXPOSE_REP2"}, justification = "Scope is limited")
+    @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "Scope is limited")
     public record Method(String name, Set<Annotation> annotations)
     {
         public Map<String, Map<String, String>> annotationsMap()
@@ -233,7 +235,7 @@ public class AirliftConfigsListing
         }
     }
 
-    @SuppressFBWarnings(value = {"EI_EXPOSE_REP", "EI_EXPOSE_REP2"}, justification = "Scope is limited")
+    @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "Scope is limited")
     public record Jar(String name, String groupId, String artifactId, String version, Set<Method> methods)
     {
     }

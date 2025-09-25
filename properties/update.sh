@@ -65,12 +65,19 @@ fi
 version=$SOURCE
 artifact=io.trino:trino-server:${version}:tar.gz
 while [ -z "$TARGET" ] || [ "$version" -le "$TARGET" ]; do
-    if ! mvn -q -C dependency:get -Dtransitive=false "-Dartifact=$artifact"; then
-        break
+    if [ "$version" -ge 477 ]; then
+        trino_server="../target/trino-server-${version}.tar.gz"
+        if ! curl -fLsS -o "$trino_server" "https://github.com/trinodb/trino/releases/download/$version/trino-server-$version.tar.gz"; then
+            break
+        fi
+    else
+        trino_server="$local_repo/io/trino/trino-server/${version}/trino-server-${version}.tar.gz"
+        if ! mvn -q -C dependency:get -Dtransitive=false "-Dartifact=$artifact"; then
+            break
+        fi
     fi
     properties="$version".csv
     if [ ! -f "$properties" ]; then
-        trino_server="$local_repo/io/trino/trino-server/${version}/trino-server-${version}.tar.gz"
         ${cmd[0]} "$trino_server" >"$properties"
     fi
     ((version++))

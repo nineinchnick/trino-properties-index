@@ -15,11 +15,10 @@ package pl.net.was.listconfigs;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.Map;
 import java.util.Set;
 import java.util.jar.JarInputStream;
@@ -40,11 +39,10 @@ class AirliftConfigsListingTest
 
         ClassLoader classLoader = getClass().getClassLoader();
         URL resource = requireNonNull(classLoader.getResource(resourceName));
-        File file = new File(resource.getFile());
 
         JarInputStream jarIS;
         try {
-            jarIS = new JarInputStream(Files.newInputStream(Paths.get(file.getAbsolutePath())));
+            jarIS = new JarInputStream(Files.newInputStream(Path.of(resource.getFile())));
         }
         catch (IOException e) {
             throw new RuntimeException(e);
